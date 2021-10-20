@@ -1,3 +1,9 @@
+<?php 
+include_once 'configs/db.php';
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
