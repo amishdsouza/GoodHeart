@@ -179,7 +179,7 @@ include_once 'configs/db.php';
                                                     <ul class="text-left">
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/1.jpg" class="w-100" alt="">
+                                                                <img src="../img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
