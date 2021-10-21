@@ -15,7 +15,7 @@ include_once 'configs/db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="..img/favicon.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -46,7 +46,7 @@ include_once 'configs/db.php';
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="../img/logo/logo1.png" alt=""></a>
+                            <a href="index.php"><img src="../..img/logo/logo1.png" alt=""></a>
                         </div>
                     </div>
 
@@ -179,7 +179,7 @@ include_once 'configs/db.php';
                                                     <ul class="text-left">
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="../img/product/1.jpg" class="w-100" alt="">
+                                                                <img src="../..img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
@@ -189,7 +189,7 @@ include_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/2.jpg" class="w-100" alt="">
+                                                                <img src="../..img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">RIMINI - Folding leather
@@ -199,7 +199,7 @@ include_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/3.jpg" class="w-100" alt="">
+                                                                <img src="..img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
@@ -209,7 +209,7 @@ include_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/1.jpg" class="w-100" alt="">
+                                                                <img src="..img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
@@ -219,7 +219,7 @@ include_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/2.jpg" class="w-100" alt="">
+                                                                <img src="..img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">RIMINI - Folding leather
@@ -229,7 +229,7 @@ include_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/3.jpg" class="w-100" alt="">
+                                                                <img src="..img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
@@ -254,7 +254,7 @@ include_once 'configs/db.php';
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="..img/product/1.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
@@ -269,7 +269,7 @@ include_once 'configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="..img/product/2.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
@@ -284,7 +284,7 @@ include_once 'configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="..img/product/3.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
@@ -398,7 +398,7 @@ include_once 'configs/db.php';
     <!-- slider section start -->
     <section class="slider">
         <div class="slider-active">
-            <div class="single-slider d-flex align-items-center h-950" data-background="img/slider/1.jpg">
+            <div class="single-slider d-flex align-items-center h-950" data-background="..img/slider/1.jpg">
                 <div class="container">
                     <div class="single-slider-inner d-flex align-items-center justify-content-start">
                         <div class="single-slider-content text-left light-content">
@@ -417,7 +417,7 @@ include_once 'configs/db.php';
                     </div>
                 </div>
             </div>
-            <div class="single-slider d-flex align-items-center h-950" data-background="img/slider/2.jpg">
+            <div class="single-slider d-flex align-items-center h-950" data-background="..img/slider/2.jpg">
                 <div class="container">
                     <div class="single-slider-inner d-flex align-items-center justify-content-start">
                         <div class="single-slider-content text-left light-content">
@@ -436,7 +436,7 @@ include_once 'configs/db.php';
                     </div>
                 </div>
             </div>
-            <div class="single-slider d-flex align-items-center h-950" data-background="img/slider/3.jpg">
+            <div class="single-slider d-flex align-items-center h-950" data-background="..img/slider/3.jpg">
                 <div class="container">
                     <div class="single-slider-inner d-flex align-items-center justify-content-start">
                         <div class="single-slider-content text-left light-content">
@@ -470,7 +470,7 @@ include_once 'configs/db.php';
                     <div class="category-box">
                         <div class="category-wrapper">
                             <div class="category-img">
-                                <img src="img/banner/categorie_1.jpg" class="w-100" alt="">
+                                <img src="..img/banner/categorie_1.jpg" class="w-100" alt="">
                             </div>
                             <div class="category-content">
                                 <a href="shop2.php" class="title">Clothing</a>
@@ -487,7 +487,7 @@ include_once 'configs/db.php';
                                     <div class="category-box">
                                         <div class="category-wrapper">
                                             <div class="category-img">
-                                                <img src="img/banner/categorie_2.jpg" class="w-100" alt="">
+                                                <img src="..img/banner/categorie_2.jpg" class="w-100" alt="">
                                             </div>
                                             <div class="category-content">
                                                 <a href="shop2.php" class="title">Handbag</a>
@@ -500,7 +500,7 @@ include_once 'configs/db.php';
                                     <div class="category-box">
                                         <div class="category-wrapper">
                                             <div class="category-img">
-                                                <img src="img/banner/categorie_3.jpg" class="w-100" alt="">
+                                                <img src="..img/banner/categorie_3.jpg" class="w-100" alt="">
                                             </div>
                                             <div class="category-content">
                                                 <a href="shop2.php" class="title">Sneaker</a>
@@ -515,7 +515,7 @@ include_once 'configs/db.php';
                             <div class="category-box">
                                 <div class="category-wrapper">
                                     <div class="category-img">
-                                        <img src="img/banner/categorie_4.jpg" class="w-100" alt="">
+                                        <img src="..img/banner/categorie_4.jpg" class="w-100" alt="">
                                     </div>
                                     <div class="category-content">
                                         <a href="shop2.php" class="title">Women</a>
@@ -555,10 +555,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -589,10 +589,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -623,10 +623,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -658,10 +658,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/7.jpg" class="w-100" alt="">
+                                            <img src="..img/product/7.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/7-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -695,10 +695,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/8.jpg" class="w-100" alt="">
+                                            <img src="..img/product/8.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/8-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -731,10 +731,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/9.jpg" class="w-100" alt="">
+                                            <img src="..img/product/9.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/9-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -767,10 +767,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -801,10 +801,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -835,10 +835,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/6.jpg" class="w-100" alt="">
+                                            <img src="..img/product/6.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/6-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -873,10 +873,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/15.jpg" class="w-100" alt="">
+                                            <img src="..img/product/15.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/15-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -909,10 +909,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -947,10 +947,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/16.jpg" class="w-100" alt="">
+                                            <img src="..img/product/16.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/16-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -983,10 +983,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/12.jpg" class="w-100" alt="">
+                                            <img src="..img/product/12.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/12-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1019,10 +1019,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/13.jpg" class="w-100" alt="">
+                                            <img src="..img/product/13.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/13-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1054,10 +1054,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/14.jpg" class="w-100" alt="">
+                                            <img src="..img/product/14.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/14-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1091,10 +1091,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/10.jpg" class="w-100" alt="">
+                                            <img src="..img/product/10.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/10-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1128,10 +1128,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/11.jpg" class="w-100" alt="">
+                                            <img src="..img/product/11.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/11-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1167,10 +1167,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/17.jpg" class="w-100" alt="">
+                                            <img src="..img/product/17.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/17-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1212,10 +1212,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/15.jpg" class="w-100" alt="">
+                                            <img src="..img/product/15.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/15-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1248,10 +1248,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1286,10 +1286,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/16.jpg" class="w-100" alt="">
+                                            <img src="..img/product/16.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/16-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1322,10 +1322,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/12.jpg" class="w-100" alt="">
+                                            <img src="..img/product/12.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/12-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1358,10 +1358,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/13.jpg" class="w-100" alt="">
+                                            <img src="..img/product/13.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/13-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1393,10 +1393,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/14.jpg" class="w-100" alt="">
+                                            <img src="..img/product/14.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/14-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1430,10 +1430,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/10.jpg" class="w-100" alt="">
+                                            <img src="..img/product/10.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/10-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1467,10 +1467,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/11.jpg" class="w-100" alt="">
+                                            <img src="..img/product/11.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/11-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1506,10 +1506,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/17.jpg" class="w-100" alt="">
+                                            <img src="..img/product/17.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/17-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1543,10 +1543,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1577,10 +1577,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1611,10 +1611,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1646,10 +1646,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/7.jpg" class="w-100" alt="">
+                                            <img src="..img/product/7.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/7-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1683,10 +1683,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/8.jpg" class="w-100" alt="">
+                                            <img src="..img/product/8.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/8-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1719,10 +1719,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/9.jpg" class="w-100" alt="">
+                                            <img src="..img/product/9.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/9-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1755,10 +1755,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1789,10 +1789,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1823,10 +1823,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/6.jpg" class="w-100" alt="">
+                                            <img src="..img/product/6.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/6-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1869,10 +1869,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1903,10 +1903,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1937,10 +1937,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -1972,10 +1972,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/7.jpg" class="w-100" alt="">
+                                            <img src="..img/product/7.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/7-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2009,10 +2009,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/8.jpg" class="w-100" alt="">
+                                            <img src="..img/product/8.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/8-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2045,10 +2045,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/9.jpg" class="w-100" alt="">
+                                            <img src="..img/product/9.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/9-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2081,10 +2081,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2115,10 +2115,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/4.jpg" class="w-100" alt="">
+                                            <img src="..img/product/4.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/4-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2149,10 +2149,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/6.jpg" class="w-100" alt="">
+                                            <img src="..img/product/6.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/6-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2187,10 +2187,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/15.jpg" class="w-100" alt="">
+                                            <img src="..img/product/15.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/15-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2223,10 +2223,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/5.jpg" class="w-100" alt="">
+                                            <img src="..img/product/5.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/5-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2261,10 +2261,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/16.jpg" class="w-100" alt="">
+                                            <img src="..img/product/16.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/16-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2297,10 +2297,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/12.jpg" class="w-100" alt="">
+                                            <img src="..img/product/12.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/12-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2333,10 +2333,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/13.jpg" class="w-100" alt="">
+                                            <img src="..img/product/13.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/13-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2368,10 +2368,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/14.jpg" class="w-100" alt="">
+                                            <img src="..img/product/14.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/14-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2405,10 +2405,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/10.jpg" class="w-100" alt="">
+                                            <img src="..img/product/10.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/10-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2442,10 +2442,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/11.jpg" class="w-100" alt="">
+                                            <img src="..img/product/11.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/11-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2481,10 +2481,10 @@ include_once 'configs/db.php';
                                 <div class="product-box mb-40">
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
-                                            <img src="img/product/17.jpg" class="w-100" alt="">
+                                            <img src="..img/product/17.jpg" class="w-100" alt="">
                                             <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
-                                                    <img src="img/product/17-hover.jpg" alt="" class="w-100">
+                                                    <img src="..img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)"
@@ -2529,7 +2529,7 @@ include_once 'configs/db.php';
     <section class="shipping-price-section shipping-2 pt-130 mt-120 gray-border-top">
         <div class="container">
             <div class="shipping-icon text-center">
-                <img src="img/logo/ship-logo.svg" alt="">
+                <img src="..img/logo/ship-logo.svg" alt="">
             </div>
             <div class="shipping-desc pt-35">
                 <h2 class="mb-20">All Order Over $60 Ship Free!</h2>
@@ -2618,7 +2618,7 @@ include_once 'configs/db.php';
                             <div class="col-xl-5 col-lg-5 col-md-9">
                                 <div class="footer-item has-desc">
                                     <div class="footer-logo mb-25">
-                                        <img src="img/logo/logo2.png" width="120" height="31" alt="">
+                                        <img src="..img/logo/logo2.png" width="120" height="31" alt="">
                                     </div>
                                     <div class="footer-desc">
                                         <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
@@ -2626,7 +2626,7 @@ include_once 'configs/db.php';
                                         </p>
                                     </div>
                                     <div class="footer-img mt-65">
-                                        <img src="img/logo/paypal.png" alt="">
+                                        <img src="..img/logo/paypal.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -2701,34 +2701,34 @@ include_once 'configs/db.php';
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="product-popup-1">
                                     <div class="product-popup-img">
-                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                        <img src="..img/product/10.jpg" class="w-100" alt="">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="product-popup-2">
                                     <div class="product-popup-img">
-                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                        <img src="..img/product/11.jpg" class="w-100" alt="">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="product-popup-3">
                                     <div class="product-popup-img">
-                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                        <img src="..img/product/12.jpg" class="w-100" alt="">
                                     </div>
                                 </div>
                             </div>
                             <ul class="nav nav-pills justify-content-center mt-10">
                                 <li class="nav-item">
                                     <a class="active" data-toggle="pill" href="#product-popup-1">
-                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                        <img src="..img/product/10.jpg" class="w-100" alt="">
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="" data-toggle="pill" href="#product-popup-2">
-                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                        <img src="..img/product/11.jpg" class="w-100" alt="">
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="" data-toggle="pill" href="#product-popup-3">
-                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                        <img src="..img/product/12.jpg" class="w-100" alt="">
                                     </a>
                                 </li>
                             </ul>
