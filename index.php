@@ -1,5 +1,5 @@
 <?php
-include_once '/configs/db.php';
+include_once 'configs/db.php';
 
 
 ?>
@@ -46,7 +46,7 @@ include_once '/configs/db.php';
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.html"><img src="img/logo/logo1.png" alt=""></a>
+                            <a href="index.php"><img src="../img/logo/logo1.png" alt=""></a>
                         </div>
                     </div>
 
@@ -58,13 +58,13 @@ include_once '/configs/db.php';
                                                     class="fal fa-angle-down"></i></span></a>
 
                                         <ul class="submenu">
-                                            <li><a href="index.html">Home Fashion 1</a></li>
-                                            <li><a href="index2.html">Home Fashion 2</a></li>
-                                            <li><a href="index3.html">Home Fashion 3</a></li>
-                                            <li><a href="index4.html">Home Fashion 4</a></li>
-                                            <li><a href="index5.html">Home Fashion 5</a></li>
-                                            <li><a href="index6.html">Home Fashion 6</a></li>
-                                            <li><a href="index7.html">Home Fashion 7</a></li>
+                                            <li><a href="index.php">Home Fashion 1</a></li>
+                                            <li><a href="index2.php">Home Fashion 2</a></li>
+                                            <li><a href="index3.php">Home Fashion 3</a></li>
+                                            <li><a href="index4.php">Home Fashion 4</a></li>
+                                            <li><a href="index5.php">Home Fashion 5</a></li>
+                                            <li><a href="index6.php">Home Fashion 6</a></li>
+                                            <li><a href="index7.php">Home Fashion 7</a></li>
                                         </ul>
                                     </li>
                                     <li class="position-static"><a href="javascript:void(0)"><span>Shop <i
@@ -72,33 +72,33 @@ include_once '/configs/db.php';
                                         <div class="mega-menu">
                                             <div class="col-xl-7 pl-0 position-static">
                                                 <ul>
-                                                    <li><a href="shop.html">Shop Layout</a></li>
-                                                    <li><a href="shop4.html">Masonry – Grid</a></li>
-                                                    <li><a href="shop3.html">Pagination</a></li>
-                                                    <li><a href="shop2.html">Ajax Load More</a></li>
-                                                    <li><a href="shop2.html">Infinite Scroll</a></li>
-                                                    <li><a href="shop2.html">Sidebar Right</a></li>
-                                                    <li><a href="shop.html">Sidebar Left</a></li>
+                                                    <li><a href="shop.php">Shop Layout</a></li>
+                                                    <li><a href="shop4.php">Masonry – Grid</a></li>
+                                                    <li><a href="shop3.php">Pagination</a></li>
+                                                    <li><a href="shop2.php">Ajax Load More</a></li>
+                                                    <li><a href="shop2.php">Infinite Scroll</a></li>
+                                                    <li><a href="shop2.php">Sidebar Right</a></li>
+                                                    <li><a href="shop.php">Sidebar Left</a></li>
                                                 </ul>
 
                                                 <ul>
-                                                    <li><a href="shop.html">Shop Pages</a></li>
-                                                    <li><a href="shop2.html">List View</a></li>
-                                                    <li><a href="shop3.html">Small Products</a></li>
-                                                    <li><a href="shop2.html">Large Products</a></li>
-                                                    <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                                    <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                                    <li><a href="shop4.html">Shop — 5 Items</a></li>
+                                                    <li><a href="shop.php">Shop Pages</a></li>
+                                                    <li><a href="shop2.php">List View</a></li>
+                                                    <li><a href="shop3.php">Small Products</a></li>
+                                                    <li><a href="shop2.php">Large Products</a></li>
+                                                    <li><a href="shop3.php">Shop — 3 Items</a></li>
+                                                    <li><a href="shop3.php">Shop — 4 Items</a></li>
+                                                    <li><a href="shop4.php">Shop — 5 Items</a></li>
                                                 </ul>
 
                                                 <ul>
-                                                    <li><a href="single-product-2.html">Product Layout</a></li>
-                                                    <li><a href="single-product.html">Description Sticky</a></li>
-                                                    <li><a href="single-product-2.html">Product Carousels</a></li>
-                                                    <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                                    <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                                    <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                                    <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
+                                                    <li><a href="single-product-2.php">Product Layout</a></li>
+                                                    <li><a href="single-product.php">Description Sticky</a></li>
+                                                    <li><a href="single-product-2.php">Product Carousels</a></li>
+                                                    <li><a href="single-product-3.php">Gallery Modern</a></li>
+                                                    <li><a href="single-product-4.php">Thumbnail Left</a></li>
+                                                    <li><a href="single-product-5.php">Thumbnail Right</a></li>
+                                                    <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -106,30 +106,30 @@ include_once '/configs/db.php';
                                     <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
                                         </a>
                                         <ul class="submenu">
-                                            <li><a href="blog.html">Grid layout</a></li>
-                                            <li><a href="blog2.html">Large image</a></li>
-                                            <li><a href="blog3.html">Left Sidebar</a></li>
-                                            <li><a href="blog4.html">Right Sidebar</a></li>
-                                            <li><a href="blog5.html">No sidebar</a></li>
+                                            <li><a href="blog.php">Grid layout</a></li>
+                                            <li><a href="blog2.php">Large image</a></li>
+                                            <li><a href="blog3.php">Left Sidebar</a></li>
+                                            <li><a href="blog4.php">Right Sidebar</a></li>
+                                            <li><a href="blog5.php">No sidebar</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:void(0)"><span>Portfolio <i
                                                     class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
-                                            <li><a href="portfolio.html">Single project</a></li>
-                                            <li><a href="portfolio2.html">Two Columns</a></li>
-                                            <li><a href="portfolio3.html">Three Columns</a></li>
+                                            <li><a href="portfolio.php">Single project</a></li>
+                                            <li><a href="portfolio2.php">Two Columns</a></li>
+                                            <li><a href="portfolio3.php">Three Columns</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:void(0)"><span>Page</span> <i
                                                 class="fal fa-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="question.html">Frequently Questions</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="question.php">Frequently Questions</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html"><span>Contact</span></a></li>
+                                    <li><a href="contact.php"><span>Contact</span></a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -138,7 +138,7 @@ include_once '/configs/db.php';
                     <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
                         <div class="header-right">
                             <ul class="text-right">
-                                <li><a href="registar.html" class="account"><i class="fal fa-user-friends"></i>
+                                <li><a href="registar.php" class="account"><i class="fal fa-user-friends"></i>
                                         <article class="account-registar d-inline-block">
                                             Login/Sign up
                                         </article>
@@ -182,7 +182,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">ELLE - Recliner syntheti
+                                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
                                                                     chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -192,7 +192,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">RIMINI - Folding leather
+                                                                <a href="shop2.php" class="title px-0">RIMINI - Folding leather
                                                                     deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -202,7 +202,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">LANDSCAPE - Folding
+                                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
                                                                     fabric deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -212,7 +212,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">ELLE - Recliner syntheti
+                                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
                                                                     chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -222,7 +222,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">RIMINI - Folding leather
+                                                                <a href="shop2.php" class="title px-0">RIMINI - Folding leather
                                                                     deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -232,7 +232,7 @@ include_once '/configs/db.php';
                                                                 <img src="img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="shop2.html" class="title px-0">LANDSCAPE - Folding
+                                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
                                                                     fabric deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
@@ -245,7 +245,7 @@ include_once '/configs/db.php';
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="wishlist.html" data-toggle="tooltip" data-placement="bottom"
+                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom"
                                         title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
                                     <div class="minicart">
@@ -254,11 +254,11 @@ include_once '/configs/db.php';
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.html" class="p-0"><img src="img/product/1.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
-                                                            <a href="single-product-3.html" class="p-0">Capitalize on low hanging fruit
+                                                            <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
                                                                 t</a>
                                                             <strong>1 × $250.00</strong>
                                                         </div>
@@ -269,11 +269,11 @@ include_once '/configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.html" class="p-0"><img src="img/product/2.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
-                                                            <a href="single-product-3.html" class="p-0">Leather Courriere duffle ba</a>
+                                                            <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
                                                             <strong>1 × $150.00</strong>
                                                         </div>
                                                         <div class="remove">
@@ -284,11 +284,11 @@ include_once '/configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.html" class="p-0"><img src="img/product/3.jpg"
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg"
                                                                     class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
-                                                            <a href="single-product-3.html" class="p-0">Party Supplies Around Cupcake</a>
+                                                            <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
                                                             <strong>1 × $150.00</strong>
                                                         </div>
                                                         <div class="remove">
@@ -304,10 +304,10 @@ include_once '/configs/db.php';
                                                 <span class="price float-right">503.00</span>
                                             </div>
                                             <div class="minicart-checkout-links">
-                                                <a href="cart.html"
+                                                <a href="cart.php"
                                                     class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
                                                     cart</a>
-                                                <a href="checkout.html"
+                                                <a href="checkout.php"
                                                     class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
                                             </div>
                                         </div>
@@ -315,11 +315,11 @@ include_once '/configs/db.php';
                                 </li>
                                 <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
                                     <ul class="submenu text-right">
-                                        <li><a href="login.html">My Account</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="question.html">Frequently</a></li>
+                                        <li><a href="login.php">My Account</a></li>
+                                        <li><a href="checkout.php">Checkout</a></li>
+                                        <li><a href="shop.php">Shop</a></li>
+                                        <li><a href="wishlist.php">Wishlist</a></li>
+                                        <li><a href="question.php">Frequently</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -332,58 +332,58 @@ include_once '/configs/db.php';
                     <ul>
                         <li><a class="pl-3" href="javascript:void(0)">Home</a>
                             <ul class="pl-4">
-                                <li><a href="index.html">Home Fashion 1</a></li>
-                                <li><a href="index2.html">Home Fashion 2</a></li>
-                                <li><a href="index3.html">Home Fashion 3</a></li>
-                                <li><a href="index4.html">Home Fashion 4</a></li>
-                                <li><a href="index5.html">Home Fashion 5</a></li>
-                                <li><a href="index6.html">Home Fashion 6</a></li>
-                                <li><a href="index7.html">Home Fashion 7</a></li>
+                                <li><a href="index.php">Home Fashion 1</a></li>
+                                <li><a href="index2.php">Home Fashion 2</a></li>
+                                <li><a href="index3.php">Home Fashion 3</a></li>
+                                <li><a href="index4.php">Home Fashion 4</a></li>
+                                <li><a href="index5.php">Home Fashion 5</a></li>
+                                <li><a href="index6.php">Home Fashion 6</a></li>
+                                <li><a href="index7.php">Home Fashion 7</a></li>
 
                             </ul>
                         </li>
                         <li><a class="pl-3" href="javascript:void(0)">Shop</a>
                             <ul>
-                                <li><a href="shop.html">Shop Layout</a></li>
-                                <li><a href="shop4.html">Masonry – Grid</a></li>
-                                <li><a href="shop3.html">Pagination</a></li>
-                                <li><a href="shop2.html">Ajax Load More</a></li>
-                                <li><a href="shop2.html">Infinite Scroll</a></li>
-                                <li><a href="shop2.html">Sidebar Right</a></li>
-                                <li><a href="shop.html">Sidebar Left</a></li>
-                                <li><a href="shop.html">Shop Pages</a></li>
-                                <li><a href="shop2.html">List View</a></li>
-                                <li><a href="shop3.html">Small Products</a></li>
-                                <li><a href="shop2.html">Large Products</a></li>
-                                <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                <li><a href="shop4.html">Shop — 5 Items</a></li>
-                                <li><a href="single-product-2.html">Product Layout</a></li>
-                                <li><a href="single-product.html">Description Sticky</a></li>
-                                <li><a href="single-product-2.html">Product Carousels</a></li>
-                                <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
+                                <li><a href="shop.php">Shop Layout</a></li>
+                                <li><a href="shop4.php">Masonry – Grid</a></li>
+                                <li><a href="shop3.php">Pagination</a></li>
+                                <li><a href="shop2.php">Ajax Load More</a></li>
+                                <li><a href="shop2.php">Infinite Scroll</a></li>
+                                <li><a href="shop2.php">Sidebar Right</a></li>
+                                <li><a href="shop.php">Sidebar Left</a></li>
+                                <li><a href="shop.php">Shop Pages</a></li>
+                                <li><a href="shop2.php">List View</a></li>
+                                <li><a href="shop3.php">Small Products</a></li>
+                                <li><a href="shop2.php">Large Products</a></li>
+                                <li><a href="shop3.php">Shop — 3 Items</a></li>
+                                <li><a href="shop3.php">Shop — 4 Items</a></li>
+                                <li><a href="shop4.php">Shop — 5 Items</a></li>
+                                <li><a href="single-product-2.php">Product Layout</a></li>
+                                <li><a href="single-product.php">Description Sticky</a></li>
+                                <li><a href="single-product-2.php">Product Carousels</a></li>
+                                <li><a href="single-product-3.php">Gallery Modern</a></li>
+                                <li><a href="single-product-4.php">Thumbnail Left</a></li>
+                                <li><a href="single-product-5.php">Thumbnail Right</a></li>
+                                <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0)">Blog</a>
                             <ul>
-                                <li><a href="blog.html">Grid layout</a></li>
-                                <li><a href="blog2.html">Large image</a></li>
-                                <li><a href="blog3.html">Left Sidebar</a></li>
-                                <li><a href="blog4.html">Right Sidebar</a></li>
-                                <li><a href="blog5.html">No sidebar</a></li>
+                                <li><a href="blog.php">Grid layout</a></li>
+                                <li><a href="blog2.php">Large image</a></li>
+                                <li><a href="blog3.php">Left Sidebar</a></li>
+                                <li><a href="blog4.php">Right Sidebar</a></li>
+                                <li><a href="blog5.php">No sidebar</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0)">Portfolio</a>
                             <ul>
-                                <li><a href="portfolio.html">Single project</a></li>
-                                <li><a href="portfolio2.html">Two Columns</a></li>
-                                <li><a href="portfolio3.html">Three Columns</a></li>
+                                <li><a href="portfolio.php">Single project</a></li>
+                                <li><a href="portfolio2.php">Two Columns</a></li>
+                                <li><a href="portfolio3.php">Three Columns</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -410,7 +410,7 @@ include_once '/configs/db.php';
                                 <p class="mt-35 mb-0">New Spring drops from Over. Shop the Collection</p>
                             </div>
                             <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
-                                <a href="shop2.html" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                <a href="shop2.php" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
                                     now</a>
                             </div>
                         </div>
@@ -429,7 +429,7 @@ include_once '/configs/db.php';
                                 <p class="mt-35 mb-0">New Spring drops from Over. Shop the Collection</p>
                             </div>
                             <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
-                                <a href="shop2.html" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                <a href="shop2.php" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
                                     now</a>
                             </div>
                         </div>
@@ -448,7 +448,7 @@ include_once '/configs/db.php';
                                 <p class="mt-35 mb-0">New Spring drops from Over. Shop the Collection</p>
                             </div>
                             <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
-                                <a href="shop2.html" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                <a href="shop2.php" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
                                     now</a>
                             </div>
                         </div>
@@ -473,7 +473,7 @@ include_once '/configs/db.php';
                                 <img src="img/banner/categorie_1.jpg" class="w-100" alt="">
                             </div>
                             <div class="category-content">
-                                <a href="shop2.html" class="title">Clothing</a>
+                                <a href="shop2.php" class="title">Clothing</a>
                                 <p class="category-item">(<span>8</span> items)</p>
                             </div>
                         </div>
@@ -490,7 +490,7 @@ include_once '/configs/db.php';
                                                 <img src="img/banner/categorie_2.jpg" class="w-100" alt="">
                                             </div>
                                             <div class="category-content">
-                                                <a href="shop2.html" class="title">Handbag</a>
+                                                <a href="shop2.php" class="title">Handbag</a>
                                                 <p class="category-item">(<span>20</span> items)</p>
                                             </div>
                                         </div>
@@ -503,7 +503,7 @@ include_once '/configs/db.php';
                                                 <img src="img/banner/categorie_3.jpg" class="w-100" alt="">
                                             </div>
                                             <div class="category-content">
-                                                <a href="shop2.html" class="title">Sneaker</a>
+                                                <a href="shop2.php" class="title">Sneaker</a>
                                                 <p class="category-item">(<span>11</span> items)</p>
                                             </div>
                                         </div>
@@ -518,7 +518,7 @@ include_once '/configs/db.php';
                                         <img src="img/banner/categorie_4.jpg" class="w-100" alt="">
                                     </div>
                                     <div class="category-content">
-                                        <a href="shop2.html" class="title">Women</a>
+                                        <a href="shop2.php" class="title">Women</a>
                                         <p class="category-item">(<span>17</span> items)</p>
                                     </div>
                                 </div>
@@ -556,7 +556,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -568,16 +568,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -590,7 +590,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -602,16 +602,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -624,7 +624,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -636,16 +636,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -659,7 +659,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/7.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -671,19 +671,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Women</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Women</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Courriere
+                                            <a href="single-product-3.php" class="product-title">Leather Courriere
                                                 duffle bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -696,7 +696,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/8.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -709,18 +709,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Wood design bedroom
+                                            <a href="single-product-3.php" class="product-title">Wood design bedroom
                                                 clook</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$45-$10.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -732,7 +732,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/9.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -745,16 +745,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Capitalize on low
+                                            <a href="single-product-3.php" class="product-title">Capitalize on low
                                                 hanging fruit to</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -768,7 +768,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -780,16 +780,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -802,7 +802,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -814,16 +814,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -836,7 +836,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/6.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -848,19 +848,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design
+                                            <a href="single-product-3.php" class="product-title">Coating design
                                                 lighting lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$7.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -874,7 +874,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/15.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -886,18 +886,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design dining
+                                            <a href="single-product-3.php" class="product-title">Coating design dining
                                                 lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -910,7 +910,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -922,20 +922,20 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elegant wooden
+                                            <a href="single-product-3.php" class="product-title">Elegant wooden
                                                 leg...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -948,7 +948,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/16.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -960,17 +960,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Party Supplies Around
+                                            <a href="single-product-3.php" class="product-title">Party Supplies Around
                                                 Cupcake</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -984,7 +984,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/12.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -996,18 +996,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Clothing</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Supreme duffle
+                                            <a href="single-product-3.php" class="product-title">Leather Supreme duffle
                                                 bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$100.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1020,7 +1020,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/13.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1032,18 +1032,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Nari Narwhal
+                                            <a href="single-product-3.php" class="product-title">Nari Narwhal
                                                 Usb...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1055,7 +1055,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/14.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1067,17 +1067,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Kids</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Kids</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Override the
+                                            <a href="single-product-3.php" class="product-title">Override the
                                                 digital...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1092,7 +1092,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/10.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1104,18 +1104,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Oliver Cat Full Body
+                                            <a href="single-product-3.php" class="product-title">Oliver Cat Full Body
                                                 Mug</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$70.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1129,7 +1129,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/11.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1141,18 +1141,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Design Replica Organic
+                                            <a href="single-product-3.php" class="product-title">Design Replica Organic
                                                 Chair</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$90.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1168,7 +1168,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/17.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1180,18 +1180,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elodie Unicorn Ramen
+                                            <a href="single-product-3.php" class="product-title">Elodie Unicorn Ramen
                                                 Bowl</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+Go
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+Go
                                                     To Buy</a>
                                             </div>
                                         </div>
@@ -1201,7 +1201,7 @@ include_once '/configs/db.php';
                         </div>
                     </div>
                     <div class="text-center mt-10  load-btn">
-                        <a href="shop.html" class="load-more">LOAD MORE...</a>
+                        <a href="shop.php" class="load-more">LOAD MORE...</a>
                     </div>
                 </div>
                 <!-- /. tab content 1 -->
@@ -1213,7 +1213,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/15.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1225,18 +1225,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design dining
+                                            <a href="single-product-3.php" class="product-title">Coating design dining
                                                 lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1249,7 +1249,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1261,20 +1261,20 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elegant wooden
+                                            <a href="single-product-3.php" class="product-title">Elegant wooden
                                                 leg...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1287,7 +1287,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/16.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1299,17 +1299,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Party Supplies Around
+                                            <a href="single-product-3.php" class="product-title">Party Supplies Around
                                                 Cupcake</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1323,7 +1323,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/12.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1335,18 +1335,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Clothing</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Supreme duffle
+                                            <a href="single-product-3.php" class="product-title">Leather Supreme duffle
                                                 bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$100.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1359,7 +1359,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/13.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1371,18 +1371,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Nari Narwhal
+                                            <a href="single-product-3.php" class="product-title">Nari Narwhal
                                                 Usb...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1394,7 +1394,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/14.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1406,17 +1406,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Kids</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Kids</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Override the
+                                            <a href="single-product-3.php" class="product-title">Override the
                                                 digital...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1431,7 +1431,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/10.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1443,18 +1443,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Oliver Cat Full Body
+                                            <a href="single-product-3.php" class="product-title">Oliver Cat Full Body
                                                 Mug</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$70.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1468,7 +1468,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/11.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1480,18 +1480,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Design Replica Organic
+                                            <a href="single-product-3.php" class="product-title">Design Replica Organic
                                                 Chair</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$90.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1507,7 +1507,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/17.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1519,18 +1519,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elodie Unicorn Ramen
+                                            <a href="single-product-3.php" class="product-title">Elodie Unicorn Ramen
                                                 Bowl</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+Go
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+Go
                                                     To Buy</a>
                                             </div>
                                         </div>
@@ -1544,7 +1544,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1556,16 +1556,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1578,7 +1578,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1590,16 +1590,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1612,7 +1612,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1624,16 +1624,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1647,7 +1647,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/7.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1659,19 +1659,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Women</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Women</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Courriere
+                                            <a href="single-product-3.php" class="product-title">Leather Courriere
                                                 duffle bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1684,7 +1684,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/8.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1697,18 +1697,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Wood design bedroom
+                                            <a href="single-product-3.php" class="product-title">Wood design bedroom
                                                 clook</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$45-$10.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1720,7 +1720,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/9.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1733,16 +1733,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Capitalize on low
+                                            <a href="single-product-3.php" class="product-title">Capitalize on low
                                                 hanging fruit to</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1756,7 +1756,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1768,16 +1768,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1790,7 +1790,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1802,16 +1802,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1824,7 +1824,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/6.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1836,19 +1836,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design
+                                            <a href="single-product-3.php" class="product-title">Coating design
                                                 lighting lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$7.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1858,7 +1858,7 @@ include_once '/configs/db.php';
                         </div>
                     </div>
                     <div class="text-center mt-60 load-btn">
-                        <a href="shop.html" class="load-more">LOAD MORE...</a>
+                        <a href="shop.php" class="load-more">LOAD MORE...</a>
                     </div>
                 </div>
                 <!-- /. tab content 2 -->
@@ -1870,7 +1870,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1882,16 +1882,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1904,7 +1904,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1916,16 +1916,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1938,7 +1938,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1950,16 +1950,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -1973,7 +1973,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/7.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/7-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -1985,19 +1985,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Women</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Women</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Courriere
+                                            <a href="single-product-3.php" class="product-title">Leather Courriere
                                                 duffle bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2010,7 +2010,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/8.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/8-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2023,18 +2023,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Wood design bedroom
+                                            <a href="single-product-3.php" class="product-title">Wood design bedroom
                                                 clook</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$45-$10.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2046,7 +2046,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/9.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/9-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2059,16 +2059,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Capitalize on low
+                                            <a href="single-product-3.php" class="product-title">Capitalize on low
                                                 hanging fruit to</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2082,7 +2082,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2094,16 +2094,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Light green crewneck
+                                            <a href="single-product-3.php" class="product-title">Light green crewneck
                                                 sweatshir</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$58.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2116,7 +2116,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/4.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/4-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2128,16 +2128,16 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Tassels Pendant
+                                            <a href="single-product-3.php" class="product-title">Tassels Pendant
                                                 Earrings</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$85.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2150,7 +2150,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/6.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/6-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2162,19 +2162,19 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design
+                                            <a href="single-product-3.php" class="product-title">Coating design
                                                 lighting lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$7.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2188,7 +2188,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/15.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/15-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2200,18 +2200,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Coating design dining
+                                            <a href="single-product-3.php" class="product-title">Coating design dining
                                                 lamp</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2224,7 +2224,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/5.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/5-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2236,20 +2236,20 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elegant wooden
+                                            <a href="single-product-3.php" class="product-title">Elegant wooden
                                                 leg...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2262,7 +2262,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/16.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/16-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2274,17 +2274,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Shoes</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Shoes</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Party Supplies Around
+                                            <a href="single-product-3.php" class="product-title">Party Supplies Around
                                                 Cupcake</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2298,7 +2298,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/12.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/12-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2310,18 +2310,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Clothing</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Leather Supreme duffle
+                                            <a href="single-product-3.php" class="product-title">Leather Supreme duffle
                                                 bag</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$100.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2334,7 +2334,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/13.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/13-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2346,18 +2346,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Nari Narwhal
+                                            <a href="single-product-3.php" class="product-title">Nari Narwhal
                                                 Usb...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2369,7 +2369,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/14.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/14-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2381,17 +2381,17 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html" class="product-category"><span>Kids</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Kids</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Override the
+                                            <a href="single-product-3.php" class="product-title">Override the
                                                 digital...</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$3.00-$44.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2406,7 +2406,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/10.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/10-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2418,18 +2418,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Oliver Cat Full Body
+                                            <a href="single-product-3.php" class="product-title">Oliver Cat Full Body
                                                 Mug</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$70.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2443,7 +2443,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/11.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/11-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2455,18 +2455,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Sneaker</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Design Replica Organic
+                                            <a href="single-product-3.php" class="product-title">Design Replica Organic
                                                 Chair</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$90.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+add
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+add
                                                     to cart</a>
                                             </div>
                                         </div>
@@ -2482,7 +2482,7 @@ include_once '/configs/db.php';
                                     <div class="product-box-wrapper">
                                         <div class="product-img">
                                             <img src="img/product/17.jpg" class="w-100" alt="">
-                                            <a href="single-product-3.html" class="d-block">
+                                            <a href="single-product-3.php" class="d-block">
                                                 <div class="second-img">
                                                     <img src="img/product/17-hover.jpg" alt="" class="w-100">
                                                 </div>
@@ -2494,18 +2494,18 @@ include_once '/configs/db.php';
                                         <div class="product-desc pb-20">
                                             <div class="product-desc-top">
                                                 <div class="categories">
-                                                    <a href="shop2.html"
+                                                    <a href="shop2.php"
                                                         class="product-category"><span>Handbag</span></a>
-                                                    <a href="shop2.html" class="product-category"><span>Woman</span></a>
+                                                    <a href="shop2.php" class="product-category"><span>Woman</span></a>
                                                 </div>
-                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                <a href="wishlist.php" class="wishlist float-right"><span><i
                                                             class="fal fa-heart"></i></span></a>
                                             </div>
-                                            <a href="single-product-3.html" class="product-title">Elodie Unicorn Ramen
+                                            <a href="single-product-3.php" class="product-title">Elodie Unicorn Ramen
                                                 Bowl</a>
                                             <div class="price-switcher">
                                                 <span class="price switcher-item">$250.00</span>
-                                                <a href="cart.html" class="add-cart text-capitalize switcher-item">+Go
+                                                <a href="cart.php" class="add-cart text-capitalize switcher-item">+Go
                                                     To Buy</a>
                                             </div>
                                         </div>
@@ -2515,7 +2515,7 @@ include_once '/configs/db.php';
                         </div>
                     </div>
                     <div class="text-center mt-60">
-                        <a href="shop.html" class="load-more">LOAD MORE...</a>
+                        <a href="shop.php" class="load-more">LOAD MORE...</a>
                     </div>
                 </div>
                 <!-- /. tab content 3 -->
@@ -2538,7 +2538,7 @@ include_once '/configs/db.php';
                 <p class="mb-0">accumsan ac bibendum ac in erat. Donec posuere consectetuer volutpat rutrum ac,
                     sollicitudin quam quisque, at</p>
                 <p class="mb-0">interdum dignissim, fringilla elit risus lorem, eu condimentum eros mollis.</p>
-                <div class="text-center"><a href="shop2.html"
+                <div class="text-center"><a href="shop2.php"
                         class="generic-btn mt-50 red-hover-btn text-uppercase">Discover now</a></div>
             </div>
         </div>
@@ -2636,11 +2636,11 @@ include_once '/configs/db.php';
                                         <div class="footer-menu">
                                             <ul>
                                                 <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
-                                                <li><a href="login.html">My account</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="shop2.html">Shop</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="question.html">Frequently</a></li>
+                                                <li><a href="login.php">My account</a></li>
+                                                <li><a href="checkout.php">Checkout</a></li>
+                                                <li><a href="shop2.php">Shop</a></li>
+                                                <li><a href="wishlist.php">Wishlist</a></li>
+                                                <li><a href="question.php">Frequently</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2649,12 +2649,12 @@ include_once '/configs/db.php';
                                         <div class="footer-menu">
                                             <ul>
                                                 <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
-                                                <li><a href="shop2.html">Special Offers</a></li>
-                                                <li><a href="shop2.html">Gift Cards</a></li>
-                                                <li><a href="shop2.html">F21 Red</a></li>
-                                                <li><a href="about.html">Privacy Policy</a></li>
-                                                <li><a href="about.html">Teams of Use</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
+                                                <li><a href="shop2.php">Special Offers</a></li>
+                                                <li><a href="shop2.php">Gift Cards</a></li>
+                                                <li><a href="shop2.php">F21 Red</a></li>
+                                                <li><a href="about.php">Privacy Policy</a></li>
+                                                <li><a href="about.php">Teams of Use</a></li>
+                                                <li><a href="portfolio.php">Portfolio</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2663,12 +2663,12 @@ include_once '/configs/db.php';
                                         <div class="footer-menu">
                                             <ul>
                                                 <li><a href="javascript:void(0)" class="title">Company Info</a></li>
-                                                <li><a href="about.html">About us</a></li>
-                                                <li><a href="blog.html">Careers</a></li>
-                                                <li><a href="portfolio2.html">Business With Us</a></li>
-                                                <li><a href="shop2.html">Find a Store</a></li>
-                                                <li><a href="question.html">Teams of Use</a></li>
-                                                <li><a href="portfolio3.html">Press & Talent</a></li>
+                                                <li><a href="about.php">About us</a></li>
+                                                <li><a href="blog.php">Careers</a></li>
+                                                <li><a href="portfolio2.php">Business With Us</a></li>
+                                                <li><a href="shop2.php">Find a Store</a></li>
+                                                <li><a href="question.php">Teams of Use</a></li>
+                                                <li><a href="portfolio3.php">Press & Talent</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2739,7 +2739,7 @@ include_once '/configs/db.php';
                                     <h2>Nari Narwhal Usb...</h2>
                                 </div>
                                 <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
-                                <a href="single-product-3.html" class="all-feature">See all feature</a>
+                                <a href="single-product-3.php" class="all-feature">See all feature</a>
                                 <div class="quick-quantity mt-30">
                                     <form action="#" method="POST">
                                         <input type="number" value="1">
