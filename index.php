@@ -199,7 +199,7 @@ require_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/3.jpg" class="w-100" alt="">
+                                                                <img src="../img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
@@ -219,7 +219,7 @@ require_once 'configs/db.php';
                                                         </li>
                                                         <li class="d-block d-flex align-items-center">
                                                             <div class="search-result-img">
-                                                                <img src="img/product/2.jpg" class="w-100" alt="">
+                                                                <img src="../img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
                                                                 <a href="shop2.php" class="title px-0">RIMINI - Folding leather
