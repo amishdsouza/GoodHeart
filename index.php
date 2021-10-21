@@ -1,5 +1,5 @@
-<?php 
-include_once 'configs/db.php';
+<?php
+include_once '/configs/db.php';
 
 
 ?>
@@ -339,7 +339,7 @@ include_once 'configs/db.php';
                                 <li><a href="index5.html">Home Fashion 5</a></li>
                                 <li><a href="index6.html">Home Fashion 6</a></li>
                                 <li><a href="index7.html">Home Fashion 7</a></li>
-                                
+
                             </ul>
                         </li>
                         <li><a class="pl-3" href="javascript:void(0)">Shop</a>
