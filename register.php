@@ -1,7 +1,7 @@
 <?php
 require_once 'configs/db.php';
 
-
+session_start();
 //header("Content-type: application/json");
 
 
