@@ -2,6 +2,9 @@
 require_once 'configs/db.php';
 
 
+//header("Content-type: application/json");
+
+
 ?>
 
 
@@ -418,22 +421,29 @@ require_once 'configs/db.php';
                     <div class="col-lg-8 offset-lg-2">
                         <div class="basic-login">
                             <h3 class="text-center mb-60">Signup From Here</h3>
-                            <form action="" method="POST" id="reg">
+                            <form method="POST" id="reg">
 
                                 <label for="uname">Name <span>*</span></label>
                                 <input id="uname" type="text" name="uname" placeholder="Enter Your Full Name" onkeypress="return(event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" required />
 
-                                <label for="email-id">Email Address <span>*</span></label>
-                                <input id="email-id" type="email" name="email-id" placeholder="Enter Email address" required />
+                                <label for="uemail">Email Address <span>*</span></label>
+                                <input id="uemail" type="email" name="uemail" placeholder="Enter Email address" required />
+                                <div class="alert alert-danger" id="errorEmail" style="display:none;">
+                                    This Email Already Exist.
+                                </div>
 
                                 <label for="pass">Password <span>*</span></label>
-                                <input type="password" id="Password" name="Password" class="form-control" placeholder="" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8">
+                                <input type="password" id="pass" name="pass" class="form-control" placeholder="" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8">
+
+                                <div class="alert alert-danger" id="errorPass" style="display:none;">
+                                    This Password Already Exist.
+                                </div>
 
                                 <label for="Conpass">Confirm Password <span>*</span></label>
                                 <input type="password" id="Con_Pass" name="Con_Pass" class="form-control" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Please Match The Password" minlength="8" placeholder="" required>
 
                                 <label for="StreetAddress">Street Address <span>*</span></label>
-                                <input class="form-control" name="StreetAddress" id="text" placeholder="Enter Your Address" required />
+                                <input class="form-control" name="StreetAddress" id="StreetAddress" placeholder="Enter Your Address" required />
 
                                 <label for="houseNo">House Number/Name or Bldg Name/Floor Number<span>*</span></label>
                                 <input class="form-control" type="text" name="houseNo" id="houseNo" placeholder="Enter Your House Number / Flat Number" required />
@@ -453,12 +463,21 @@ require_once 'configs/db.php';
                                 <label for="mobileNo">Mobile Number <span>*</span> </label>
                                 <input id="mobileNo" type="text" name="mobileNo" placeholder="Enter Mobile Number" required onkeypress="return isNumber(event);" maxlength="10" minlength="10" />
 
+                                <div class="alert alert-danger" id="errorMobile" style="display:none;">
+                                    This Mobile Number Already Exist.
+                                </div>
+
                                 <div class="mt-10"></div>
                                 <br>
                                 <br>
-                                <button class="btn theme-btn w-100">Register Now</button>
+                                <button type="button" name="register_btn" id="btnreg" class="btn theme-btn w-100">Register Now</button>
+                                <br>
+                                <br>
+                                <div class="alert alert-success" role="alert" style="display:none;" id="msgSuccess">
+                                    User Successfuly Created
+                                </div>
                                 <div class="or-divide"><span>or</span></div>
-                                <button class="btn theme-btn w-100">login Now</button>
+                                <button id class="btn theme-btn w-100" onclick="location.href='login.php'">login Now</button>
                             </form>
                         </div>
                     </div>
@@ -769,24 +788,90 @@ require_once 'configs/db.php';
     <script src="js/main.js"></script>
     <script src="js/textbox.js"></script>
     <script src="js/datepicker.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
     <script>
         $(document).ready(function() {
             $("#reg").validate({
                 rules: {
                     Con_Pass: {
-                        equalTo: "#Password"
+                        equalTo: "#pass"
                     }
 
 
                 },
                 messages: {
-                    Password: "Recomended Password(UpperCase, LowerCase, Number / SpecialChar and min 8 Chars)"
+                    pass: "Recomended Password(UpperCase, LowerCase, Number / SpecialChar and min 8 Chars)"
 
                 }
             });
+
+            $('#btnreg').on('click', function() {
+                var uname = $('#uname').val();
+                var uemail = $('#uemail').val();
+                var pass = $('#pass').val();
+                var StreetAddress = $('#StreetAddress').val();
+                var houseNo = $('#houseNo').val();
+                var place = $('#place').val();
+                var state = $('#state').val();
+                var zip = $('#zip').val();
+                var dob = $('#dob').val();
+                var mobileNo = $('#mobileNo').val();
+                //$('#errorEmail').show();
+
+                if (!$('#reg').valid()) {
+                    return false;
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "insertCust.php",
+                        data: {
+                            uname: uname,
+                            uemail: uemail,
+                            pass: pass,
+                            StreetAddress: StreetAddress,
+                            houseNo: houseNo,
+                            place: place,
+                            state: state,
+                            zip: zip,
+                            dob: dob,
+                            mobileNo: mobileNo
+
+                        },
+                        success: function(dataResult) {
+                            //var dr = JSON.stringify(dataResult.statusCode);
+                            var dataResult = JSON.parse(dataResult);
+                            // alert(dataResult)
+
+                            // alert(dataResult.statusCode).toString;
+                            if (dataResult.statusCode == 201) {
+                                //alert("true")
+                                $('#errorEmail').show();
+                                $("#errorPass").hide();
+                                $("#errorMobile").hide();
+                            } else if (dataResult.statusCode == 202) {
+                                $("#errorPass").show();
+                                $("#errorEmail").hide();
+                                $("#errorMobile").hide();
+                            } else if (dataResult.statusCode == 203) {
+                                $("#errorMobile").show();
+                                $("#errorEmail").hide();
+                                $("#errorPass").hide();
+                            } else if (dataResult.statusCode == 200) {
+                                $('#msgSuccess').show();
+                                $("#errorEmail").hide();
+                                $("#errorPass").hide();
+                                $("#errorMobile").hide();
+                            }
+
+                        }
+                    });
+                }
+            });
+
         });
     </script>
 </body>
