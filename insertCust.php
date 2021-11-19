@@ -1,5 +1,6 @@
 <?php
 require_once 'configs/db.php';
+session_start();
 
 $uname = $mysqli->real_escape_string($_POST['uname']);
 $uemail = $mysqli->real_escape_string($_POST['uemail']);
@@ -33,18 +34,14 @@ $selectMobileSql = "SELECT * FROM `customer_registration` WHERE Mobile_Number = 
 $sql3 = mysqli_num_rows(mysqli_query($db, $selectMobileSql));
 //$row = Customer_Password = '$encryptPass'  Mobile_Number
 
-if ($sql1 > 0) {
-    //echo json_encode(array("statusCode" => 201));
-    echo json_encode(array("statusCode" => 201));
-} 
-else if ($sql2 > 0) {
-    echo json_encode(array("statusCode" => 202));
-} 
-else if ($sql3 > 0) {
-    echo json_encode(array("statusCode" => 203));
-} 
-
-else if ($db->query($insertCustDetailsSql) == TRUE) {
+    # code...
+    if ($sql1 > 0) {
+        echo json_encode(array("statusCode" => 201));
+    } else if ($sql2 > 0) {
+        echo json_encode(array("statusCode" => 202));
+    } else if ($sql3 > 0) {
+        echo json_encode(array("statusCode" => 203));
+    } else if ($db->query($insertCustDetailsSql) == TRUE) {
         # code...else
         echo json_encode(array("statusCode" => 200));
     } else {
@@ -52,6 +49,9 @@ else if ($db->query($insertCustDetailsSql) == TRUE) {
         //echo $db->error;
         //echo var_dump($insertCustDetailsSql);
     }
+ 
+
+
 
 
 

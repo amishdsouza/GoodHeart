@@ -5,6 +5,9 @@ session_start();
 //header("Content-type: application/json");
 
 
+
+
+
 ?>
 
 
@@ -470,14 +473,27 @@ session_start();
                                 <div class="mt-10"></div>
                                 <br>
                                 <br>
-                                <button type="button" name="register_btn" id="btnreg" class="btn theme-btn w-100">Register Now</button>
+                                <button type="button" name="register_btn" id="btnotp" class="btn theme-btn w-100">Send OTP</button>
+                                <div class="alert alert-success" role="alert" style="display:none;" id="otp-success">
+                                    OTP Sent Successfully
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-md-6" style="margin-left: 12em !important; display:none;" id="txtDiv">
+                                    <div class="form-group">
+                                        <input id="textInput" type="text" class="form-control" placeholder="Enter OTP" id="otp_input" name="otp_input" minlength="4" maxlength="4" onkeypress="return isNumber(event);" required>
+                                    </div>
+                                </div>
+                                <button type="button" name="btnotpsub" id="btnotpsub" class="btn theme-btn w-100" style="display:none;">Submit OTP</button>
+
+                                <button type="button" name="btnreg" id="btnreg" class="btn theme-btn w-100" style="display:none;">Register Now</button>
                                 <br>
                                 <br>
                                 <div class="alert alert-success" role="alert" style="display:none;" id="msgSuccess">
                                     User Successfuly Created
                                 </div>
-                                <div class="or-divide"><span>or</span></div>
-                                <button id class="btn theme-btn w-100" onclick="location.href='login.php'">login Now</button>
+                                <!--<div class="or-divide"><span>or</span></div>!-->
+                                <button id class="btn theme-btn w-100" id="btnlogin" onclick="location.href='login.php'" style="display:none;">login Now</button>
                             </form>
                         </div>
                     </div>
@@ -809,6 +825,68 @@ session_start();
                 }
             });
 
+            $('#btnotpsub').on('click', function() {
+                var otpsub = $('#otp_input').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "otp-process.php",
+                    data: {
+                        type: 3,
+                        otpsub: otpsub
+                    },
+                    success: function(dataResult) {
+                        var dataResult = JSON.parse(dataResult);
+
+                        if (dataResult == 200) {
+                            $('btnotpsub').hide();
+                            $('btnreg').show();
+                            $('#btnlogin').show();
+
+                        } else {
+
+                        }
+                    }
+                });
+            });
+
+            $('#btnotp').on('click', function() {
+                var mobileNo = $('#mobileNo').val();
+                var uemail = $('#uemail').val();
+                var pass = $('#pass').val();
+
+                if (!$('#reg').valid()) {
+                    return false;
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "otp_process.php",
+                        data: {
+                            type: 1,
+                            uemail: uemail,
+                            pass: pass,
+                            mobileNo: mobileNo,
+                        },
+                        success: function(dataResult) {
+                            //var db = JSON.stringify(dataResult)
+                            var dataResult = JSON.parse(dataResult);
+                            alert(dataResult);
+                            if (dataResult.statusCode == 201) {
+                                $('#btnotp').hide();
+                                $('#btnotpsub').show()
+                                $("#txtDiv").show();
+                                //$('#btnreg').show();
+                                $('#btnlogin').show();
+                                $('#otp_success').show();
+                            } else {
+                                alert('not sent')
+                            }
+                        }
+                    });
+                }
+
+            });
+
             $('#btnreg').on('click', function() {
                 var uname = $('#uname').val();
                 var uemail = $('#uemail').val();
@@ -822,54 +900,52 @@ session_start();
                 var mobileNo = $('#mobileNo').val();
                 //$('#errorEmail').show();
 
-                if (!$('#reg').valid()) {
-                    return false;
-                } else {
-                    $.ajax({
-                        type: "POST",
-                        url: "insertCust.php",
-                        data: {
-                            uname: uname,
-                            uemail: uemail,
-                            pass: pass,
-                            StreetAddress: StreetAddress,
-                            houseNo: houseNo,
-                            place: place,
-                            state: state,
-                            zip: zip,
-                            dob: dob,
-                            mobileNo: mobileNo
 
-                        },
-                        success: function(dataResult) {
-                            //var dr = JSON.stringify(dataResult.statusCode);
-                            var dataResult = JSON.parse(dataResult);
-                            // alert(dataResult)
+                $.ajax({
+                    type: "POST",
+                    url: "insertCust.php",
+                    data: {
+                        uname: uname,
+                        uemail: uemail,
+                        pass: pass,
+                        StreetAddress: StreetAddress,
+                        houseNo: houseNo,
+                        place: place,
+                        state: state,
+                        zip: zip,
+                        dob: dob,
+                        mobileNo: mobileNo
 
-                            // alert(dataResult.statusCode).toString;
-                            if (dataResult.statusCode == 201) {
-                                //alert("true")
-                                $('#errorEmail').show();
-                                $("#errorPass").hide();
-                                $("#errorMobile").hide();
-                            } else if (dataResult.statusCode == 202) {
-                                $("#errorPass").show();
-                                $("#errorEmail").hide();
-                                $("#errorMobile").hide();
-                            } else if (dataResult.statusCode == 203) {
-                                $("#errorMobile").show();
-                                $("#errorEmail").hide();
-                                $("#errorPass").hide();
-                            } else if (dataResult.statusCode == 200) {
-                                $('#msgSuccess').show();
-                                $("#errorEmail").hide();
-                                $("#errorPass").hide();
-                                $("#errorMobile").hide();
-                            }
+                    },
+                    success: function(dataResult) {
+                        //var dr = JSON.stringify(dataResult.statusCode);
+                        var dataResult = JSON.parse(dataResult);
+                        // alert(dataResult)
 
+                        // alert(dataResult.statusCode).toString;
+                        if (dataResult.statusCode == 201) {
+                            //alert("true")
+                            $('#errorEmail').show();
+                            $("#errorPass").hide();
+                            $("#errorMobile").hide();
+                        } else if (dataResult.statusCode == 202) {
+                            $("#errorPass").show();
+                            $("#errorEmail").hide();
+                            $("#errorMobile").hide();
+                        } else if (dataResult.statusCode == 203) {
+                            $("#errorMobile").show();
+                            $("#errorEmail").hide();
+                            $("#errorPass").hide();
+                        } else if (dataResult.statusCode == 200) {
+                            $('#msgSuccess').show();
+                            $("#errorEmail").hide();
+                            $("#errorPass").hide();
+                            $("#errorMobile").hide();
                         }
-                    });
-                }
+
+                    }
+                });
+
             });
 
         });
