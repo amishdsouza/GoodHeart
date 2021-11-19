@@ -138,7 +138,7 @@ require_once 'configs/db.php';
                     <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
                         <div class="header-right">
                             <ul class="text-right">
-                                <li><a href="registar.php" class="account"><i class="fal fa-user-friends"></i>
+                                <li><a href="register.php" class="account"><i class="fal fa-user-friends"></i>
                                         <article class="account-registar d-inline-block">
                                             Login/Sign up
                                         </article>
