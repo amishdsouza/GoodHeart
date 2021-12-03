@@ -138,116 +138,14 @@ session_start();
                         <div class="header-right">
                             <ul class="text-right">
                                 <li>
-                                    <a href="register.php" class="account">
+                                    <a href="login.php" class="account">
                                         <i class="fal fa-user-friends"></i>
                                         <article class="account-registar d-inline-block">
-                                            Login/Sign up
+                                            Login
                                         </article>
                                     </a>
                                 </li>
 
-                                <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
-
-                                    <!-- search popup -->
-                                    <div id="search-popup">
-                                        <div class="close-search-popup">
-                                            <i class="fal fa-times"></i>
-                                        </div>
-                                        <div class="search-popup-inner mt-135">
-                                            <div class="search-title text-center">
-                                                <h2>Search</h2>
-                                            </div>
-
-                                            <div class="search-content pt-55">
-                                                <ul class="text-center">
-                                                    <li><a href="javascript:void(0)" class="active">All categories</a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0)">Clothing</a></li>
-                                                    <li><a href="javascript:void(0)">Gift Cards</a></li>
-                                                    <li><a href="javascript:void(0)">Handbag</a></li>
-                                                    <li><a href="javascript:void(0)">Kids</a></li>
-                                                    <li><a href="javascript:void(0)">Shoes</a></li>
-                                                    <li><a href="javascript:void(0)">Sneaker</a></li>
-                                                    <li><a href="javascript:void(0)">Women</a></li>
-                                                </ul>
-
-                                                <div class="search-form mt-35">
-                                                    <form action="#" method="post">
-                                                        <input type="text" placeholder="Search Products...">
-                                                        <button type="submit"><i class="fal fa-search"></i></button>
-                                                    </form>
-                                                </div>
-
-                                                <div class="search-result-list">
-                                                    <ul class="text-left">
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="../img/product/1.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
-                                                                    chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="../img/product/2.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="shop2.php" class="title px-0">RIMINI - Folding leather
-                                                                    deck chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="../img/product/3.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
-                                                                    fabric deck chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="img/product/1.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
-                                                                    chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="../img/product/2.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="   shop2.php" class="title px-0">RIMINI - Folding leather
-                                                                    deck chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="d-block d-flex align-items-center">
-                                                            <div class="search-result-img">
-                                                                <img src="img/product/3.jpg" class="w-100" alt="">
-                                                            </div>
-                                                            <div class="search-result-desc pl-10">
-                                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
-                                                                    fabric deck chair</a>
-                                                                <div class="price">$<span>399</span></div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </li>
                                 <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom"
                                         title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
@@ -316,6 +214,7 @@ session_start();
                                         </div>
                                     </div>
                                 </li>
+                                
                                 <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
                                     <ul class="submenu text-right">
                                         <li><a href="login.php">My Account</a></li>
@@ -483,6 +382,80 @@ session_start();
         </section>
         <!-- login Area End-->
     </main>
+
+    <!-- footer section start -->
+  <section class="footer">
+        <!-- footer top -->
+        <div class="footer-bottom pt-77" style="background-color: #292929;">
+            <div class="container-1180">
+                <div class="footer-bottom-wrapper">
+                    <div class="footer-bottom-primary pb-60">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
+                                <div class="footer-item has-desc">
+                                    <div class="footer-logo mb-25">
+                                        <img src="img/logo/logo2.png" width="120" height="31" alt="">
+                                    </div>
+                                    <div class="footer-desc">
+                                        <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
+                                            extremely customizable, easy to use and fully responsive and retina ready.
+                                        </p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                <li><a href="login.php">My account</a></li>
+                                                <li><a href="checkout.php">Checkout</a></li>
+                                                <li><a href="shop2.php">Shop</a></li>
+                                                <li><a href="wishlist.php">Wishlist</a></li>
+                                                <li><a href="question.php">Frequently</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                                <li><a href="shop2.php">Special Offers</a></li>
+                                                <li><a href="shop2.php">Gift Cards</a></li>
+                                                <li><a href="shop2.php">F21 Red</a></li>
+                                                <li><a href="about.php">Privacy Policy</a></li>
+                                                <li><a href="about.php">Teams of Use</a></li>
+                                                <li><a href="portfolio.php">Portfolio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 hidden-sm">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Company Info</a></li>
+                                                <li><a href="about.php">About us</a></li>
+                                                <li><a href="blog.php">Careers</a></li>
+                                                <li><a href="portfolio2.php">Business With Us</a></li>
+                                                <li><a href="shop2.php">Find a Store</a></li>
+                                                <li><a href="question.php">Teams of Use</a></li>
+                                                <li><a href="portfolio3.php">Press & Talent</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- footer section end -->
 
 
     <!-- JS here -->
