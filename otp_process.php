@@ -125,26 +125,7 @@ if(isset($_POST['type'])){
     $mobileNo = ($_POST['mobileNo']);
     $encryptPass = md5($pass);
   // code...
-  $selectEmailSql = "SELECT * FROM `customer_registration` WHERE Customer_Email = '$uemail'";
-
-  $sql1 = mysqli_num_rows(mysqli_query($db, $selectEmailSql));
-
-  $selectPassSql = "SELECT * FROM `customer_registration` WHERE Customer_Password = '$encryptPass' ";
-
-  $sql2 = mysqli_num_rows(mysqli_query($db, $selectPassSql));
-
-  $selectMobileSql = "SELECT * FROM `customer_registration` WHERE Mobile_Number = ' $mobileNo ' ";
-  $sql3 = mysqli_num_rows(mysqli_query($db, $selectMobileSql));
-
-  // if ($sql1 > 0) {
-  //   echo json_encode(array("statusCode" => 201));
-  // } 
-  // else if ($sql2 > 0) {
-  //   echo json_encode(array("statusCode" => 202));
-  // } 
-  // else if ($sql3 > 0) {
-  //   echo json_encode(array("statusCode" => 203));
-  // } else {
+  
     # code...
     $rndno = rand(1000, 9999);
     //$_SESSION['rndno'] = $rndno;
@@ -153,7 +134,8 @@ if(isset($_POST['type'])){
     
   // }
       //echo  $_SESSION['First_Name'];
-  }
+ 
+}
 
 
 if($type == 3)
