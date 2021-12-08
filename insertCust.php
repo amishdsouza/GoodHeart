@@ -1,6 +1,7 @@
 <?php
 require_once 'configs/db.php';
 session_start();
+$session_id = session_id();
 
 $uname = $mysqli->real_escape_string($_POST['uname']);
 $uemail = $mysqli->real_escape_string($_POST['uemail']);
