@@ -88,7 +88,7 @@ if(isset($_POST['type'])){
       $curl = curl_init();
 
       curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://2factor.in/API/V1/442f3f97-4956-11ec-b710-0200cd936042/SMS/$mobile/$rndno/goodheart",
+        CURLOPT_URL => "https://2factor.in/API/V1/442f3f97-4956-11ec-b710-0200cd936042/SMS/$mobile/$rndno/GHEART",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -134,7 +134,6 @@ if(isset($_POST['type'])){
     
   // }
       //echo  $_SESSION['First_Name'];
- 
 }
 
 
@@ -151,7 +150,7 @@ if($type == 3)
       echo json_encode(array("statusCode"=>200));
     } else {
       # code...
-      echo json_encode(array("statusCode" => 201));
+      echo json_encode(array("statusCode" => 400));
     }
     
      
