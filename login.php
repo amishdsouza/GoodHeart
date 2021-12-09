@@ -1,3 +1,13 @@
+<?php
+require_once 'configs/db.php';
+session_start();
+
+
+
+
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -25,6 +35,11 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .error {
+            color: red !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,7 +55,7 @@
     <!-- header section start -->
     <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
         <div class="container-fluid">
-        <div class="header-nav position-relative">
+            <div class="header-nav position-relative">
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
@@ -54,8 +69,7 @@
                                 <ul>
                                     <li><a href="index.php"><span>Home </span></a>
                                     </li>
-                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i
-                                                    class="fal fa-angle-down"></i></span></a>
+                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i class="fal fa-angle-down"></i></span></a>
                                         <div class="mega-menu">
                                             <div class="col-xl-7 pl-0 position-static">
                                                 <ul>
@@ -100,16 +114,14 @@
                                             <li><a href="blog5.php">No sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Portfolio <i
-                                                    class="fal fa-angle-down"></i></span> </a>
+                                    <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
                                             <li><a href="portfolio.php">Single project</a></li>
                                             <li><a href="portfolio2.php">Two Columns</a></li>
                                             <li><a href="portfolio3.php">Three Columns</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Page</span> <i
-                                                class="fal fa-angle-down"></i></a>
+                                    <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="question.php">Frequently Questions</a></li>
@@ -134,8 +146,7 @@
                                     </a>
                                 </li>
 
-                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom"
-                                        title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
+                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
                                     <div class="minicart">
                                         <div class="minicart-body">
@@ -143,8 +154,7 @@
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
@@ -158,8 +168,7 @@
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
@@ -173,8 +182,7 @@
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
@@ -193,16 +201,14 @@
                                                 <span class="price float-right">503.00</span>
                                             </div>
                                             <div class="minicart-checkout-links">
-                                                <a href="cart.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
+                                                <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
                                                     cart</a>
-                                                <a href="checkout.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                
+
                                 <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
                                     <ul class="submenu text-right">
                                         <li><a href="login.php">My Account</a></li>
@@ -220,9 +226,9 @@
             <div class="mobile-menu visible-sm">
                 <div id="mobile-menu">
                     <ul>
-                        <li><a  class="pl-3" href="index.php">Home</a>
+                        <li><a class="pl-3" href="index.php">Home</a>
                         </li>
-                        <li><a  class="pl-3" href="javascript:void(0)">Shop</a>
+                        <li><a class="pl-3" href="javascript:void(0)">Shop</a>
                             <ul>
                                 <li><a href="shop.php">Shop Layout</a></li>
                                 <li><a href="shop4.php">Masonry – Grid</a></li>
@@ -274,44 +280,39 @@
 
 
 
-        <!-- login Area Strat-->
-        <section class="login-area pt-100 pb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <div class="basic-login">
-                            <h3 class="text-center mb-60">Login From Here</h3>
-                            <form action="#">
-                                <label for="name">Email Address <span>**</span></label>
-                                <input id="name" type="text" placeholder="Enter Username or Email address..." />
-                                <label for="pass">Password <span>**</span></label>
-                                <input id="pass" type="password" placeholder="Enter password..." />
-                                <div class="login-action mb-20 fix">
-                                    <span class="log-rem f-left">
-                                        <input id="remember" type="checkbox" />
-                                        <label for="remember">Remember me!</label>
-                                    </span>
+    <!-- login Area Strat-->
+    <section class="login-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="basic-login">
+                        <h3 class="text-center mb-60">Login From Here</h3>
+                        <form method="POST" id="loginform">
+                            <label for="uemail">Email Address <span>*</span></label>
+                            <input id="uemail" type="email" name="uemail" placeholder="Enter Email address" required />
+                            <label for="pass">Password <span>*</span></label>
+                            <input type="password" id="upass" name="upass" class="form-control" placeholder="Enter Password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8">
+                            <div class="login-action mb-20 fix">
+                                <span class="forgot-login f-right">
+                                    <a href="javascript:void(0)">Lost your password?</a>
+                                </span>
+                            </div>
 
-                                    <span class="forgot-login f-right">
-                                        <a href="javascript:void(0)">Lost your password?</a>
-                                    </span>
-                                </div>
+                            <button type="submit" id="loginbtn" name="loginbtn" class="btn theme-btn w-100">Login Now</button>
 
-                                <button class="btn theme-btn-2 w-100">Login Now</button>
+                            <div class="or-divide">
+                                <span>or</span>
+                            </div>
 
-                                <div class="or-divide">
-                                    <span>or</span>
-                                </div>
-                                
-                                <a href="register.php"  class="btn theme-btn w-100">
-                                   Register Now</a>
-                            </form>
-                        </div>
+                            <a href="register.php" class="btn theme-btn w-100">
+                                Register Now</a>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- login Area End-->
+        </div>
+    </section>
+    <!-- login Area End-->
 
 
 
@@ -368,11 +369,9 @@
                                 <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
                                 <a href="single-product-4.php" class="all-feature">See all feature</a>
                                 <div class="quick-quantity mt-30">
-                                    <form action="#" method="POST">
-                                        <input type="number" value="1">
-                                        <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
-                                            cart</a>
-                                    </form>
+                                    <input type="number" value="1">
+                                    <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
+                                        cart</a>
                                 </div>
 
                                 <div class="product-desc pb-20 mt-25 gray-border-top">
@@ -400,44 +399,10 @@
     <!-- product popup end -->
 
     <!-- startup popup start -->
-    <section id="startup-popup">
-        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
-        <div class="startup-popup-body">
-            <div class="startup-body-content h-100">
-                <div class="row justify-content-end h-100">
-                    <div class="col-6 h-100">
-                        <div class="startup-popup-inner h-100">
-                            <div class="close-search-popup">
-                                <i class="fal fa-times"></i>
-                            </div>
-                            <div class="startup-popup-main-content">
-                                <h2>Get Our Email Letter</h2>
-                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
-                                    arrivals, special offers
-                                    and other discount information.</p>
-                                <div class="startup-subscribe-form">
-                                    <form action="#" method="POST">
-                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
-                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="startup-popup-sub-content">
-                                <div class="popup-warning">
-                                    <input type="checkbox" id="startup-popup-hidden">
-                                    <label for="startup-popup-hidden">Do not show the popup again</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- startup popup end -->
 
-  <!-- footer section start -->
-  <section class="footer">
+
+    <!-- footer section start -->
+    <section class="footer">
         <!-- footer top -->
         <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
@@ -454,7 +419,7 @@
                                             extremely customizable, easy to use and fully responsive and retina ready.
                                         </p>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             <div class="col-xl-7 col-lg-7 col-md-12">
@@ -510,17 +475,6 @@
     </section>
     <!-- footer section end -->
 
-
-
-
-
-
-
-
-
-
-
-
     <!-- JS here -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -539,6 +493,27 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/textbox.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("#loginform").validate();
+
+            $("#loginbtn").on('click', function() {
+                if (!$('#loginform').valid()) {
+                    return false;
+                    //alert("hi");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
