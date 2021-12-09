@@ -537,7 +537,7 @@ session_start();
                         success: function(dataResult) {
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);
-                            alert(dataResult);
+                            //alert(dataResult);
                             if (dataResult.statusCode == 201) {
                                 $('#btnotp').hide();
                                 $('#btnotpsub').show()

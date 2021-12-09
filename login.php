@@ -292,13 +292,17 @@ session_start();
                             <input id="uemail" type="email" name="uemail" placeholder="Enter Email address" required />
                             <label for="pass">Password <span>*</span></label>
                             <input type="password" id="upass" name="upass" class="form-control" placeholder="Enter Password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8">
+                            <div class="alert alert-danger" id="errorLogin" style="display:none;">
+                                Wrong Credentials
+                            </div>
+
                             <div class="login-action mb-20 fix">
                                 <span class="forgot-login f-right">
                                     <a href="javascript:void(0)">Lost your password?</a>
                                 </span>
                             </div>
 
-                            <button type="submit" id="loginbtn" name="loginbtn" class="btn theme-btn w-100">Login Now</button>
+                            <button type="button" id="loginbtn" name="loginbtn" class="btn theme-btn w-100">Login Now</button>
 
                             <div class="or-divide">
                                 <span>or</span>
@@ -507,9 +511,31 @@ session_start();
             $("#loginform").validate();
 
             $("#loginbtn").on('click', function() {
+                var uemail = $('#uemail').val();
+                var upass = $('#upass').val();
+
                 if (!$('#loginform').valid()) {
                     return false;
-                    //alert("hi");
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "loginauth.php",
+                        //dataType: 'json',
+                        data: {
+                            uemail: uemail,
+                            upass: upass
+                        },
+                        success: function(dataResult) {
+                            //var db = JSON.stringify(dataResult)
+                            var dataResult = JSON.parse(dataResult);
+
+                            if (dataResult.statusCode == 200) {
+                                location.href = "index.php";
+                            } else if (dataResult.statusCode == 201) {
+                                $("#errorLogin").show();
+                            }
+                        }
+                    });
                 }
             });
         });
