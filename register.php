@@ -506,8 +506,8 @@ session_start();
                         var dataResult = JSON.parse(dataResult);
 
                         if (dataResult == 200) {
-                            $('btnotpsub').hide();
-                            $('btnreg').show();
+                            $('#btnotpsub').hide();
+                            $('#btnreg').show();
                             $('#btnlogin').show();
 
                         } else {
