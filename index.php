@@ -2,6 +2,37 @@
 require_once 'configs/db.php';
 
 
+
+function loginStart($db)
+{
+    $no_of_items = 0;
+    $uid = $_SESSION['ID'];
+
+    $query = "SELECT * FROM `shopping_cart` WHERE `Customer_ID` = '$uid'";
+
+    $sql = mysqli_query($db, $query);
+    $row = mysqli_fetch_assoc($sql);
+
+    $cart_id = $row['Cart_ID'];
+
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shoping_cart_details` WHERE `Cart_ID` = '$cart_id'";
+    $sql2 = mysqli_query($db, $query2);
+    $row2 = mysqli_fetch_assoc($sql2);
+
+    $no_of_items = $row2['count'];
+
+    return $no_of_items;
+}
+
+    if (isset($_SESSION["loginSess"])) {
+        # code...
+        loginStart($db);
+    } else {
+        # code... = 0;
+        $no_of_items= 0;
+    }
+    
+
 ?>
 
 <!doctype html>
