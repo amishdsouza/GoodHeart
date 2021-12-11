@@ -31,8 +31,10 @@ if($error)
 }
 
 
-$insertCustDetailsSql = "INSERT INTO customer_registration (`Customer_Name`, `Customer_Email`, `Customer_Password`, `Customer_Street_Address`, `Customer_HouseNo`, `Customer_Place`, `Customer_State`, `Customer_PinCode`, `Date_Of_Birth`, `Mobile_Number`) VALUES ('" . $uname . "','" . $uemail . "','" . $encryptPass  . "','" . $StreetAddress . "','" . $houseNo . "','" . $place . "','" . $state . "','" . $zip . "','" . $dob . "','" . $mobileNo . "')";
+$insertCustDetailsSql = "INSERT INTO customer_registration (`Customer_Name`, `Customer_Email`, `Customer_Password`, `Customer_Street_Address`, `Customer_HouseNo`, `Customer_Place`, `Customer_State`, `Customer_PinCode`, `Date_Of_Birth`, `Mobile_Number`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
+$pstmt = $db->prepare($insertCustDetailsSql);
+$pstmt->bind_param("sssssssisi",$uname, $uemail, $pass, $StreetAddress, $houseNo, $place, $state, $zip, $dob, $mobileNo);
 
 
 $selectEmailSql = "SELECT * FROM `customer_registration` WHERE Customer_Email = '$uemail'";
