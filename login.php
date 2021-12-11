@@ -148,16 +148,6 @@ session_start();
                             </ul>
                         </div>
                     </div>
-                            <div class="minicart-checkout">
-                                <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                    <strong class="float-left">Subtotal:</strong>
-                                        <span class="price float-right">503.00</span>
-                                        </div>
-                                        <div class="minicart-checkout-links">
-                                            <a href="cart.php" cla ss="generic-btn black-hover-btn text-uppercase w-100 mb-20">View Cart</a>
-                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
-                                        </div>
-                                        </div>
                                     </div>
                                 </li>
                             </ul>
