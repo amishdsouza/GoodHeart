@@ -8,6 +8,7 @@ session_start();
 
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -48,7 +49,7 @@ session_start();
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
- 
+
     <!-- header section start -->
     <header class="header pt-30 pb-30  header-sticky">
         <div class="container-fluid">
@@ -66,8 +67,7 @@ session_start();
                                 <ul>
                                     <li><a href="index.php"><span>Home </span></a>
                                     </li>
-                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i
-                                                    class="fal fa-angle-down"></i></span></a>
+                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i class="fal fa-angle-down"></i></span></a>
                                         <div class="mega-menu">
                                             <div class="col-xl-7 pl-0 position-static">
                                                 <ul>
@@ -112,16 +112,14 @@ session_start();
                                             <li><a href="blog5.php">No sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Portfolio <i
-                                                    class="fal fa-angle-down"></i></span> </a>
+                                    <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
                                             <li><a href="portfolio.php">Single project</a></li>
                                             <li><a href="portfolio2.php">Two Columns</a></li>
                                             <li><a href="portfolio3.php">Three Columns</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Page</span> <i
-                                                class="fal fa-angle-down"></i></a>
+                                    <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="question.php">Frequently Questions</a></li>
@@ -146,8 +144,7 @@ session_start();
                                     </a>
                                 </li>
 
-                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom"
-                                        title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
+                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
                                     <div class="minicart">
                                         <div class="minicart-body">
@@ -155,8 +152,7 @@ session_start();
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
@@ -170,8 +166,7 @@ session_start();
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
@@ -185,8 +180,7 @@ session_start();
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
@@ -205,16 +199,14 @@ session_start();
                                                 <span class="price float-right">503.00</span>
                                             </div>
                                             <div class="minicart-checkout-links">
-                                                <a href="cart.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
+                                                <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
                                                     cart</a>
-                                                <a href="checkout.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                
+
                                 <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
                                     <ul class="submenu text-right">
                                         <li><a href="login.php">My Account</a></li>
@@ -354,7 +346,8 @@ session_start();
                                 <br>
                                 <br>
                                 <button type="button" name="register_btn" id="btnotp" class="btn theme-btn w-100">Send OTP</button>
-                                <div class="alert alert-success" role="alert" style="display:none;" id="otp-success">
+                                <div class="alert alert-success alert-dismissible" role="alert" style="display:none;" id="otp-success">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                     OTP Sent Successfully
                                 </div>
                                 <br>
@@ -384,7 +377,7 @@ session_start();
     </main>
 
     <!-- footer section start -->
-  <section class="footer">
+    <section class="footer">
         <!-- footer top -->
         <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
@@ -401,7 +394,7 @@ session_start();
                                             extremely customizable, easy to use and fully responsive and retina ready.
                                         </p>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             <div class="col-xl-7 col-lg-7 col-md-12">
@@ -513,12 +506,12 @@ session_start();
                         var dataResult = JSON.parse(dataResult);
 
                         if (dataResult == 200) {
-                            $('btnotpsub').hide();
-                            $('btnreg').show();
+                            $('#btnotpsub').hide();
+                            $('#btnreg').show();
                             $('#btnlogin').show();
 
                         } else {
-
+                            alert("OTP Does'nt Match");
                         }
                     }
                 });
@@ -544,7 +537,7 @@ session_start();
                         success: function(dataResult) {
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);
-                            alert(dataResult);
+                            //alert(dataResult);
                             if (dataResult.statusCode == 201) {
                                 $('#btnotp').hide();
                                 $('#btnotpsub').show()
