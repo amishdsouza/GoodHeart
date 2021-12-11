@@ -506,8 +506,8 @@ session_start();
                         var dataResult = JSON.parse(dataResult);
 
                         if (dataResult == 200) {
-                            $('btnotpsub').hide();
-                            $('btnreg').show();
+                            $('#btnotpsub').hide();
+                            $('#btnreg').show();
                             $('#btnlogin').show();
 
                         } else {
@@ -537,7 +537,7 @@ session_start();
                         success: function(dataResult) {
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);
-                            alert(dataResult);
+                            //alert(dataResult);
                             if (dataResult.statusCode == 201) {
                                 $('#btnotp').hide();
                                 $('#btnotpsub').show()
