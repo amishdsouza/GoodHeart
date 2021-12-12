@@ -542,7 +542,14 @@ if (isset($_SESSION['login_Sess'])) {
                                     <textarea name="fmessage" id="fmessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
                                 </div>
                                 <div class="contact-btn text-center">
-                                    <button class="btn theme-btn" id="fsubmit" name="fsubmit" type="submit">get action</button>
+                                    <button class="btn theme-btn" id="fsubmit" name="fsubmit" type="button">get action</button>
+                                </div>
+                                <br>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert" id="msgSuccess" style="display: none;">
+                                    <strong id="msgSent"></strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -808,6 +815,34 @@ if (isset($_SESSION['login_Sess'])) {
 
     <script>
         $('#contact-form').validate();
+
+        $('#fsubmit').click(function() {
+            if (!$('#contact-form').valid()) {
+                return false;
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "sendForm.php",
+                    data: $('#contact-form').serialize(),
+                    success: function(dataResult) {
+                        var dataResult = JSON.parse(dataResult);
+
+                        if (dataResult.statusCode == 200) {
+                            $('#msgSuccess').show();
+                            $('#msgSent').text("Thank You For Your Feedback");
+                            $("#contact-form")[0].reset();
+                        } else {
+                            $('#msgSuccess').show();
+                            $('#msgSent').text("Feedback Not Sent");
+                            $("#contact-form")[0].reset();
+                        }
+                    }
+                });
+            }
+
+
+
+        });
     </script>
 </body>
 
