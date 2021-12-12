@@ -346,22 +346,20 @@ session_start();
                                 <br>
                                 <br>
                                 <button type="button" name="register_btn" id="btnotp" class="btn theme-btn w-100">Send OTP</button>
-                                <div class="alert alert-success alert-dismissible" role="alert" style="display:none;" id="otp-success">
+                                <div class="alert alert-success alert-dismissible" role="alert" style="display:none;" id="otp_success">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                     OTP Sent Successfully
                                 </div>
                                 <br>
-                                <br>
                                 <div class="col-md-6" style="margin-left: 12em !important; display:none;" id="txtDiv">
                                     <div class="form-group">
-                                        <input id="textInput" type="text" class="form-control" placeholder="Enter OTP" id="otp_input" name="otp_input" minlength="4" maxlength="4" onkeypress="return isNumber(event);" required>
+                                        <input type="text" class="form-control" placeholder="Enter OTP" id="otpinput" name="otpinput" minlength="4" maxlength="4" onkeypress="return isNumber(event);" required>
                                     </div>
                                 </div>
                                 <button type="button" name="btnotpsub" id="btnotpsub" class="btn theme-btn w-100" style="display:none;">Submit OTP</button>
 
                                 <button type="button" name="btnreg" id="btnreg" class="btn theme-btn w-100" style="display:none;">Register Now</button>
-                                <br>
-                                <br>
+
                                 <div class="alert alert-success" role="alert" style="display:none;" id="msgSuccess">
                                     User Successfuly Created
                                 </div>
@@ -493,25 +491,26 @@ session_start();
             });
 
             $('#btnotpsub').on('click', function() {
-                var otpsub = $('#otp_input').val();
+                var otpinput = $('#otpinput').val();
 
                 $.ajax({
                     type: "POST",
-                    url: "otp-process.php",
+                    url: "otp_process.php",
                     data: {
                         type: 3,
-                        otpsub: otpsub
+                        otpinput: otpinput
                     },
                     success: function(dataResult) {
+                        //var db = JSON.stringify(dataResult)
                         var dataResult = JSON.parse(dataResult);
 
-                        if (dataResult == 200) {
+                        if (dataResult.statusCode == 200) {
                             $('#btnotpsub').hide();
                             $('#btnreg').show();
                             $('#btnlogin').show();
 
                         } else {
-                            alert("OTP Does'nt Match");
+                            alert("OTP Do not Match");
                         }
                     }
                 });
@@ -523,6 +522,7 @@ session_start();
                 var pass = $('#pass').val();
 
                 if (!$('#reg').valid()) {
+
                     return false;
                 } else {
                     $.ajax({
@@ -538,7 +538,7 @@ session_start();
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);
                             //alert(dataResult);
-                            if (dataResult.statusCode == 201) {
+                            if (dataResult.statusCode == 200) {
                                 $('#btnotp').hide();
                                 $('#btnotpsub').show()
                                 $("#txtDiv").show();
