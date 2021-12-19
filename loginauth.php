@@ -4,7 +4,17 @@ require_once 'configs/db.php';
 
 session_start();
 
-if (isset($_POST['uemail']) && isset($_POST['upass'])) {
+$required = array('uemail', 'upass');
+
+$error = false;
+foreach ($required as $fields) {
+  # code...
+  if (isset($_POST[$fields])) {
+    $error = true;
+  }
+}
+
+if ($error) {
   # code...
   $uemail = $db->real_escape_string($_POST['uemail']);
   $upass = $db->real_escape_string($_POST['upass']);
@@ -13,21 +23,31 @@ if (isset($_POST['uemail']) && isset($_POST['upass'])) {
 
 $encryptPass = md5($upass);
 
-$selectLogin = "SELECT * FROM `customer_registration` WHERE Customer_Email = '$uemail' AND Customer_Password = '$encryptPass' ";
 
-$query = $db->query($selectLogin);
-$row = mysqli_num_rows(mysqli_query($db,$selectLogin));
+$selectLogin = "SELECT `Customer_ID`, `Customer_Name`, `Customer_Email` FROM `customer_registration` WHERE Customer_Email = ? AND Customer_Password = ?";
+
+$pstmtLogin = $db->prepare($selectLogin);
+$pstmtLogin->bind_param("ss",$uemail,$encryptPass);
+$pstmtLogin->execute();
+$pstmtLogin->store_result();
+$row = $pstmtLogin->num_rows();
+$pstmtLogin->bind_result($cid,$cname,$cemail);
+//var_dump($row_data);
 
 if ($row > 0) {
   # code...
   echo json_encode(array("statusCode" => 200));
-  $data = $query -> fetch_assoc();
 
-  $_SESSION['ID'] = $data['Customer_ID'];
-  $_SESSION['CName'] = $data['Customer_Name'];
-  $_SESSION['CEmail'] = $data['Customer_Email'];
+  //$data = $row_data->fetch_assoc() or die($db->error);
+  //$data = $row_data->fetch_assoc();
+  while ($pstmtLogin->fetch()) {
+    $_SESSION['ID'] = $cid;
+    $_SESSION['CName'] = $cname;
+    $_SESSION['CEmail'] = $cemail;
+  }
+
+
   $_SESSION['login_Sess'] = true;
-
 } else {
   # code...
   echo json_encode(array("statusCode" => 201));
