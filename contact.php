@@ -1,3 +1,38 @@
+<?php
+require_once 'configs/db.php';
+
+session_start();
+
+function loginStart($db)
+{
+    $no_of_items = 0;
+    $uid = $_SESSION['ID'];
+
+    $query = "SELECT * FROM `shopping_cart` WHERE `Customer_ID` = '$uid'";
+
+    $sql = $db->query($query) or die($db->error);
+    $row = $sql->fetch_assoc();
+    $cart_id = $row['Cart_ID'];
+
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Cart_ID` = '$cart_id'";
+    $sql2 = $db->query($query2) or die($db->error);
+    $row2 = $sql2->fetch_assoc();
+
+    $no_of_items = $row2['count'];
+
+    return $no_of_items;
+}
+
+if (isset($_SESSION['login_Sess'])) {
+    # code...
+    loginStart($db);
+} else {
+    # code... = 0;
+    $no_of_items = 0;
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -25,6 +60,12 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .error {
+            color: red !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,272 +83,318 @@
     <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
         <div class="container-fluid">
             <div class="header-nav position-relative">
-                    <div class="row align-items-center">
+                <div class="row align-items-center">
 
 
-                        <div class="col-xl-5 col-lg-6 hidden-md position-static">
-                            <div class="header-nav">
-                                <nav>
-                                    <ul>
-                                        <li><a href="javascript:void(0)" class="active"><span>Home  <i class="fal fa-angle-down"></i></span></a>
+                    <div class="col-xl-5 col-lg-6 hidden-md position-static">
+                        <div class="header-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="javascript:void(0)" class="active"><span>Home <i class="fal fa-angle-down"></i></span></a>
 
-                                            <ul class="submenu">
-                                                <li><a href="index.html">Home Fashion 1</a></li>
-                                                <li><a href="index2.html">Home Fashion 2</a></li>
-                                                <li><a href="index3.html">Home Fashion 3</a></li>
-                                                <li><a href="index4.html">Home Fashion 4</a></li>
-                                                <li><a href="index5.html">Home Fashion 5</a></li>
-                                                <li><a href="index6.html">Home Fashion 6</a></li>
-                                                <li><a href="index7.html">Home Fashion 7</a></li>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Home Fashion 1</a></li>
+                                            <li><a href="index2.html">Home Fashion 2</a></li>
+                                            <li><a href="index3.html">Home Fashion 3</a></li>
+                                            <li><a href="index4.html">Home Fashion 4</a></li>
+                                            <li><a href="index5.html">Home Fashion 5</a></li>
+                                            <li><a href="index6.html">Home Fashion 6</a></li>
+                                            <li><a href="index7.html">Home Fashion 7</a></li>
 
-                                            </ul>
-                                        </li>
-                                        <li class="position-static"><a href="javascript:void(0)"><span>Shop  <i class="fal fa-angle-down"></i></span></a>
-                                            <div class="mega-menu">
-                                                <div class="col-xl-7 pl-0 position-static">
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop Layout</a></li>
-                                                        <li><a href="shop4.html">Masonry – Grid</a></li>
-                                                        <li><a href="shop3.html">Pagination</a></li>
-                                                        <li><a href="shop2.html">Ajax Load More</a></li>
-                                                        <li><a href="shop2.html">Infinite Scroll</a></li>
-                                                        <li><a href="shop2.html">Sidebar Right</a></li>
-                                                        <li><a href="shop.html">Sidebar Left</a></li>
-                                                    </ul>
-
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop Pages</a></li>
-                                                        <li><a href="shop2.html">List View</a></li>
-                                                        <li><a href="shop3.html">Small Products</a></li>
-                                                        <li><a href="shop2.html">Large Products</a></li>
-                                                        <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                                        <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                                        <li><a href="shop4.html">Shop — 5 Items</a></li>
-                                                    </ul>
-
-                                                    <ul>
-                                                        <li><a href="single-product-2.html">Product Layout</a></li>
-                                                        <li><a href="single-product.html">Description Sticky</a></li>
-                                                        <li><a href="single-product-2.html">Product Carousels</a></li>
-                                                        <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                                        <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                                        <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                                        <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span> </a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Grid layout</a></li>
-                                                <li><a href="blog2.html">Large image</a></li>
-                                                <li><a href="blog3.html">Left Sidebar</a></li>
-                                                <li><a href="blog4.html">Right Sidebar</a></li>
-                                                <li><a href="blog5.html">No sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
-                                            <ul class="submenu">
-                                                <li><a href="portfolio.html">Single project</a></li>
-                                                <li><a href="portfolio2.html">Two Columns</a></li>
-                                                <li><a href="portfolio3.html">Three Columns</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="question.html">Frequently Questions</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html"><span>Contact</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
-                            <div class="logo">
-                                <a href="index3.html"><img src="img/logo/logo1.png" alt=""></a>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
-                            <div class="header-right">
-                                <ul class="text-right">
-                                    <li><a href="login.html" class="account"><i class="fal fa-user-friends"></i> <article class="account-registar d-inline-block">Login/Sign up</article></a></li>
-                                    <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
-
-                                        <!-- search popup -->
-                                        <div id="search-popup">
-                                            <div class="close-search-popup">
-                                                <i class="fal fa-times"></i>
-                                            </div>
-                                            <div class="search-popup-inner mt-135">
-                                                <div class="search-title text-center">
-                                                    <h2>Search</h2>
-                                                </div>
-
-                                                <div class="search-content pt-55">
-                                                    <ul class="text-center">
-                                                        <li><a href="javascript:void(0)" class="active">All categories</a></li>
-                                                        <li><a href="javascript:void(0)">Clothing</a></li>
-                                                        <li><a href="javascript:void(0)">Gift Cards</a></li>
-                                                        <li><a href="javascript:void(0)">Handbag</a></li>
-                                                        <li><a href="javascript:void(0)">Kids</a></li>
-                                                        <li><a href="javascript:void(0)">Shoes</a></li>
-                                                        <li><a href="javascript:void(0)">Sneaker</a></li>
-                                                        <li><a href="javascript:void(0)">Women</a></li>
-                                                    </ul>
-
-                                                    <div class="search-form mt-35">
-                                                        <form action="#" method="post">
-                                                            <input type="text" placeholder="Search Products...">
-                                                            <button type="submit"><i class="fal fa-search"></i></button>
-                                                        </form>
-                                                    </div>
-
-                                                    <div class="search-result-list">
-                                                        <ul class="text-left">
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/1.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">ELLE  - Recliner syntheti chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/2.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">RIMINI  - Folding leather deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/3.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">LANDSCAPE  - Folding fabric deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/1.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">ELLE  - Recliner syntheti chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/2.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">RIMINI  - Folding leather deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/3.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">LANDSCAPE  - Folding fabric deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="wishlist.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                    <li><a href="cart.html"><i class="fal fa-shopping-bag"><span>5</span></i></a>
-                                        <div class="minicart">
-                                            <div class="minicart-body">
-                                                <div class="minicart-content">
-                                                    <ul class="text-left">
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Capitalize on low hanging fruit t</a>
-                                                                <strong>1 × $250.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Leather Courriere duffle ba</a>
-                                                                <strong>1 × $150.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-
-
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Party Supplies Around Cupcake</a>
-                                                                <strong>1 × $150.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="minicart-checkout">
-                                                <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                                    <strong class="float-left">Subtotal:</strong>
-                                                    <span class="price float-right">503.00</span>
-                                                </div>
-                                                <div class="minicart-checkout-links">
-                                                    <a href="cart.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View cart</a>
-                                                    <a href="checkout.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
-                                        <ul class="submenu bold-content text-right">
-                                            <li><a href="login.html">My Account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="question.html">Frequently</a></li>
                                         </ul>
                                     </li>
+                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i class="fal fa-angle-down"></i></span></a>
+                                        <div class="mega-menu">
+                                            <div class="col-xl-7 pl-0 position-static">
+                                                <ul>
+                                                    <li><a href="shop.html">Shop Layout</a></li>
+                                                    <li><a href="shop4.html">Masonry – Grid</a></li>
+                                                    <li><a href="shop3.html">Pagination</a></li>
+                                                    <li><a href="shop2.html">Ajax Load More</a></li>
+                                                    <li><a href="shop2.html">Infinite Scroll</a></li>
+                                                    <li><a href="shop2.html">Sidebar Right</a></li>
+                                                    <li><a href="shop.html">Sidebar Left</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="shop.html">Shop Pages</a></li>
+                                                    <li><a href="shop2.html">List View</a></li>
+                                                    <li><a href="shop3.html">Small Products</a></li>
+                                                    <li><a href="shop2.html">Large Products</a></li>
+                                                    <li><a href="shop3.html">Shop — 3 Items</a></li>
+                                                    <li><a href="shop3.html">Shop — 4 Items</a></li>
+                                                    <li><a href="shop4.html">Shop — 5 Items</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="single-product-2.html">Product Layout</a></li>
+                                                    <li><a href="single-product.html">Description Sticky</a></li>
+                                                    <li><a href="single-product-2.html">Product Carousels</a></li>
+                                                    <li><a href="single-product-3.html">Gallery Modern</a></li>
+                                                    <li><a href="single-product-4.html">Thumbnail Left</a></li>
+                                                    <li><a href="single-product-5.html">Thumbnail Right</a></li>
+                                                    <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span> </a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Grid layout</a></li>
+                                            <li><a href="blog2.html">Large image</a></li>
+                                            <li><a href="blog3.html">Left Sidebar</a></li>
+                                            <li><a href="blog4.html">Right Sidebar</a></li>
+                                            <li><a href="blog5.html">No sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
+                                        <ul class="submenu">
+                                            <li><a href="portfolio.html">Single project</a></li>
+                                            <li><a href="portfolio2.html">Two Columns</a></li>
+                                            <li><a href="portfolio3.html">Three Columns</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="question.html">Frequently Questions</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html"><span>Contact</span></a></li>
                                 </ul>
-                            </div>
+                            </nav>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
+                        <div class="logo">
+                            <a href="index3.html"><img src="img/logo/logo1.png" alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
+                        <div class="header-right">
+                            <ul class="text-right">
+                                <li> <?php
+                                        if (isset($_SESSION['login_Sess'])) {
+                                            # code...
+                                        ?>
+                                        <a href="" class="account"><i class="fal fa-user-friends"></i>
+                                            <article class="account-registar d-inline-block">
+                                                <?php echo $_SESSION['CName']; ?>
+                                            </article>
+                                        </a>
+                                    <?php
+                                        } else {
+                                            # code...
+                                    ?>
+                                        <a href="login.php" class="account"><i class="fal fa-user-friends"></i>
+                                            <article class="account-registar d-inline-block">
+                                                Login/Sign up
+                                            </article>
+                                        </a>
+                                    <?php
+                                        }
+
+                                    ?>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
+
+                                    <!-- search popup -->
+                                    <div id="search-popup">
+                                        <div class="close-search-popup">
+                                            <i class="fal fa-times"></i>
+                                        </div>
+                                        <div class="search-popup-inner mt-135">
+                                            <div class="search-title text-center">
+                                                <h2>Search</h2>
+                                            </div>
+
+                                            <div class="search-content pt-55">
+                                                <ul class="text-center">
+                                                    <li><a href="javascript:void(0)" class="active">All categories</a></li>
+                                                    <li><a href="javascript:void(0)">Clothing</a></li>
+                                                    <li><a href="javascript:void(0)">Gift Cards</a></li>
+                                                    <li><a href="javascript:void(0)">Handbag</a></li>
+                                                    <li><a href="javascript:void(0)">Kids</a></li>
+                                                    <li><a href="javascript:void(0)">Shoes</a></li>
+                                                    <li><a href="javascript:void(0)">Sneaker</a></li>
+                                                    <li><a href="javascript:void(0)">Women</a></li>
+                                                </ul>
+
+                                                <div class="search-form mt-35">
+                                                    <form action="#" method="post">
+                                                        <input type="text" placeholder="Search Products...">
+                                                        <button type="submit"><i class="fal fa-search"></i></button>
+                                                    </form>
+                                                </div>
+
+                                                <div class="search-result-list">
+                                                    <ul class="text-left">
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/1.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">ELLE - Recliner syntheti chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/2.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">RIMINI - Folding leather deck chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/3.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/1.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">ELLE - Recliner syntheti chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/2.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">RIMINI - Folding leather deck chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-block d-flex align-items-center">
+                                                            <div class="search-result-img">
+                                                                <img src="img/product/3.jpg" class="w-100" alt="">
+                                                            </div>
+                                                            <div class="search-result-desc pl-10">
+                                                                <a href="single-product-4.html" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
+                                                                <div class="price">$<span>399</span></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="wishlist.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
+                                <li><a href="cart.html"><i class="fal fa-shopping-bag">
+                                            <span>
+                                                <?php
+                                                if (isset($_SESSION['login_Sess'])) {
+                                                    echo loginStart($db);
+                                                } else {
+                                                    echo "0";
+                                                }
+                                                ?>
+                                            </span>
+                                        </i></a>
+                                    <div class="minicart">
+                                        <div class="minicart-body">
+                                            <div class="minicart-content">
+                                                <ul class="text-left">
+                                                    <li>
+                                                        <div class="minicart-img">
+                                                            <a href="single-product-4.html" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
+                                                        </div>
+                                                        <div class="minicart-desc">
+                                                            <a href="single-product-4.html" class="p-0">Capitalize on low hanging fruit t</a>
+                                                            <strong>1 × $250.00</strong>
+                                                        </div>
+                                                        <div class="remove">
+                                                            <i class="fal fa-times"></i>
+                                                        </div>
+                                                    </li>
+
+                                                    <li>
+                                                        <div class="minicart-img">
+                                                            <a href="single-product-4.html" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
+                                                        </div>
+                                                        <div class="minicart-desc">
+                                                            <a href="single-product-4.html" class="p-0">Leather Courriere duffle ba</a>
+                                                            <strong>1 × $150.00</strong>
+                                                        </div>
+                                                        <div class="remove">
+                                                            <i class="fal fa-times"></i>
+                                                        </div>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <div class="minicart-img">
+                                                            <a href="single-product-4.html" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
+                                                        </div>
+                                                        <div class="minicart-desc">
+                                                            <a href="single-product-4.html" class="p-0">Party Supplies Around Cupcake</a>
+                                                            <strong>1 × $150.00</strong>
+                                                        </div>
+                                                        <div class="remove">
+                                                            <i class="fal fa-times"></i>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="minicart-checkout">
+                                            <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
+                                                <strong class="float-left">Subtotal:</strong>
+                                                <span class="price float-right">503.00</span>
+                                            </div>
+                                            <div class="minicart-checkout-links">
+                                                <a href="cart.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View cart</a>
+                                                <a href="checkout.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <?php
+                                if (isset($_SESSION['login_Sess'])) {
+                                    # code...
+                                ?>
+                                    <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
+                                        <ul class="submenu text-right">
+                                            <li><a href="">My Account</a></li>
+                                            <li><a href="shop.php">Shop</a></li>
+                                            <li><a href="wishlist.php">Wishlist</a></li>
+                                            <li><a href="logout.php">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                <?php
+                                } else {
+                                    # code...
+                                ?>
+
+                                <?php
+                                }
+
+                                ?>
+                            </ul>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="mobile-menu visible-sm">
                 <div id="mobile-menu">
                     <ul>
-                        <li><a  class="pl-3" href="javascript:void(0)">Home</a>
+                        <li><a class="pl-3" href="javascript:void(0)">Home</a>
                             <ul class="pl-4">
                                 <li><a href="index.html">Home Fashion 1</a></li>
                                 <li><a href="index2.html">Home Fashion 2</a></li>
@@ -319,7 +406,7 @@
 
                             </ul>
                         </li>
-                        <li><a  class="pl-3" href="javascript:void(0)">Shop</a>
+                        <li><a class="pl-3" href="javascript:void(0)">Shop</a>
                             <ul>
                                 <li><a href="shop.html">Shop Layout</a></li>
                                 <li><a href="shop4.html">Masonry – Grid</a></li>
@@ -374,15 +461,15 @@
     <section class="contact-area pb-30" data-background="assets/img/bg/bg-map.png">
         <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/bg/3.jpg');">
             <div class="breadcrumb-content d-flex justify-content-center align-items-center" style="flex-direction: column;">
-             <h2 class="title">Contact</h2>
-             <nav aria-label="breadcrumb" class="mb-40">
-                 <ol class="breadcrumb p-0 m-0">
-                     <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                 </ol>
-             </nav>
+                <h2 class="title">Contact</h2>
+                <nav aria-label="breadcrumb" class="mb-40">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
             </div>
-         </div>
+        </div>
         <div class="container container-1430">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4">
@@ -432,39 +519,41 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contact-form" action="#">
+                    <form id="contact-form" method="POST">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-box user-icon mb-30">
-                                    <input type="text" name="name" placeholder="Your Name">
+                                    <input type="text" name="fname" id="fname" placeholder="Your Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-box email-icon mb-30">
-                                    <input type="text" name="email" placeholder="Your Email">
+                                    <input type="email" name="femail" id="femail" placeholder="Your Email" required>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-box phone-icon mb-30">
-                                    <input type="text" name="phone" placeholder="Your Phone">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
+
+                            <div class="col-lg-6 mx-auto">
                                 <div class="form-box subject-icon mb-30">
-                                    <input type="text" name="subject" placeholder="Your Subject">
+                                    <input type="text" name="fsubject" id="fsubject" placeholder="Your Subject" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-box message-icon mb-30">
-                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                    <textarea name="fmessage" id="fmessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
                                 </div>
                                 <div class="contact-btn text-center">
-                                    <button class="btn theme-btn" type="submit">get action</button>
+                                    <button class="btn theme-btn" id="fsubmit" name="fsubmit" type="button">get action</button>
+                                </div>
+                                <br>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert" id="msgSuccess" style="display: none;">
+                                    <strong id="msgSent"></strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <p class="ajax-response text-center"></p>
                 </div>
             </div>
         </div>
@@ -686,42 +775,7 @@
     </section>
     <!-- product popup end -->
 
-    <!-- startup popup start -->
-    <section id="startup-popup">
-        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
-        <div class="startup-popup-body">
-            <div class="startup-body-content h-100">
-                <div class="row justify-content-end h-100">
-                    <div class="col-6 h-100">
-                        <div class="startup-popup-inner h-100">
-                            <div class="close-search-popup">
-                                <i class="fal fa-times"></i>
-                            </div>
-                            <div class="startup-popup-main-content">
-                                <h2>Get Our Email Letter</h2>
-                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
-                                    arrivals, special offers
-                                    and other discount information.</p>
-                                <div class="startup-subscribe-form">
-                                    <form action="#" method="POST">
-                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
-                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="startup-popup-sub-content">
-                                <div class="popup-warning">
-                                    <input type="checkbox" id="startup-popup-hidden">
-                                    <label for="startup-popup-hidden">Do not show the popup again</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- startup popup end -->
+
 
 
 
@@ -754,6 +808,42 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+
+    <script>
+        $('#contact-form').validate();
+
+        $('#fsubmit').click(function() {
+            if (!$('#contact-form').valid()) {
+                return false;
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "sendForm.php",
+                    data: $('#contact-form').serialize(),
+                    success: function(dataResult) {
+                        var dataResult = JSON.parse(dataResult);
+
+                        if (dataResult.statusCode == 200) {
+                            $('#msgSuccess').show();
+                            $('#msgSent').text("Thank You For Your Feedback");
+                            $("#contact-form")[0].reset();
+                        } else {
+                            $('#msgSuccess').show();
+                            $('#msgSent').text("Feedback Not Sent");
+                            $("#contact-form")[0].reset();
+                        }
+                    }
+                });
+            }
+
+
+
+        });
+    </script>
 </body>
 
 </html>

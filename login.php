@@ -3,6 +3,10 @@ require_once 'configs/db.php';
 session_start();
 
 
+if (isset($_GET['source'])) {
+    $source = $_GET['source'];
+}
+
 
 
 
@@ -145,78 +149,10 @@ session_start();
                                         </article>
                                     </a>
                                 </li>
-
-                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
-                                    <div class="minicart">
-                                        <div class="minicart-body">
-                                            <div class="minicart-content">
-                                                <ul class="text-left">
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
-                                                                t</a>
-                                                            <strong>1 × $250.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
-                                                            <strong>1 × $150.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-
-
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
-                                                            <strong>1 × $150.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="minicart-checkout">
-                                            <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                                <strong class="float-left">Subtotal:</strong>
-                                                <span class="price float-right">503.00</span>
-                                            </div>
-                                            <div class="minicart-checkout-links">
-                                                <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
-                                                    cart</a>
-                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
-                                            </div>
-                                        </div>
+                            </ul>
+                        </div>
+                    </div>
                                     </div>
-                                </li>
-
-                                <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
-                                    <ul class="submenu text-right">
-                                        <li><a href="login.php">My Account</a></li>
-                                        <li><a href="checkout.php">Checkout</a></li>
-                                        <li><a href="shop.php">Shop</a></li>
-                                        <li><a href="wishlist.php">Wishlist</a></li>
-                                        <li><a href="question.php">Frequently</a></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
