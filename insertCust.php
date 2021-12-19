@@ -59,7 +59,7 @@ $numPass = $pstmtPass->num_rows();
 
 $selectMobileSql = "SELECT * FROM `customer_registration` WHERE Mobile_Number = ?";
 $pstmtMobile = $db->prepare($selectMobileSql);
-$pstmtPass->bind_param("i", $mobileNo);
+$pstmtMobile->bind_param("i", $mobileNo);
 $pstmtMobile->execute();
 $pstmtMobile->store_result();
 $numMobile = $pstmtMobile->num_rows();

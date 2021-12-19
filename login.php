@@ -152,64 +152,64 @@ if (isset($_GET['source'])) {
                             </ul>
                         </div>
                     </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
+                </li>
+                </ul>
             </div>
-            <div class="mobile-menu visible-sm">
-                <div id="mobile-menu">
-                    <ul>
-                        <li><a class="pl-3" href="index.php">Home</a>
-                        </li>
-                        <li><a class="pl-3" href="javascript:void(0)">Shop</a>
-                            <ul>
-                                <li><a href="shop.php">Shop Layout</a></li>
-                                <li><a href="shop4.php">Masonry – Grid</a></li>
-                                <li><a href="shop3.php">Pagination</a></li>
-                                <li><a href="shop2.php">Ajax Load More</a></li>
-                                <li><a href="shop2.php">Infinite Scroll</a></li>
-                                <li><a href="shop2.php">Sidebar Right</a></li>
-                                <li><a href="shop.php">Sidebar Left</a></li>
-                                <li><a href="shop.php">Shop Pages</a></li>
-                                <li><a href="shop2.php">List View</a></li>
-                                <li><a href="shop3.php">Small Products</a></li>
-                                <li><a href="shop2.php">Large Products</a></li>
-                                <li><a href="shop3.php">Shop — 3 Items</a></li>
-                                <li><a href="shop3.php">Shop — 4 Items</a></li>
-                                <li><a href="shop4.php">Shop — 5 Items</a></li>
-                                <li><a href="single-product-2.php">Product Layout</a></li>
-                                <li><a href="single-product.php">Description Sticky</a></li>
-                                <li><a href="single-product-2.php">Product Carousels</a></li>
-                                <li><a href="single-product-3.php">Gallery Modern</a></li>
-                                <li><a href="single-product-4.php">Thumbnail Left</a></li>
-                                <li><a href="single-product-5.php">Thumbnail Right</a></li>
-                                <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Blog</a>
-                            <ul>
-                                <li><a href="blog.php">Grid layout</a></li>
-                                <li><a href="blog2.php">Large image</a></li>
-                                <li><a href="blog3.php">Left Sidebar</a></li>
-                                <li><a href="blog4.php">Right Sidebar</a></li>
-                                <li><a href="blog5.php">No sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Portfolio</a>
-                            <ul>
-                                <li><a href="portfolio.php">Single project</a></li>
-                                <li><a href="portfolio2.php">Two Columns</a></li>
-                                <li><a href="portfolio3.php">Three Columns</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
+        </div>
+        </div>
+        </div>
+        <div class="mobile-menu visible-sm">
+            <div id="mobile-menu">
+                <ul>
+                    <li><a class="pl-3" href="index.php">Home</a>
+                    </li>
+                    <li><a class="pl-3" href="javascript:void(0)">Shop</a>
+                        <ul>
+                            <li><a href="shop.php">Shop Layout</a></li>
+                            <li><a href="shop4.php">Masonry – Grid</a></li>
+                            <li><a href="shop3.php">Pagination</a></li>
+                            <li><a href="shop2.php">Ajax Load More</a></li>
+                            <li><a href="shop2.php">Infinite Scroll</a></li>
+                            <li><a href="shop2.php">Sidebar Right</a></li>
+                            <li><a href="shop.php">Sidebar Left</a></li>
+                            <li><a href="shop.php">Shop Pages</a></li>
+                            <li><a href="shop2.php">List View</a></li>
+                            <li><a href="shop3.php">Small Products</a></li>
+                            <li><a href="shop2.php">Large Products</a></li>
+                            <li><a href="shop3.php">Shop — 3 Items</a></li>
+                            <li><a href="shop3.php">Shop — 4 Items</a></li>
+                            <li><a href="shop4.php">Shop — 5 Items</a></li>
+                            <li><a href="single-product-2.php">Product Layout</a></li>
+                            <li><a href="single-product.php">Description Sticky</a></li>
+                            <li><a href="single-product-2.php">Product Carousels</a></li>
+                            <li><a href="single-product-3.php">Gallery Modern</a></li>
+                            <li><a href="single-product-4.php">Thumbnail Left</a></li>
+                            <li><a href="single-product-5.php">Thumbnail Right</a></li>
+                            <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">Blog</a>
+                        <ul>
+                            <li><a href="blog.php">Grid layout</a></li>
+                            <li><a href="blog2.php">Large image</a></li>
+                            <li><a href="blog3.php">Left Sidebar</a></li>
+                            <li><a href="blog4.php">Right Sidebar</a></li>
+                            <li><a href="blog5.php">No sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">Portfolio</a>
+                        <ul>
+                            <li><a href="portfolio.php">Single project</a></li>
+                            <li><a href="portfolio2.php">Two Columns</a></li>
+                            <li><a href="portfolio3.php">Three Columns</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
             </div>
-            <!-- /. mobile nav -->
+        </div>
+        <!-- /. mobile nav -->
         </div>
     </header>
     <!-- header section end -->
@@ -457,10 +457,7 @@ if (isset($_GET['source'])) {
                         type: "POST",
                         url: "loginauth.php",
                         //dataType: 'json',
-                        data: {
-                            uemail: uemail,
-                            upass: upass
-                        },
+                        data: $('#loginform').serialize(),
                         success: function(dataResult) {
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);

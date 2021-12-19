@@ -814,7 +814,7 @@ if (isset($_SESSION['login_Sess'])) {
     <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
     <script>
-        $('#contact-form').validate();
+        //$('#contact-form').validate();
 
         $('#fsubmit').click(function() {
             if (!$('#contact-form').valid()) {

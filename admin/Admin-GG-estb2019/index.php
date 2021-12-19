@@ -1,5 +1,5 @@
 <?php
-include_once '../../php/config.php';
+include_once '../../configs/db.php';
 session_start();
 
 if (isset($_GET['sourcead'])) {
