@@ -1,5 +1,5 @@
 <?php
-include_once '../../configs/db.php';
+require_once '../../configs/db.php';
 session_start();
 
 if (isset($_GET['sourcead'])) {
@@ -12,16 +12,25 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $query = mysqli_query($con, "SELECT * FROM `user_info` WHERE Email = '$email' AND Password = '$password' AND User_Type = 'admin'");
-  $row = mysqli_num_rows($query);
+  $encryptPass = md5($password);
+
+  $query = "SELECT `A_ID`,`Admin_Name` FROM `admin` WHERE Admin_Username = ? AND Admin_Password = ?";
+
+  $pstmtLogin = $db->prepare($selectLogin);
+  $pstmtLogin->bind_param("ss", $uemail, $encryptPass);
+  $pstmtLogin->execute();
+  $pstmtLogin->store_result();
+  $row = $pstmtLogin->num_rows();
+  $pstmtLogin->bind_result($aid,$aname);
 
   if ($row > 0) {
     // code...
-    $data = mysqli_fetch_assoc($query);
-    $adid = $data['User_ID'];
-    $adname = $data['First_Name'];
-    $_SESSION['adName'] = $adname;
-    $_SESSION['adid'] = $adid;
+
+    while ($pstmtLogin->fetch()) {
+      $_SESSION['AID'] = $aid;
+      $_SESSION['AName'] = $aname;
+      
+    }
     $_SESSION['adminlogin'] = "1";
   
       # code...

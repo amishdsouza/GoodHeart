@@ -1,34 +1,34 @@
  <?php
-  include_once '../../php/config.php';
+  require_once '../../configs/db.php';
   session_start();
   if ((isset($_SESSION['adminlogin']))) {
     # code...
-    $aname = $_SESSION['adName'];
+    $aname = $_SESSION['AName'];
   } else {
     # code...
     header('location:index.php?sourcead=dashboard.php');
   }
 
 
-  $count_orders_query = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `total_orders`");
+  $count_orders_query = mysqli_query($db, "SELECT COUNT(*) AS `count` FROM `donation`");
   $row_orders = mysqli_fetch_assoc($count_orders_query);
   $count_orders = $row_orders['count'];
 
-  $net_profit_query = mysqli_query($con, "SELECT SUM(Total_Price) as `profit` FROM `total_orders` WHERE `Payment_Status` = 'Paid'");
+  $net_profit_query = mysqli_query($con, "SELECT SUM(Donation_Amount) as `profit` FROM `donation` WHERE `Pay_Status` = 'Paid'");
 
   $row_net = mysqli_fetch_assoc($net_profit_query);
 
   $net_profit = $row_net['profit'];
 
-  $user_no_query = mysqli_query($con, "SELECT COUNT(*) as `sum_use` FROM `user_info` WHERE User_Type = 'Customer'");
+  $user_no_query = mysqli_query($con, "SELECT COUNT(*) as `sum_use` FROM `customer_registration`");
 
   $row_user = mysqli_fetch_assoc($user_no_query);
 
   $user_no = $row_user['sum_use'];
 
-  $deli_orders_query = mysqli_query($con, "SELECT COUNT(*) AS `delcount` FROM `total_orders` WHERE Order_Status = 'Delivered'");
-  $delirow_orders = mysqli_fetch_assoc($deli_orders_query);
-  $deli_orders = $delirow_orders['delcount'];
+  $paidDonation_query = mysqli_query($con, "SELECT COUNT(*) AS `delcount` FROM `donation` WHERE `Pay_Status` = 'Paid'");
+  $paidDonation_orders = mysqli_fetch_assoc($paidDonation_query);
+  $paidDonation = $paidDonation_orders['delcount'];
 
 
   if (isset($_POST['MYsubmit'])) {
@@ -36,13 +36,13 @@
     $year = $_POST['SelYear'];
     $month = $_POST['SelMonth'];
 
-    $sel_query = mysqli_query($con, "SELECT SUM(Total_Price) as total,SUM(Quantity) as noOfPro, DATE_FORMAT(Date_OF_Purchase,'%M') as month FROM total_orders WHERE YEAR(Date_OF_Purchase) = $year AND MONTH(Date_OF_Purchase) = $month AND Order_Status = 'Delivered'");
+    $don_query = mysqli_query($con, "SELECT SUM(Donation_Amount) as total,COUNT(Donation_ID) as noOfDon, DATE_FORMAT(Donation_Date,'%M') as monthDon FROM total_orders WHERE YEAR(Donation_Date) = $year AND MONTH(Date_OF_Purchase) = $month AND `Pay_Status` = 'Paid'");
 
-    $sel_row = mysqli_fetch_assoc($sel_query);
+    $don_row = mysqli_fetch_assoc($don_query);
 
-    $count_sell = $sel_row['noOfPro'];
-    $sum_sell = $sel_row['total'];
-    $month_name = $sel_row['month'];
+    $count_don = $sel_row['noOfDon'];
+    $sum_don = $sel_row['total'];
+    $month_name = $sel_row['monthDon'];
   }
   ?>
 
@@ -111,7 +111,7 @@
              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
            </div>
            <div class="info">
-             <a href="index.php" class="d-block">Admin</a>
+             <a href="index.php" class="d-block">Welcome <?php echo $aname?></a>
            </div>
          </div>
 
@@ -257,7 +257,7 @@
                <!-- small box -->
                <div class="small-box bg-danger">
                  <div class="inner">
-                   <h3><?php echo $deli_orders ?></h3>
+                   <h3><?php echo $paidDonation ?></h3>
 
                    <p>Delivered Orders</p>
                  </div>
@@ -480,8 +480,8 @@
    <script src="dist/js/pages/dashboard.js"></script>
    <script src="dist/js/pages/dashboard3.js"></script>
    <script type="text/javascript">
-     var SalesinRs = "<?= $sum_sell ?>"
-     var SalesinNo = "<?= $count_sell ?>"
+     var DoninRs = "<?= $sum_don ?>"
+     var DoninNo = "<?= $count_don ?>"
    </script>
 
    <!-- AdminLTE for demo purposes -->
