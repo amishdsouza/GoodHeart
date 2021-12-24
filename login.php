@@ -63,7 +63,7 @@ if (isset($_GET['source'])) {
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="img/logo/logo.png" alt=""></a>
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt="Good Heart logo"></a>
                         </div>
                     </div>
 

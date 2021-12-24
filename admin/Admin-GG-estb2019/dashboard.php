@@ -14,19 +14,19 @@
   $row_orders = mysqli_fetch_assoc($count_orders_query);
   $count_orders = $row_orders['count'];
 
-  $net_profit_query = mysqli_query($con, "SELECT SUM(Donation_Amount) as `profit` FROM `donation` WHERE `Pay_Status` = 'Paid'");
+  $net_profit_query = mysqli_query($db, "SELECT SUM(Donation_Amount) as `profit` FROM `donation` WHERE `Pay_Status` = 'Paid'");
 
   $row_net = mysqli_fetch_assoc($net_profit_query);
 
   $net_profit = $row_net['profit'];
 
-  $user_no_query = mysqli_query($con, "SELECT COUNT(*) as `sum_use` FROM `customer_registration`");
+  $user_no_query = mysqli_query($db, "SELECT COUNT(*) as `sum_use` FROM `customer_registration`");
 
   $row_user = mysqli_fetch_assoc($user_no_query);
 
   $user_no = $row_user['sum_use'];
 
-  $paidDonation_query = mysqli_query($con, "SELECT COUNT(*) AS `delcount` FROM `donation` WHERE `Pay_Status` = 'Paid'");
+  $paidDonation_query = mysqli_query($db, "SELECT COUNT(*) AS `delcount` FROM `donation` WHERE `Pay_Status` = 'Paid'");
   $paidDonation_orders = mysqli_fetch_assoc($paidDonation_query);
   $paidDonation = $paidDonation_orders['delcount'];
 
@@ -36,7 +36,7 @@
     $year = $_POST['SelYear'];
     $month = $_POST['SelMonth'];
 
-    $don_query = mysqli_query($con, "SELECT SUM(Donation_Amount) as total,COUNT(Donation_ID) as noOfDon, DATE_FORMAT(Donation_Date,'%M') as monthDon FROM total_orders WHERE YEAR(Donation_Date) = $year AND MONTH(Date_OF_Purchase) = $month AND `Pay_Status` = 'Paid'");
+    $don_query = mysqli_query($db, "SELECT SUM(Donation_Amount) as total,COUNT(Donation_ID) as noOfDon, DATE_FORMAT(Donation_Date,'%M') as monthDon FROM total_orders WHERE YEAR(Donation_Date) = $year AND MONTH(Date_OF_Purchase) = $month AND `Pay_Status` = 'Paid'");
 
     $don_row = mysqli_fetch_assoc($don_query);
 
@@ -99,7 +99,7 @@
      <aside class="main-sidebar sidebar-dark-primary elevation-4">
        <!-- Brand Logo -->
        <a href="index.php" class="brand-link">
-         <img src="..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+         <img src="..\..\img\banner\good_heart_new_trans_white.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
          <span class="brand-text font-weight-light">Gricee Grocery</span>
        </a>
 
@@ -111,7 +111,7 @@
              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
            </div>
            <div class="info">
-             <a href="index.php" class="d-block">Welcome <?php echo $aname?></a>
+             <a href="index.php" class="d-block">Welcome <?php echo $aname ?></a>
            </div>
          </div>
 
@@ -229,7 +229,7 @@
                  <div class="inner">
                    <h3>₹<?php echo $net_profit; ?></h3>
 
-                   <p>Net Profit</p>
+                   <p>Total Donation</p>
                  </div>
                  <div class="icon">
                    <i class="ion ion-stats-bars"></i>
@@ -346,7 +346,7 @@
 
                <div class="card">
                  <div class="card-header border-transparent">
-                   <h3 class="card-title">Latest Orders</h3>
+                   <h3 class="card-title">Latest Donations</h3>
 
                    <div class="card-tools">
                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -363,19 +363,23 @@
                      <table class="table m-0">
                        <thead>
                          <tr>
-                           <th>Order ID</th>
-                           <th>Item</th>
-                           <th>Status</th>
+                           <th>Donation ID</th>
+                           <th>Donors Name</th>
+                           <th>Donation Amount</th>
+                           <th>Donation Date</th>
+                           <th>Pay Status</th>
                          </tr>
                        </thead>
                        <tbody>
                          <?php
-                          $query_or = mysqli_query($con, "SELECT * FROM `total_orders` ORDER BY Order_No DESC LIMIT 5 ");
+                          $query_or = mysqli_query($db, "SELECT * FROM `donation` ORDER BY Donation_ID DESC LIMIT 5");
                           while ($row_or = mysqli_fetch_assoc($query_or)) {
                           ?>
                            <tr>
-                             <td><?php echo $row_or['Order_No']; ?></td>
-                             <td><?php echo $row_or['Product_Name']; ?></td>
+                             <td><?php echo $row_or['Donation_ID']; ?></td>
+                             <td><?php echo $row_or['Donors_Name']; ?></td>
+                             <td><?php echo $row_or['Donation_Amount']; ?></td>
+                             <td><?php echo $row_or['Donation_Date']; ?></td>
                              <td><span class="badge badge-success"><?php echo $row_or['Order_Status']; ?></span></td>
                            </tr>
                          <?php

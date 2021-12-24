@@ -1,5 +1,5 @@
 <?php
-include_once '../../../../php/config.php';
+require_once '../../../../php/config.php';
 session_start();
 
 
@@ -78,8 +78,7 @@ session_start();
               </a>
             </li>
             <li class="nav-item">
-              <a href="user-list.php" class="nav-link active"
-              >
+              <a href="user-list.php" class="nav-link active">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   User List
@@ -165,24 +164,22 @@ session_start();
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>User ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Landmark</th>
+                      <th>Customer ID</th>
+                      <th>Customer Name</th>
+                      <th>Customer Email</th>
+                      <th>Customer Street Address</th>
                       <th>House No./Flat No.</th>
                       <th>Place</th>
-                      <th>Taluka</th>
-                      <th>District</th>
                       <th>State</th>
                       <th>Pin Code</th>
+                      <th>Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Email</th>
                     </tr>
                   </thead>
                   <tbody>
 
                     <?php
-                    $sql = "SELECT * FROM user_info WHERE User_Type = 'Customer'";
+                    $sql = "SELECT * FROM customer_registration";
                     $res_data = mysqli_query($con, $sql);
 
                     while ($row = mysqli_fetch_assoc($res_data)) {
@@ -190,18 +187,16 @@ session_start();
 
                     ?>
                       <tr>
-                        <td><?php echo $row['User_ID']; ?></td>
-                        <td><?php echo $row['First_Name']; ?></td>
-                        <td><?php echo $row['Last_Name']; ?></td>
-                        <td><?php echo $row['Landmark']; ?></td>
-                        <td><?php echo $row['House_No_Name']; ?></td>
-                        <td><?php echo $row['Place']; ?></td>
-                        <td><?php echo $row['Taluka']; ?></td>
-                        <td><?php echo $row['District']; ?></td>
-                        <td><?php echo $row['State']; ?></td>
-                        <td><?php echo $row['Pin_Code']; ?></td>
+                        <td><?php echo $row['Customer_ID']; ?></td>
+                        <td><?php echo $row['Customer_Name']; ?></td>
+                        <td><?php echo $row['Customer_Email']; ?></td>
+                        <td><?php echo $row['Customer_Street_Address']; ?></td>
+                        <td><?php echo $row['Customer_HouseNo']; ?></td>
+                        <td><?php echo $row['Customer_Place']; ?></td>
+                        <td><?php echo $row['Customer_State']; ?></td>
+                        <td><?php echo $row['Customer_PinCode']; ?></td>
+                        <td><?php echo $row['Date_Of_Birth']; ?></td>
                         <td><?php echo $row['Mobile_Number']; ?></td>
-                        <td><?php echo $row['Email']; ?></td>
                       </tr>
                     <?php
 
@@ -213,18 +208,16 @@ session_start();
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>User ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Landmark</th>
+                      <th>Customer ID</th>
+                      <th>Customer Name</th>
+                      <th>Customer Email</th>
+                      <th>Customer Street Address</th>
                       <th>House No./Flat No.</th>
                       <th>Place</th>
-                      <th>Taluka</th>
-                      <th>District</th>
                       <th>State</th>
                       <th>Pin Code</th>
+                      <th>Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Email</th>
                     </tr>
                   </tfoot>
                 </table>

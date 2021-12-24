@@ -9,12 +9,12 @@ if (isset($_GET['sourcead'])) {
 
 if (isset($_POST['submit'])) {
   // code...
-  $email = $_POST['email'];
+  $uemail = $_POST['email'];
   $password = $_POST['password'];
 
   $encryptPass = md5($password);
 
-  $query = "SELECT `A_ID`,`Admin_Name` FROM `admin` WHERE Admin_Username = ? AND Admin_Password = ?";
+  $selectLogin = "SELECT `A_ID`,`Admin_Name` FROM `admin` WHERE Admin_Username = ? AND Admin_Password = ?";
 
   $pstmtLogin = $db->prepare($selectLogin);
   $pstmtLogin->bind_param("ss", $uemail, $encryptPass);
@@ -44,8 +44,10 @@ if (isset($_POST['submit'])) {
     <script type="text/javascript">
       alert('Wrong Email and Password');
     </script>
+    
 
 <?php
+
 
   }
 }
@@ -83,7 +85,7 @@ if (isset($_POST['submit'])) {
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Gricee Grocery</b> Admin</a>
+      <a href="#"><b>Good Heart</b> Admin</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -92,7 +94,7 @@ if (isset($_POST['submit'])) {
 
         <form id="adlogin" method="post">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-error="#err1">
+            <input type="text" class="form-control" placeholder="Email" name="email" id="email" required data-error="#err1">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

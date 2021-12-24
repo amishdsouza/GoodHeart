@@ -84,93 +84,82 @@ if (isset($_SESSION['login_Sess'])) {
         <div class="container-fluid">
             <div class="header-nav position-relative">
                 <div class="row align-items-center">
-
+                    <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
+                        <div class="logo">
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt="Good Heart logo"></a>
+                        </div>
+                    </div>
 
                     <div class="col-xl-5 col-lg-6 hidden-md position-static">
                         <div class="header-nav">
                             <nav>
                                 <ul>
-                                    <li><a href="javascript:void(0)" class="active"><span>Home <i class="fal fa-angle-down"></i></span></a>
-
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Home Fashion 1</a></li>
-                                            <li><a href="index2.html">Home Fashion 2</a></li>
-                                            <li><a href="index3.html">Home Fashion 3</a></li>
-                                            <li><a href="index4.html">Home Fashion 4</a></li>
-                                            <li><a href="index5.html">Home Fashion 5</a></li>
-                                            <li><a href="index6.html">Home Fashion 6</a></li>
-                                            <li><a href="index7.html">Home Fashion 7</a></li>
-
-                                        </ul>
+                                    <li><a href="index.php"><span>Home </span></a>
                                     </li>
                                     <li class="position-static"><a href="javascript:void(0)"><span>Shop <i class="fal fa-angle-down"></i></span></a>
                                         <div class="mega-menu">
                                             <div class="col-xl-7 pl-0 position-static">
                                                 <ul>
-                                                    <li><a href="shop.html">Shop Layout</a></li>
-                                                    <li><a href="shop4.html">Masonry – Grid</a></li>
-                                                    <li><a href="shop3.html">Pagination</a></li>
-                                                    <li><a href="shop2.html">Ajax Load More</a></li>
-                                                    <li><a href="shop2.html">Infinite Scroll</a></li>
-                                                    <li><a href="shop2.html">Sidebar Right</a></li>
-                                                    <li><a href="shop.html">Sidebar Left</a></li>
+                                                    <li><a href="shop.php">Shop Layout</a></li>
+                                                    <li><a href="shop4.php">Masonry – Grid</a></li>
+                                                    <li><a href="shop3.php">Pagination</a></li>
+                                                    <li><a href="shop2.php">Ajax Load More</a></li>
+                                                    <li><a href="shop2.php">Infinite Scroll</a></li>
+                                                    <li><a href="shop2.php">Sidebar Right</a></li>
+                                                    <li><a href="shop.php">Sidebar Left</a></li>
                                                 </ul>
 
                                                 <ul>
-                                                    <li><a href="shop.html">Shop Pages</a></li>
-                                                    <li><a href="shop2.html">List View</a></li>
-                                                    <li><a href="shop3.html">Small Products</a></li>
-                                                    <li><a href="shop2.html">Large Products</a></li>
-                                                    <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                                    <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                                    <li><a href="shop4.html">Shop — 5 Items</a></li>
+                                                    <li><a href="shop.php">Shop Pages</a></li>
+                                                    <li><a href="shop2.php">List View</a></li>
+                                                    <li><a href="shop3.php">Small Products</a></li>
+                                                    <li><a href="shop2.php">Large Products</a></li>
+                                                    <li><a href="shop3.php">Shop — 3 Items</a></li>
+                                                    <li><a href="shop3.php">Shop — 4 Items</a></li>
+                                                    <li><a href="shop4.php">Shop — 5 Items</a></li>
                                                 </ul>
 
                                                 <ul>
-                                                    <li><a href="single-product-2.html">Product Layout</a></li>
-                                                    <li><a href="single-product.html">Description Sticky</a></li>
-                                                    <li><a href="single-product-2.html">Product Carousels</a></li>
-                                                    <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                                    <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                                    <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                                    <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
+                                                    <li><a href="single-product-2.php">Product Layout</a></li>
+                                                    <li><a href="single-product.php">Description Sticky</a></li>
+                                                    <li><a href="single-product-2.php">Product Carousels</a></li>
+                                                    <li><a href="single-product-3.php">Gallery Modern</a></li>
+                                                    <li><a href="single-product-4.php">Thumbnail Left</a></li>
+                                                    <li><a href="single-product-5.php">Thumbnail Right</a></li>
+                                                    <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
                                     <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
-                                            <li><a href="blog.html">Grid layout</a></li>
-                                            <li><a href="blog2.html">Large image</a></li>
-                                            <li><a href="blog3.html">Left Sidebar</a></li>
-                                            <li><a href="blog4.html">Right Sidebar</a></li>
-                                            <li><a href="blog5.html">No sidebar</a></li>
+                                            <li><a href="blog.php">Grid layout</a></li>
+                                            <li><a href="blog2.php">Large image</a></li>
+                                            <li><a href="blog3.php">Left Sidebar</a></li>
+                                            <li><a href="blog4.php">Right Sidebar</a></li>
+                                            <li><a href="blog5.php">No sidebar</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
-                                            <li><a href="portfolio.html">Single project</a></li>
-                                            <li><a href="portfolio2.html">Two Columns</a></li>
-                                            <li><a href="portfolio3.html">Three Columns</a></li>
+                                            <li><a href="portfolio.php">Single project</a></li>
+                                            <li><a href="portfolio2.php">Two Columns</a></li>
+                                            <li><a href="portfolio3.php">Three Columns</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="question.html">Frequently Questions</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="question.php">Frequently Questions</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html"><span>Contact</span></a></li>
+                                    <li><a href="contact.php"><span>Contact</span></a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
-                        <div class="logo">
-                            <a href="index3.html"><img src="img/logo/logo1.png" alt=""></a>
-                        </div>
-                    </div>
+
 
                     <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
                         <div class="header-right">
@@ -236,7 +225,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">ELLE - Recliner syntheti chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">ELLE - Recliner syntheti chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -245,7 +234,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">RIMINI - Folding leather deck chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">RIMINI - Folding leather deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -254,7 +243,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -263,7 +252,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/1.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">ELLE - Recliner syntheti chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">ELLE - Recliner syntheti chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -272,7 +261,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/2.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">RIMINI - Folding leather deck chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">RIMINI - Folding leather deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -281,7 +270,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                 <img src="img/product/3.jpg" class="w-100" alt="">
                                                             </div>
                                                             <div class="search-result-desc pl-10">
-                                                                <a href="single-product-4.html" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
+                                                                <a href="single-product-4.php" class="title px-0">LANDSCAPE - Folding fabric deck chair</a>
                                                                 <div class="price">$<span>399</span></div>
                                                             </div>
                                                         </li>
@@ -293,8 +282,8 @@ if (isset($_SESSION['login_Sess'])) {
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="wishlist.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                <li><a href="cart.html"><i class="fal fa-shopping-bag">
+                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
+                                <li><a href="cart.php"><i class="fal fa-shopping-bag">
                                             <span>
                                                 <?php
                                                 if (isset($_SESSION['login_Sess'])) {
@@ -311,10 +300,10 @@ if (isset($_SESSION['login_Sess'])) {
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-4.html" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
+                                                            <a href="single-product-4.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
-                                                            <a href="single-product-4.html" class="p-0">Capitalize on low hanging fruit t</a>
+                                                            <a href="single-product-4.php" class="p-0">Capitalize on low hanging fruit t</a>
                                                             <strong>1 × $250.00</strong>
                                                         </div>
                                                         <div class="remove">
