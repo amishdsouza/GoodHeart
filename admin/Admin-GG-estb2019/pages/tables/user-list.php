@@ -6,7 +6,7 @@ if ((isset($_SESSION['adminlogin']))) {
   $aname = $_SESSION['AName'];
 } else {
   # code...
-  header('location:index.php?sourcead=/pages/tables/user-list.php');
+  header('location:../../index.php?sourcead=/pages/tables/user-list.php');
 }
 
 ?>
