@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
   $pstmtLogin->execute();
   $pstmtLogin->store_result();
   $row = $pstmtLogin->num_rows();
-  $pstmtLogin->bind_result($aid,$aname);
+  $pstmtLogin->bind_result($aid, $aname);
 
   if ($row > 0) {
     // code...
@@ -29,22 +29,21 @@ if (isset($_POST['submit'])) {
     while ($pstmtLogin->fetch()) {
       $_SESSION['AID'] = $aid;
       $_SESSION['AName'] = $aname;
-      
     }
     $_SESSION['adminlogin'] = "1";
-  
-      # code...
-      header("location:dashboard.php");
-      # code...
-    
-    
+
+    # code...
+    header("location:dashboard.php");
+    # code...
+
+
   } else {
     $_SESSION['adminlogin'] = "";
 ?>
     <script type="text/javascript">
       alert('Wrong Email and Password');
     </script>
-    
+
 
 <?php
 
@@ -85,7 +84,10 @@ if (isset($_POST['submit'])) {
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Good Heart</b> Admin</a>
+      <a href="#">
+        <img src="..\..\img\banner\good_heart_new_trans.png" alt="good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1; width: 80px; height:50px;">
+        <b>Good Heart</b> Admin
+      </a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -94,7 +96,7 @@ if (isset($_POST['submit'])) {
 
         <form id="adlogin" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Email" name="email" id="email" required data-error="#err1">
+            <input type="text" class="form-control" placeholder="Username" name="email" id="email" required data-error="#err1">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
