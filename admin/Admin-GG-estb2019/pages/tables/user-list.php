@@ -1,7 +1,13 @@
 <?php
-require_once '../../../../php/config.php';
+require_once '../../../../configs/db.php';
 session_start();
-
+if ((isset($_SESSION['adminlogin']))) {
+  # code...
+  $aname = $_SESSION['AName'];
+} else {
+  # code...
+  header('location:index.php?sourcead=/pages/tables/user-list.php');
+}
 
 ?>
 
@@ -12,7 +18,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery | Admin Panel</title>
+  <title>Good Heart | Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -48,7 +54,7 @@ session_start();
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
         <span class="brand-text font-weight-light">Gricee Grocery</span>
       </a>
 
@@ -180,7 +186,7 @@ session_start();
 
                     <?php
                     $sql = "SELECT * FROM customer_registration";
-                    $res_data = mysqli_query($con, $sql);
+                    $res_data = mysqli_query($db, $sql);
 
                     while ($row = mysqli_fetch_assoc($res_data)) {
                       // code...

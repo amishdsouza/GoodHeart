@@ -52,7 +52,7 @@
  <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Gricee Grocery | Dashboard</title>
+   <title>Good Heart | Dashboard</title>
    <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Font Awesome -->
@@ -99,8 +99,8 @@
      <aside class="main-sidebar sidebar-dark-primary elevation-4">
        <!-- Brand Logo -->
        <a href="index.php" class="brand-link">
-         <img src="..\..\img\banner\good_heart_new_trans_white.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-         <span class="brand-text font-weight-light">Gricee Grocery</span>
+         <img src="..\..\img\banner\good_heart_new_trans_white.png" alt="good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+         <span class="brand-text font-weight-light">Good Heart</span>
        </a>
 
        <!-- Sidebar -->

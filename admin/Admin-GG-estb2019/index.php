@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery - Admin Panel </title>
+  <title>Good Heart | Admin Panel </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
