@@ -1,5 +1,5 @@
 <?php
-include_once '../../configs/db.php';
+require_once '../../configs/db.php';
 session_start();
 
 if (isset($_GET['sourcead'])) {
@@ -9,19 +9,28 @@ if (isset($_GET['sourcead'])) {
 
 if (isset($_POST['submit'])) {
   // code...
-  $email = $_POST['email'];
+  $uemail = $_POST['email'];
   $password = $_POST['password'];
 
-  $query = mysqli_query($con, "SELECT * FROM `user_info` WHERE Email = '$email' AND Password = '$password' AND User_Type = 'admin'");
-  $row = mysqli_num_rows($query);
+  $encryptPass = md5($password);
+
+  $selectLogin = "SELECT `A_ID`,`Admin_Name` FROM `admin` WHERE Admin_Username = ? AND Admin_Password = ?";
+
+  $pstmtLogin = $db->prepare($selectLogin);
+  $pstmtLogin->bind_param("ss", $uemail, $encryptPass);
+  $pstmtLogin->execute();
+  $pstmtLogin->store_result();
+  $row = $pstmtLogin->num_rows();
+  $pstmtLogin->bind_result($aid,$aname);
 
   if ($row > 0) {
     // code...
-    $data = mysqli_fetch_assoc($query);
-    $adid = $data['User_ID'];
-    $adname = $data['First_Name'];
-    $_SESSION['adName'] = $adname;
-    $_SESSION['adid'] = $adid;
+
+    while ($pstmtLogin->fetch()) {
+      $_SESSION['AID'] = $aid;
+      $_SESSION['AName'] = $aname;
+      
+    }
     $_SESSION['adminlogin'] = "1";
   
       # code...
@@ -35,8 +44,10 @@ if (isset($_POST['submit'])) {
     <script type="text/javascript">
       alert('Wrong Email and Password');
     </script>
+    
 
 <?php
+
 
   }
 }
@@ -49,7 +60,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery - Admin Panel </title>
+  <title>Good Heart | Admin Panel </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -74,7 +85,7 @@ if (isset($_POST['submit'])) {
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Gricee Grocery</b> Admin</a>
+      <a href="#"><b>Good Heart</b> Admin</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -83,7 +94,7 @@ if (isset($_POST['submit'])) {
 
         <form id="adlogin" method="post">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-error="#err1">
+            <input type="text" class="form-control" placeholder="Email" name="email" id="email" required data-error="#err1">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

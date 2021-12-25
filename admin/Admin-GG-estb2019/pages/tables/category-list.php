@@ -1,15 +1,15 @@
 <?php
-include_once '../../../../php/config.php';
+require_once '../../../../configs/db.php';
 session_start();
 if (!isset($_SESSION['adminlogin'])) {
   // code...
-  header('location:../../index.php');
+  header('location:../../index.php?sourcead=/pages/tables/category-list.php');
 }
 
 if (isset($_GET['catid'])) {
   # code...
   $catid = $_GET['catid'];
-  $cat_data = mysqli_query($con, "SELECT * FROM `categories` WHERE `Category_ID`= '$catid' ");
+  $cat_data = mysqli_query($db, "SELECT * FROM `categories` WHERE `Category_ID`= '$catid' ");
 
 
   $cat_row = mysqli_fetch_assoc($cat_data);
@@ -26,7 +26,7 @@ if (isset($_POST['up_submit'])) {
   $cat_name = $_POST['cat_name'];
 
 
-  $update_query_cat = mysqli_query($con, "UPDATE `categories` SET `Category_Name`='$cat_name' WHERE `Category_ID` = '$cid'");
+  $update_query_cat = mysqli_query($db, "UPDATE `categories` SET `Category_Name`='$cat_name' WHERE `Category_ID` = '$cid'");
 
   if ($update_query_cat) {
     # code...
@@ -69,7 +69,7 @@ if (isset($_POST['del_submit'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery | Admin Panel | Category List</title>
+  <title>Good Heart | Admin Panel | Category List</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -158,8 +158,8 @@ if (isset($_POST['del_submit'])) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">Gricee Grocery</span>
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good Heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
       <!-- Sidebar -->
@@ -170,7 +170,7 @@ if (isset($_POST['del_submit'])) {
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName']; ?></a>
           </div>
         </div>
 
@@ -284,7 +284,7 @@ if (isset($_POST['del_submit'])) {
 
                     <?php
                     $sql = "SELECT * FROM `categories`";
-                    $res_data = mysqli_query($con, $sql);
+                    $res_data = mysqli_query($db, $sql);
 
                     while ($row = mysqli_fetch_assoc($res_data)) {
                       // code...
@@ -292,7 +292,7 @@ if (isset($_POST['del_submit'])) {
                     ?>
                       <tr>
                         <td><?php echo $row['Category_ID']; ?></td>
-                        <td><?php echo "<img src=\"data:image;base64," . $row['Category_Image_Temp'] . "\" alt=" . $row['Category_Image_Name'] . " width=\"50px\" height=\"50px\">"; ?></td>
+                        <td><?php echo "<img src=" . $row['Category_Admin_Location'] . " alt=" . $row['Category_Image_Name'] . " width=\"50px\" height=\"50px\">"; ?></td>
                         <td><?php echo $row['Category_Name']; ?></td>
                         <td><a href="?catid=<?php echo $row['Category_ID']; ?>" class="btn btn-info btn-sm" onclick="openModal()">
                             <i class=" fas fa-pencil-alt">
@@ -327,65 +327,65 @@ if (isset($_POST['del_submit'])) {
 
         </div>
         <?php
-            if (isset($_GET['catid'])) {
-              // code...
-              ?>
-              <div class="modal" id="myModal">
-                <!-- jquery validation -->
+        if (isset($_GET['catid'])) {
+          // code...
+        ?>
+          <div class="modal" id="myModal">
+            <!-- jquery validation -->
 
-                <div class="card card-primary">
-                  <div class="card-header">
-                    <h3 class="card-title">Add Products</h3>
-                    <span class="close cursor" onclick="closeModal()">&times;</span>
-                  </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
-                  <form id="form1" method="post">
-                    <div class="card">
-                      <div class="form-group">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add Products</h3>
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="form1" method="post">
+                <div class="card">
+                  <div class="form-group">
 
-                        <input type="hidden" name="cat_id" class="form-control" id="cat_id" onkeypress="return (event.charCode > 64 &&
+                    <input type="hidden" name="cat_id" class="form-control" id="cat_id" onkeypress="return (event.charCode > 64 &&
                         event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($cat_row['Category_ID'])) {
                                                                                                                                 echo $cat_row['Category_ID'];
                                                                                                                               }  ?>">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Category Name</label>
-                        <input type="text" name="cat_name" class="form-control" id="cat_name" required onkeypress="return (event.charCode > 64 &&
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Category Name</label>
+                    <input type="text" name="cat_name" class="form-control" id="cat_name" required onkeypress="return (event.charCode > 64 &&
                         event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($cat_row['Category_Name'])) {
                                                                                                                                 echo $cat_row['Category_Name'];
                                                                                                                               }  ?>">
-                      </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                      <button type="submit" name="up_submit" class="btn btn-primary">Submit</button>
-                      <button class="btn btn-danger btn-sm" type="submit" name="del_submit">
-                        <i class="fas fa-trash">
-                        </i>
-                        Delete
-                      </button>
-                    </div>
-
+                  </div>
                 </div>
-                </form>
-                <!-- /.row -->
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" name="up_submit" class="btn btn-primary">Submit</button>
+                  <button class="btn btn-danger btn-sm" type="submit" name="del_submit">
+                    <i class="fas fa-trash">
+                    </i>
+                    Delete
+                  </button>
+                </div>
+
+            </div>
+            </form>
+            <!-- /.row -->
           </div>
 
-              <?php
-            } else {
-              // code...
-              ?>
-                <h1>Kindly Load the data</h1>
-              <?php
-            }
+        <?php
+        } else {
+          // code...
+        ?>
+          <h1>Kindly Load the data</h1>
+        <?php
+        }
 
 
-         ?>
+        ?>
 
-  </section>
-  <!-- /.content -->
-  </div>
+      </section>
+      <!-- /.content -->
+    </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
       <div class="float-right d-none d-sm-block">

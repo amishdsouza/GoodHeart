@@ -240,7 +240,7 @@ $html = '<!DOCTYPE html>
                 </div>
                 <div class="col company-details">
                   <h2 class="name">
-                      Gricee Grocery
+                      Good Heart
                   </h2>
                   <div>Bldg No:6, Cacoda Plaza, Curchorem, Goa</div>
                   <div>(+91) 9637350999</div>
@@ -324,7 +324,7 @@ file_put_contents($file_name,$file);
 //$dompdf->stream();
 
 $email = new \SendGrid\Mail\Mail();
-$email->setFrom("mohitkamat99@gmail.com", "Gricee Grocery");
+$email->setFrom("mohitkamat99@gmail.com", "Good Heart");
 $email->setSubject("Order Delivered");
 $email->addTo($_SESSION['u_email'], $_SESSION['u_fullname']);
 $email->addContent(

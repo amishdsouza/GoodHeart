@@ -1,7 +1,13 @@
 <?php
-include_once '../../../../php/config.php';
+require_once '../../../../configs/db.php';
 session_start();
-
+if ((isset($_SESSION['adminlogin']))) {
+  # code...
+  $aname = $_SESSION['AName'];
+} else {
+  # code...
+  header('location:../../index.php?sourcead=/pages/tables/user-list.php');
+}
 
 ?>
 
@@ -12,7 +18,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery | Admin Panel</title>
+  <title>Good Heart | Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -48,8 +54,8 @@ session_start();
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">Gricee Grocery</span>
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
       <!-- Sidebar -->
@@ -60,7 +66,7 @@ session_start();
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName'];?></a>
           </div>
         </div>
 
@@ -78,8 +84,7 @@ session_start();
               </a>
             </li>
             <li class="nav-item">
-              <a href="user-list.php" class="nav-link active"
-              >
+              <a href="user-list.php" class="nav-link active">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   User List
@@ -165,43 +170,39 @@ session_start();
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>User ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Landmark</th>
+                      <th>Customer ID</th>
+                      <th>Customer Name</th>
+                      <th>Customer Email</th>
+                      <th>Customer Street Address</th>
                       <th>House No./Flat No.</th>
                       <th>Place</th>
-                      <th>Taluka</th>
-                      <th>District</th>
                       <th>State</th>
                       <th>Pin Code</th>
+                      <th>Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Email</th>
                     </tr>
                   </thead>
                   <tbody>
 
                     <?php
-                    $sql = "SELECT * FROM user_info WHERE User_Type = 'Customer'";
-                    $res_data = mysqli_query($con, $sql);
+                    $sql = "SELECT * FROM customer_registration";
+                    $res_data = mysqli_query($db, $sql);
 
                     while ($row = mysqli_fetch_assoc($res_data)) {
                       // code...
 
                     ?>
                       <tr>
-                        <td><?php echo $row['User_ID']; ?></td>
-                        <td><?php echo $row['First_Name']; ?></td>
-                        <td><?php echo $row['Last_Name']; ?></td>
-                        <td><?php echo $row['Landmark']; ?></td>
-                        <td><?php echo $row['House_No_Name']; ?></td>
-                        <td><?php echo $row['Place']; ?></td>
-                        <td><?php echo $row['Taluka']; ?></td>
-                        <td><?php echo $row['District']; ?></td>
-                        <td><?php echo $row['State']; ?></td>
-                        <td><?php echo $row['Pin_Code']; ?></td>
+                        <td><?php echo $row['Customer_ID']; ?></td>
+                        <td><?php echo $row['Customer_Name']; ?></td>
+                        <td><?php echo $row['Customer_Email']; ?></td>
+                        <td><?php echo $row['Customer_Street_Address']; ?></td>
+                        <td><?php echo $row['Customer_HouseNo']; ?></td>
+                        <td><?php echo $row['Customer_Place']; ?></td>
+                        <td><?php echo $row['Customer_State']; ?></td>
+                        <td><?php echo $row['Customer_PinCode']; ?></td>
+                        <td><?php echo $row['Date_Of_Birth']; ?></td>
                         <td><?php echo $row['Mobile_Number']; ?></td>
-                        <td><?php echo $row['Email']; ?></td>
                       </tr>
                     <?php
 
@@ -213,18 +214,16 @@ session_start();
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>User ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Landmark</th>
+                      <th>Customer ID</th>
+                      <th>Customer Name</th>
+                      <th>Customer Email</th>
+                      <th>Customer Street Address</th>
                       <th>House No./Flat No.</th>
                       <th>Place</th>
-                      <th>Taluka</th>
-                      <th>District</th>
                       <th>State</th>
                       <th>Pin Code</th>
+                      <th>Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Email</th>
                     </tr>
                   </tfoot>
                 </table>

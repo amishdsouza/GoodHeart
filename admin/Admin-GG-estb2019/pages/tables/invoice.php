@@ -201,7 +201,7 @@ session_start();
                 </div>
                 <div class="col company-details">
                   <h2 class="name">
-                      Gricee Grocery
+                      Good Heart
                   </h2>
                   <div>Bldg No:6, Cacoda Plaza, Curchorem, Goa</div>
                   <div>(+91) 9637350999</div>

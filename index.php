@@ -76,7 +76,7 @@ if (isset($_SESSION['login_Sess'])) {
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="../img/logo/logo1.png" alt=""></a>
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt=""></a>
                         </div>
                     </div>
 
@@ -371,7 +371,7 @@ if (isset($_SESSION['login_Sess'])) {
                                 } else {
                                     # code...
                                 ?>
-                                    
+
                                 <?php
                                 }
 

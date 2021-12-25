@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery | Admin Panel</title>
+  <title>Good Heart | Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -109,8 +109,8 @@ if (isset($_POST['submit'])) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">Gricee Grocery</span>
+        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Good Heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
       <!-- Sidebar -->

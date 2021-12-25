@@ -1,10 +1,10 @@
 <?php
 session_start();
-include_once '../../../../php/config.php';
+require_once '../../../../configs/db.php';
 
 if (!isset($_SESSION['adminlogin'])) {
   // code...
-  header('location:../../index.php');
+  header('location:../../index.php?sourcead=/pages/forms/add-category.php');
 }
 
 if (isset($_POST['submit'])) {
@@ -12,19 +12,21 @@ if (isset($_POST['submit'])) {
   $cat_name = $_POST['cat_name'];
   $cat_id = $_POST['cat_id'];
 
+  $cat_image = ($_FILES['cat_image']['name']);
+  $cat_image_tmp = ($_FILES['cat_image']['tmp_name']);
 
-  $cat_image = addslashes($_FILES['cat_image']['name']);
-  $cat_image_tmp = addslashes($_FILES['cat_image']['tmp_name']);
+  $folder = "../../../../img/category_images/" . $cat_image;
 
-  $cat_image_tmp = file_get_contents($cat_image_tmp);
-  $cat_image_tmp = base64_encode($cat_image_tmp);
-
-  $query = mysqli_query($con, "INSERT INTO categories(Category_ID,Category_Name,Category_Image_Name,Category_Image_Temp) VALUES ('$cat_id','$cat_name','$cat_image','$cat_image_tmp')");
-
+  //$cat_image_tmp = file_get_contents($cat_image_tmp);
+  //$cat_image_tmp = base64_encode($cat_image_tmp);
 
 
-  if ($query) {
+  $trim_loc = ltrim($folder, "./");
+
+  $query = mysqli_query($db, "INSERT INTO categories(Category_ID,Category_Name,Category_Image_Name,Category_Image_Location,Category_Admin_Location) VALUES ('$cat_id','$cat_name','$cat_image','$trim_loc','$folder')");
+  if (move_uploaded_file($cat_image_tmp, $folder)) {
     // code...
+
 ?>
     <script type="text/javascript">
       alert('Records Entered');
@@ -33,7 +35,7 @@ if (isset($_POST['submit'])) {
   <?php
   } else {
     //   // code...
-    echo ("Error description: " . mysqli_error($con));
+    echo ("Error description: " . mysqli_error($db));
   ?>
 
 
@@ -49,7 +51,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gricee Grocery | Admin Panel</title>
+  <title>Good Heart | Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,8 +94,8 @@ if (isset($_POST['submit'])) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">Gricee Grocery</span>
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
       <!-- Sidebar -->
@@ -104,7 +106,7 @@ if (isset($_POST['submit'])) {
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName']; ?></a>
           </div>
         </div>
 

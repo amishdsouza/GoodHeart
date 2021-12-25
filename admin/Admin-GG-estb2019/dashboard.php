@@ -1,34 +1,34 @@
  <?php
-  include_once '../../php/config.php';
+  require_once '../../configs/db.php';
   session_start();
   if ((isset($_SESSION['adminlogin']))) {
     # code...
-    $aname = $_SESSION['adName'];
+    $aname = $_SESSION['AName'];
   } else {
     # code...
     header('location:index.php?sourcead=dashboard.php');
   }
 
 
-  $count_orders_query = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `total_orders`");
+  $count_orders_query = mysqli_query($db, "SELECT COUNT(*) AS `count` FROM `donation`");
   $row_orders = mysqli_fetch_assoc($count_orders_query);
   $count_orders = $row_orders['count'];
 
-  $net_profit_query = mysqli_query($con, "SELECT SUM(Total_Price) as `profit` FROM `total_orders` WHERE `Payment_Status` = 'Paid'");
+  $net_profit_query = mysqli_query($db, "SELECT SUM(Donation_Amount) as `profit` FROM `donation` WHERE `Pay_Status` = 'Paid'");
 
   $row_net = mysqli_fetch_assoc($net_profit_query);
 
   $net_profit = $row_net['profit'];
 
-  $user_no_query = mysqli_query($con, "SELECT COUNT(*) as `sum_use` FROM `user_info` WHERE User_Type = 'Customer'");
+  $user_no_query = mysqli_query($db, "SELECT COUNT(*) as `sum_use` FROM `customer_registration`");
 
   $row_user = mysqli_fetch_assoc($user_no_query);
 
   $user_no = $row_user['sum_use'];
 
-  $deli_orders_query = mysqli_query($con, "SELECT COUNT(*) AS `delcount` FROM `total_orders` WHERE Order_Status = 'Delivered'");
-  $delirow_orders = mysqli_fetch_assoc($deli_orders_query);
-  $deli_orders = $delirow_orders['delcount'];
+  $paidDonation_query = mysqli_query($db, "SELECT COUNT(*) AS `delcount` FROM `donation` WHERE `Pay_Status` = 'Paid'");
+  $paidDonation_orders = mysqli_fetch_assoc($paidDonation_query);
+  $paidDonation = $paidDonation_orders['delcount'];
 
 
   if (isset($_POST['MYsubmit'])) {
@@ -36,13 +36,13 @@
     $year = $_POST['SelYear'];
     $month = $_POST['SelMonth'];
 
-    $sel_query = mysqli_query($con, "SELECT SUM(Total_Price) as total,SUM(Quantity) as noOfPro, DATE_FORMAT(Date_OF_Purchase,'%M') as month FROM total_orders WHERE YEAR(Date_OF_Purchase) = $year AND MONTH(Date_OF_Purchase) = $month AND Order_Status = 'Delivered'");
+    $don_query = mysqli_query($db, "SELECT SUM(Donation_Amount) as total,COUNT(Donation_ID) as noOfDon, DATE_FORMAT(Donation_Date,'%M') as monthDon FROM total_orders WHERE YEAR(Donation_Date) = $year AND MONTH(Date_OF_Purchase) = $month AND `Pay_Status` = 'Paid'");
 
-    $sel_row = mysqli_fetch_assoc($sel_query);
+    $don_row = mysqli_fetch_assoc($don_query);
 
-    $count_sell = $sel_row['noOfPro'];
-    $sum_sell = $sel_row['total'];
-    $month_name = $sel_row['month'];
+    $count_don = $sel_row['noOfDon'];
+    $sum_don = $sel_row['total'];
+    $month_name = $sel_row['monthDon'];
   }
   ?>
 
@@ -52,7 +52,7 @@
  <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Gricee Grocery | Dashboard</title>
+   <title>Good Heart | Dashboard</title>
    <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Font Awesome -->
@@ -99,8 +99,8 @@
      <aside class="main-sidebar sidebar-dark-primary elevation-4">
        <!-- Brand Logo -->
        <a href="index.php" class="brand-link">
-         <img src="..\..\images/GriceeGroceryfinal.png" alt="Gricee Grocery Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-         <span class="brand-text font-weight-light">Gricee Grocery</span>
+         <img src="..\..\img\banner\good_heart_new_trans_white.png" alt="good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+         <span class="brand-text font-weight-light">Good Heart</span>
        </a>
 
        <!-- Sidebar -->
@@ -111,7 +111,7 @@
              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
            </div>
            <div class="info">
-             <a href="index.php" class="d-block">Admin</a>
+             <a href="index.php" class="d-block"><?php echo $aname ?></a>
            </div>
          </div>
 
@@ -229,7 +229,7 @@
                  <div class="inner">
                    <h3>₹<?php echo $net_profit; ?></h3>
 
-                   <p>Net Profit</p>
+                   <p>Total Donation</p>
                  </div>
                  <div class="icon">
                    <i class="ion ion-stats-bars"></i>
@@ -257,7 +257,7 @@
                <!-- small box -->
                <div class="small-box bg-danger">
                  <div class="inner">
-                   <h3><?php echo $deli_orders ?></h3>
+                   <h3><?php echo $paidDonation ?></h3>
 
                    <p>Delivered Orders</p>
                  </div>
@@ -289,10 +289,12 @@
              </select>
 
              <select class="form-control" name="SelYear" style="margin-top:15px;" required id="SelYear">
-               <option value="2020">2020</option>
-               <option value="2021">2021</option>
                <option value="2022">2022</option>
                <option value="2023">2023</option>
+               <option value="2024">2022</option>
+               <option value="2025">2023</option>
+               <option value="2026">2022</option>
+               <option value="2027">2023</option>
              </select>
 
              <button type="submit" name="MYsubmit" style="margin-top:15px;" class="btn btn-primary" id="MYsubmit">Submit</button>
@@ -346,7 +348,7 @@
 
                <div class="card">
                  <div class="card-header border-transparent">
-                   <h3 class="card-title">Latest Orders</h3>
+                   <h3 class="card-title">Latest Donations</h3>
 
                    <div class="card-tools">
                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -363,19 +365,23 @@
                      <table class="table m-0">
                        <thead>
                          <tr>
-                           <th>Order ID</th>
-                           <th>Item</th>
-                           <th>Status</th>
+                           <th>Donation ID</th>
+                           <th>Donors Name</th>
+                           <th>Donation Amount</th>
+                           <th>Donation Date</th>
+                           <th>Pay Status</th>
                          </tr>
                        </thead>
                        <tbody>
                          <?php
-                          $query_or = mysqli_query($con, "SELECT * FROM `total_orders` ORDER BY Order_No DESC LIMIT 5 ");
+                          $query_or = mysqli_query($db, "SELECT * FROM `donation` ORDER BY Donation_ID DESC LIMIT 5");
                           while ($row_or = mysqli_fetch_assoc($query_or)) {
                           ?>
                            <tr>
-                             <td><?php echo $row_or['Order_No']; ?></td>
-                             <td><?php echo $row_or['Product_Name']; ?></td>
+                             <td><?php echo $row_or['Donation_ID']; ?></td>
+                             <td><?php echo $row_or['Donors_Name']; ?></td>
+                             <td><?php echo $row_or['Donation_Amount']; ?></td>
+                             <td><?php echo $row_or['Donation_Date']; ?></td>
                              <td><span class="badge badge-success"><?php echo $row_or['Order_Status']; ?></span></td>
                            </tr>
                          <?php
@@ -480,8 +486,8 @@
    <script src="dist/js/pages/dashboard.js"></script>
    <script src="dist/js/pages/dashboard3.js"></script>
    <script type="text/javascript">
-     var SalesinRs = "<?= $sum_sell ?>"
-     var SalesinNo = "<?= $count_sell ?>"
+     var DoninRs = "<?= $sum_don ?>"
+     var DoninNo = "<?= $count_don ?>"
    </script>
 
    <!-- AdminLTE for demo purposes -->

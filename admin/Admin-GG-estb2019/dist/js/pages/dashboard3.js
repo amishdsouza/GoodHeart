@@ -18,7 +18,7 @@ $(function () {
         {
           backgroundColor: '#007bff',
           borderColor    : '#007bff',
-          data           : [+ SalesinRs]
+          data           : [+ DoninRs]
         }
       ]
     },
