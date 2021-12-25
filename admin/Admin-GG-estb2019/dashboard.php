@@ -111,7 +111,7 @@
              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
            </div>
            <div class="info">
-             <a href="index.php" class="d-block">Welcome <?php echo $aname ?></a>
+             <a href="index.php" class="d-block"><?php echo $aname ?></a>
            </div>
          </div>
 
@@ -289,10 +289,12 @@
              </select>
 
              <select class="form-control" name="SelYear" style="margin-top:15px;" required id="SelYear">
-               <option value="2020">2020</option>
-               <option value="2021">2021</option>
                <option value="2022">2022</option>
                <option value="2023">2023</option>
+               <option value="2024">2022</option>
+               <option value="2025">2023</option>
+               <option value="2026">2022</option>
+               <option value="2027">2023</option>
              </select>
 
              <button type="submit" name="MYsubmit" style="margin-top:15px;" class="btn btn-primary" id="MYsubmit">Submit</button>

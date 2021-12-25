@@ -32,7 +32,7 @@ if(isset($_POST['type'])){
     //     'to'        => $otpEmail,
     //     'toname'    => "Customer",
     //     'from'      => "mohitkamat99@gmail.com",
-    //     'fromname'  => "Gricee Grocery",
+    //     'fromname'  => "Good Heart",
     //     'subject'   => "Forgot Password",
     //     'html'      => '<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     // <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

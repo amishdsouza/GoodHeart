@@ -31,7 +31,7 @@ $_SESSION['u_fullname'] = $user_data['First_Name'] . " " . $user_data['Last_Name
 $_SESSION['u_email'] = $user_data['Email'];
 
 $email = new \SendGrid\Mail\Mail();
-$email->setFrom("mohitkamat99@gmail.com", "Gricee Grocery");
+$email->setFrom("mohitkamat99@gmail.com", "Good Heart");
 $email->setSubject("Order Cancelled");
 $email->addTo($_SESSION['u_email'], $_SESSION['u_fullname']);
 $email->addContent(

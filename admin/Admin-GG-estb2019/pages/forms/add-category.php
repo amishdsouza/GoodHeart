@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
         <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">Gricee Grocery</span>
+        <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
       <!-- Sidebar -->
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName']; ?></a>
           </div>
         </div>
 
