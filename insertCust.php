@@ -1,21 +1,34 @@
 <?php
 require_once 'configs/db.php';
 session_start();
+$session_id = session_id();
 
-$uname = $mysqli->real_escape_string($_POST['uname']);
-$uemail = $mysqli->real_escape_string($_POST['uemail']);
-$pass = $mysqli->real_escape_string($_POST['pass']);
-$StreetAddress = $mysqli->real_escape_string($_POST['StreetAddress']);
-$houseNo = $mysqli->real_escape_string($_POST['houseNo']);
-$place = $mysqli->real_escape_string(strtoupper($_POST['place']));
-$state = $mysqli->real_escape_string($_POST['state']);
-$zip = $mysqli->real_escape_string($_POST['zip']);
-$dob = $mysqli->real_escape_string($_POST['dob']);
-$mobileNo = $mysqli->real_escape_string($_POST['mobileNo']);
+$required = array('uname','uemail','pass', 'StreetAddress', 'houseNo', 'place', 'state', 'zip', 'dob', 'mobileNo');
 
-$encryptPass = md5($pass);
+$error = false;
+foreach ($required as $fields) {
+    # code...
+    if(isset($_POST[$fields])){
+        $error = true;
+    }
+}
 
+if($error)
+{
+    $uname = $mysqli->real_escape_string($_POST['uname']);
+    $uemail = $mysqli->real_escape_string($_POST['uemail']);
+    $pass = $mysqli->real_escape_string($_POST['pass']);
+    $StreetAddress = $mysqli->real_escape_string($_POST['StreetAddress']);
+    $houseNo = $mysqli->real_escape_string($_POST['houseNo']);
+    $place = $mysqli->real_escape_string(strtoupper($_POST['place']));
+    $state = $mysqli->real_escape_string($_POST['state']);
+    $zip = $mysqli->real_escape_string($_POST['zip']);
+    $dob = $mysqli->real_escape_string($_POST['dob']);
+    $mobileNo = $mysqli->real_escape_string($_POST['mobileNo']);
 
+    $encryptPass = md5($pass);
+
+}
 
 
 $insertCustDetailsSql = "INSERT INTO customer_registration (`Customer_Name`, `Customer_Email`, `Customer_Password`, `Customer_Street_Address`, `Customer_HouseNo`, `Customer_Place`, `Customer_State`, `Customer_PinCode`, `Date_Of_Birth`, `Mobile_Number`) VALUES ('" . $uname . "','" . $uemail . "','" . $encryptPass  . "','" . $StreetAddress . "','" . $houseNo . "','" . $place . "','" . $state . "','" . $zip . "','" . $dob . "','" . $mobileNo . "')";

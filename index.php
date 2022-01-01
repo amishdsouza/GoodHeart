@@ -1,5 +1,36 @@
 <?php
 require_once 'configs/db.php';
+include("header.php");
+
+session_start();
+
+function loginStart($db)
+{
+    $no_of_items = 0;
+    $uid = $_SESSION['ID'];
+
+    $query = "SELECT * FROM `shopping_cart` WHERE `Customer_ID` = '$uid'";
+
+    $sql = $db->query($query) or die($db->error);
+    $row = $sql->fetch_assoc();
+    $cart_id = $row['Cart_ID'];
+
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Cart_ID` = '$cart_id'";
+    $sql2 = $db->query($query2) or die($db->error);
+    $row2 = $sql2->fetch_assoc();
+
+    $no_of_items = $row2['count'];
+
+    return $no_of_items;
+}
+
+if (isset($_SESSION['login_Sess'])) {
+    # code...
+    loginStart($db);
+} else {
+    # code... = 0;
+    $no_of_items = 0;
+}
 
 
 ?>
@@ -7,30 +38,6 @@ require_once 'configs/db.php';
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mazia - Clean Minimal eCommerce HTML5 Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/meanmenu.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
 
 <body>
     <!-- preloader -->
@@ -54,32 +61,11 @@ require_once 'configs/db.php';
                         <div class="header-nav">
                             <nav>
                                 <ul>
-                                    <li><a href="index.php" class="active"><span>Home </span></a>
-                                       
-                                    </li>
-                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i
-                                                    class="fal fa-angle-down"></i></span></a>
+                                    <li><a href="index.php" class="active"><span>Home </span></a></li>
+
+                                    <li class="position-static"><a href="shop.php"><span>Shop <i class="fal fa-angle-down"></i></span></a>
                                         <div class="mega-menu">
                                             <div class="col-xl-7 pl-0 position-static">
-                                                <ul>
-                                                    <li><a href="shop.php">Shop Layout</a></li>
-                                                    <li><a href="shop4.php">Masonry – Grid</a></li>
-                                                    <li><a href="shop3.php">Pagination</a></li>
-                                                    <li><a href="shop2.php">Ajax Load More</a></li>
-                                                    <li><a href="shop2.php">Infinite Scroll</a></li>
-                                                    <li><a href="shop2.php">Sidebar Right</a></li>
-                                                    <li><a href="shop.php">Sidebar Left</a></li>
-                                                </ul>
-
-                                                <ul>
-                                                    <li><a href="shop.php">Shop Pages</a></li>
-                                                    <li><a href="shop2.php">List View</a></li>
-                                                    <li><a href="shop3.php">Small Products</a></li>
-                                                    <li><a href="shop2.php">Large Products</a></li>
-                                                    <li><a href="shop3.php">Shop — 3 Items</a></li>
-                                                    <li><a href="shop3.php">Shop — 4 Items</a></li>
-                                                    <li><a href="shop4.php">Shop — 5 Items</a></li>
-                                                </ul>
 
                                                 <ul>
                                                     <li><a href="single-product-2.php">Product Layout</a></li>
@@ -93,7 +79,7 @@ require_once 'configs/db.php';
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
+                                    <li><a href="blog.php"><span>Blog <i class="fal fa-angle-down"></i></span>
                                         </a>
                                         <ul class="submenu">
                                             <li><a href="blog.php">Grid layout</a></li>
@@ -103,23 +89,20 @@ require_once 'configs/db.php';
                                             <li><a href="blog5.php">No sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Portfolio <i
-                                                    class="fal fa-angle-down"></i></span> </a>
+                                    <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
                                         <ul class="submenu">
                                             <li><a href="portfolio.php">Single project</a></li>
                                             <li><a href="portfolio2.php">Two Columns</a></li>
                                             <li><a href="portfolio3.php">Three Columns</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Page</span> <i
-                                                class="fal fa-angle-down"></i></a>
+                                    <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="question.php">Frequently Questions</a></li>
-                                            <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.php"><span>Contact</span></a></li>
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -128,11 +111,12 @@ require_once 'configs/db.php';
                     <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
                         <div class="header-right">
                             <ul class="text-right">
-                                <li><a href="login.php" class="account"><i class="fal fa-user-friends"></i>
-                                        <article class="account-registar d-inline-block">
-                                            Login/Sign up
-                                        </article>
-                                    </a></li>
+                            
+                            <li>
+                                <a href="giveaway.php" class="account"> <i class="fas fa-gift"> </i><?php echo "GIVEAWAY" ?></a>
+                            </li>
+
+
                                 <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
 
                                     <!-- search popup -->
@@ -235,17 +219,30 @@ require_once 'configs/db.php';
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom"
-                                        title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
+                                <li>
+                                    <a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist">
+                                        <i class="fal fa-heart"><span>0</span></i>
+                                    </a>
+                                </li>
+
+                                <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag">
+                                            <span>
+                                                <?php
+                                                if (isset($_SESSION['login_Sess'])) {
+                                                    echo loginStart($db);
+                                                } else {
+                                                    echo "0";
+                                                }
+                                                ?>
+                                            </span>
+                                        </i></a>
                                     <div class="minicart">
                                         <div class="minicart-body">
                                             <div class="minicart-content">
                                                 <ul class="text-left">
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
@@ -259,8 +256,7 @@ require_once 'configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
@@ -274,8 +270,7 @@ require_once 'configs/db.php';
 
                                                     <li>
                                                         <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg"
-                                                                    class="w-100" alt=""></a>
+                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
                                                         </div>
                                                         <div class="minicart-desc">
                                                             <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
@@ -294,24 +289,48 @@ require_once 'configs/db.php';
                                                 <span class="price float-right">503.00</span>
                                             </div>
                                             <div class="minicart-checkout-links">
-                                                <a href="cart.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
+                                                <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
                                                     cart</a>
-                                                <a href="checkout.php"
-                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
-                                    <ul class="submenu text-right">
-                                        <li><a href="login.php">My Account</a></li>
-                                        <li><a href="checkout.php">Checkout</a></li>
-                                        <li><a href="shop.php">Shop</a></li>
-                                        <li><a href="wishlist.php">Wishlist</a></li>
-                                        <li><a href="question.php">Frequently</a></li>
-                                    </ul>
+                                
+                                <li>
+                                    <?php
+                                    if (isset($_SESSION['login_Sess'])) {
+                                        # code...
+                                    ?>
+                                        <a href="" class="account"><i class="fal fa-user-friends"></i>
+                                            <article class="account-registar d-inline-block">
+                                                <?php echo $_SESSION['CName']; ?>
+                                            </article>
+                                        </a>
+                                        <ul class="submenu text-right">
+                                            <li><a href="">My Account</a></li>
+                                            <li><a href="shop.php">Shop</a></li>
+                                            <li><a href="wishlist.php">Wishlist</a></li>
+                                            <li><a href="logout.php">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <?php
+                                    } else {
+                                        # code...
+                                    ?>
+                                        <a href="login.php" class="account"><i class="fal fa-user-friends"></i>
+                                            <article class="account-registar d-inline-block">
+                                                Login/Sign up
+                                            </article>
+                                        </a>
+                                    <?php
+                                    }
+
+                                    ?>
+
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -438,9 +457,6 @@ require_once 'configs/db.php';
     </section>
     <!-- slider section end -->
 
-
-
-
     <!-- category section start -->
     <section class="category mt-100">
         <div class="container">
@@ -524,8 +540,7 @@ require_once 'configs/db.php';
                             <div class="newsletter-form">
                                 <form action="#" method="POST">
                                     <input type="text" placeholder="Search for our newsletter...">
-                                    <button type="submit"
-                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                    <button type="submit" class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
                                         Now</button>
                                 </form>
                             </div>
@@ -533,13 +548,12 @@ require_once 'configs/db.php';
 
                     </div>
                 </div>
-               
+
                 <!-- /. footer bottom -->
             </div>
 
         </div>
         <!-- footer top -->
-
         <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
                 <div class="footer-bottom-wrapper">
@@ -555,7 +569,7 @@ require_once 'configs/db.php';
                                             extremely customizable, easy to use and fully responsive and retina ready.
                                         </p>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             <div class="col-xl-7 col-lg-7 col-md-12">
@@ -731,35 +745,6 @@ require_once 'configs/db.php';
     </section>
     <!-- startup popup end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- JS here -->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/one-page-nav-min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/jquery.meanmenu.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </body>
 
