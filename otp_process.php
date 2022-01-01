@@ -32,7 +32,7 @@ if(isset($_POST['type'])){
     //     'to'        => $otpEmail,
     //     'toname'    => "Customer",
     //     'from'      => "mohitkamat99@gmail.com",
-    //     'fromname'  => "Gricee Grocery",
+    //     'fromname'  => "Good Heart",
     //     'subject'   => "Forgot Password",
     //     'html'      => '<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     // <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -88,7 +88,7 @@ if(isset($_POST['type'])){
       $curl = curl_init();
 
       curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://2factor.in/API/V1/442f3f97-4956-11ec-b710-0200cd936042/SMS/$mobile/$rndno/GHEART",
+        CURLOPT_URL => "https://2factor.in/API/V1/442f3f97-4956-11ec-b710-0200cd936042/SMS/$mobile/$rndno/goodheart",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -110,7 +110,7 @@ if(isset($_POST['type'])){
         echo "cURL Error #:" . $err;
       } else {
         //echo "sent";
-        echo json_encode(array("statusCode" => 201));
+        echo json_encode(array("statusCode" => 200));
       }
 
       //return true;
@@ -139,11 +139,13 @@ if(isset($_POST['type'])){
 
 if($type == 3)
 {
-  if (isset($_SESSION['OTP'])) {
+  if (isset($_POST['otpinput'])) {
     # code...
     $SessOTP =  $_SESSION['OTP'];
   
-    $inpOTP = $_POST['otpsub'];
+    $inpOTP = $_POST['otpinput'];
+
+    //echo $_SESSION['OTP'];
 
     if ($inpOTP == $SessOTP) {
       # code...
@@ -155,6 +157,11 @@ if($type == 3)
     
      
   } 
+
+  else{
+    echo $_SESSION['OTP'];
+    echo ($_POST['otpinput']);
+  }
     }
 
 
