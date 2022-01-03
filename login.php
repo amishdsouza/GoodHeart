@@ -3,6 +3,10 @@ require_once 'configs/db.php';
 session_start();
 
 
+if (isset($_GET['source'])) {
+    $source = $_GET['source'];
+}
+
 
 
 
@@ -59,7 +63,7 @@ session_start();
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="img/logo/logo.png" alt=""></a>
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt="Good Heart logo"></a>
                         </div>
                     </div>
 
@@ -145,135 +149,67 @@ session_start();
                                         </article>
                                     </a>
                                 </li>
-
-                                <li><a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag"><span>5</span></i></a>
-                                    <div class="minicart">
-                                        <div class="minicart-body">
-                                            <div class="minicart-content">
-                                                <ul class="text-left">
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
-                                                                t</a>
-                                                            <strong>1 × $250.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
-                                                            <strong>1 × $150.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-
-
-                                                    <li>
-                                                        <div class="minicart-img">
-                                                            <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
-                                                        </div>
-                                                        <div class="minicart-desc">
-                                                            <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
-                                                            <strong>1 × $150.00</strong>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <i class="fal fa-times"></i>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="minicart-checkout">
-                                            <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                                <strong class="float-left">Subtotal:</strong>
-                                                <span class="price float-right">503.00</span>
-                                            </div>
-                                            <div class="minicart-checkout-links">
-                                                <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
-                                                    cart</a>
-                                                <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
-                                    <ul class="submenu text-right">
-                                        <li><a href="login.php">My Account</a></li>
-                                        <li><a href="checkout.php">Checkout</a></li>
-                                        <li><a href="shop.php">Shop</a></li>
-                                        <li><a href="wishlist.php">Wishlist</a></li>
-                                        <li><a href="question.php">Frequently</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                </li>
+                </ul>
             </div>
-            <div class="mobile-menu visible-sm">
-                <div id="mobile-menu">
-                    <ul>
-                        <li><a class="pl-3" href="index.php">Home</a>
-                        </li>
-                        <li><a class="pl-3" href="javascript:void(0)">Shop</a>
-                            <ul>
-                                <li><a href="shop.php">Shop Layout</a></li>
-                                <li><a href="shop4.php">Masonry – Grid</a></li>
-                                <li><a href="shop3.php">Pagination</a></li>
-                                <li><a href="shop2.php">Ajax Load More</a></li>
-                                <li><a href="shop2.php">Infinite Scroll</a></li>
-                                <li><a href="shop2.php">Sidebar Right</a></li>
-                                <li><a href="shop.php">Sidebar Left</a></li>
-                                <li><a href="shop.php">Shop Pages</a></li>
-                                <li><a href="shop2.php">List View</a></li>
-                                <li><a href="shop3.php">Small Products</a></li>
-                                <li><a href="shop2.php">Large Products</a></li>
-                                <li><a href="shop3.php">Shop — 3 Items</a></li>
-                                <li><a href="shop3.php">Shop — 4 Items</a></li>
-                                <li><a href="shop4.php">Shop — 5 Items</a></li>
-                                <li><a href="single-product-2.php">Product Layout</a></li>
-                                <li><a href="single-product.php">Description Sticky</a></li>
-                                <li><a href="single-product-2.php">Product Carousels</a></li>
-                                <li><a href="single-product-3.php">Gallery Modern</a></li>
-                                <li><a href="single-product-4.php">Thumbnail Left</a></li>
-                                <li><a href="single-product-5.php">Thumbnail Right</a></li>
-                                <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Blog</a>
-                            <ul>
-                                <li><a href="blog.php">Grid layout</a></li>
-                                <li><a href="blog2.php">Large image</a></li>
-                                <li><a href="blog3.php">Left Sidebar</a></li>
-                                <li><a href="blog4.php">Right Sidebar</a></li>
-                                <li><a href="blog5.php">No sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Portfolio</a>
-                            <ul>
-                                <li><a href="portfolio.php">Single project</a></li>
-                                <li><a href="portfolio2.php">Two Columns</a></li>
-                                <li><a href="portfolio3.php">Three Columns</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
+        </div>
+        </div>
+        </div>
+        <div class="mobile-menu visible-sm">
+            <div id="mobile-menu">
+                <ul>
+                    <li><a class="pl-3" href="index.php">Home</a>
+                    </li>
+                    <li><a class="pl-3" href="javascript:void(0)">Shop</a>
+                        <ul>
+                            <li><a href="shop.php">Shop Layout</a></li>
+                            <li><a href="shop4.php">Masonry – Grid</a></li>
+                            <li><a href="shop3.php">Pagination</a></li>
+                            <li><a href="shop2.php">Ajax Load More</a></li>
+                            <li><a href="shop2.php">Infinite Scroll</a></li>
+                            <li><a href="shop2.php">Sidebar Right</a></li>
+                            <li><a href="shop.php">Sidebar Left</a></li>
+                            <li><a href="shop.php">Shop Pages</a></li>
+                            <li><a href="shop2.php">List View</a></li>
+                            <li><a href="shop3.php">Small Products</a></li>
+                            <li><a href="shop2.php">Large Products</a></li>
+                            <li><a href="shop3.php">Shop — 3 Items</a></li>
+                            <li><a href="shop3.php">Shop — 4 Items</a></li>
+                            <li><a href="shop4.php">Shop — 5 Items</a></li>
+                            <li><a href="single-product-2.php">Product Layout</a></li>
+                            <li><a href="single-product.php">Description Sticky</a></li>
+                            <li><a href="single-product-2.php">Product Carousels</a></li>
+                            <li><a href="single-product-3.php">Gallery Modern</a></li>
+                            <li><a href="single-product-4.php">Thumbnail Left</a></li>
+                            <li><a href="single-product-5.php">Thumbnail Right</a></li>
+                            <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">Blog</a>
+                        <ul>
+                            <li><a href="blog.php">Grid layout</a></li>
+                            <li><a href="blog2.php">Large image</a></li>
+                            <li><a href="blog3.php">Left Sidebar</a></li>
+                            <li><a href="blog4.php">Right Sidebar</a></li>
+                            <li><a href="blog5.php">No sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">Portfolio</a>
+                        <ul>
+                            <li><a href="portfolio.php">Single project</a></li>
+                            <li><a href="portfolio2.php">Two Columns</a></li>
+                            <li><a href="portfolio3.php">Three Columns</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
             </div>
-            <!-- /. mobile nav -->
+        </div>
+        <!-- /. mobile nav -->
         </div>
     </header>
     <!-- header section end -->
@@ -521,10 +457,7 @@ session_start();
                         type: "POST",
                         url: "loginauth.php",
                         //dataType: 'json',
-                        data: {
-                            uemail: uemail,
-                            upass: upass
-                        },
+                        data: $('#loginform').serialize(),
                         success: function(dataResult) {
                             //var db = JSON.stringify(dataResult)
                             var dataResult = JSON.parse(dataResult);
