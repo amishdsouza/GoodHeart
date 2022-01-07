@@ -1,6 +1,7 @@
 <?php
-require_once 'configs/db.php';
+require_once("configs/db.php");
 include("header.php");
+
 
 session_start();
 
