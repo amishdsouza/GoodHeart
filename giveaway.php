@@ -717,7 +717,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                                     <form action="#" method="POST">
                                         <input type="number" value="1">
                                         <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
-                                            cart</a>
+                                            cart</button</a>
                                     </form>
                                 </div>
 
