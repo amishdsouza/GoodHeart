@@ -3,7 +3,7 @@ require_once 'configs/db.php';
 include("header.php");
 
 session_start();
-
+/*
 function loginStart($db)
 {
     $no_of_items = 0;
@@ -33,18 +33,15 @@ if (isset($_SESSION['login_Sess'])) {
 }
 
 
+*/
 ?>
-
 <!doctype html>
 <html lang="en">
-
-
 <body>
     <!-- preloader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
-
 
     <!-- header section start -->
     <header class="header pt-30 pb-30  header-sticky">
@@ -375,9 +372,6 @@ if (isset($_SESSION['login_Sess'])) {
         </div>
     </header>
     <!-- header section end -->
-
-
-
 
     <!-- slider section start -->
     <section class="slider">
@@ -733,5 +727,4 @@ if (isset($_SESSION['login_Sess'])) {
 
     <script src="js/main.js"></script>
 </body>
-
 </html>
