@@ -3,7 +3,7 @@ require_once 'configs/db.php';
 include("header.php");
 
 session_start();
-/*
+
 function loginStart($db)
 {
     $no_of_items = 0;
@@ -33,15 +33,18 @@ if (isset($_SESSION['login_Sess'])) {
 }
 
 
-*/
 ?>
+
 <!doctype html>
 <html lang="en">
+
+
 <body>
     <!-- preloader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
+
 
     <!-- header section start -->
     <header class="header pt-30 pb-30  header-sticky">
@@ -99,7 +102,7 @@ if (isset($_SESSION['login_Sess'])) {
                                             <li><a href="question.php">Frequently Questions</a></li>
                                         </ul>
                                     </li>
-                                    
+
                                 </ul>
                             </nav>
                         </div>
@@ -108,10 +111,10 @@ if (isset($_SESSION['login_Sess'])) {
                     <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
                         <div class="header-right">
                             <ul class="text-right">
-                            
-                            <li>
-                                <a href="giveaway.php" class="account"> <i class="fas fa-gift"> </i><?php echo "GIVEAWAY" ?></a>
-                            </li>
+
+                                <li>
+                                    <a href="giveaway.php" class="account"> <i class="fas fa-gift"> </i><?php echo "GIVEAWAY" ?></a>
+                                </li>
 
 
                                 <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
@@ -293,7 +296,7 @@ if (isset($_SESSION['login_Sess'])) {
                                         </div>
                                     </div>
                                 </li>
-                                
+
                                 <li>
                                     <?php
                                     if (isset($_SESSION['login_Sess'])) {
@@ -310,10 +313,20 @@ if (isset($_SESSION['login_Sess'])) {
                                             <li><a href="wishlist.php">Wishlist</a></li>
                                             <li><a href="logout.php">Log Out</a></li>
                                         </ul>
-                                    </li>
+                                    <?php
+                                    } else {
+
+                                    ?>
+                                        <a href="register.php" class="account"><i class="fal fa-user-friends"></i>
+                                            <article class="account-registar d-inline-block">
+                                                Register/Login
+                                            </article>
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
 
                                 </li>
-                                
                             </ul>
                         </div>
                     </div>
@@ -372,6 +385,9 @@ if (isset($_SESSION['login_Sess'])) {
         </div>
     </header>
     <!-- header section end -->
+
+
+
 
     <!-- slider section start -->
     <section class="slider">
@@ -689,42 +705,10 @@ if (isset($_SESSION['login_Sess'])) {
     <!-- product popup end -->
 
     <!-- startup popup start -->
-    <section id="startup-popup" class="d-none">
-        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
-        <div class="startup-popup-body">
-            <div class="startup-body-content h-100">
-                <div class="row justify-content-end h-100">
-                    <div class="col-6 h-100">
-                        <div class="startup-popup-inner h-100">
-                            <div class="close-search-popup">
-                                <i class="fal fa-times"></i>
-                            </div>
-                            <div class="startup-popup-main-content">
-                                <h2>Get Our Email Letter</h2>
-                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
-                                    arrivals, special offers
-                                    and other discount information.</p>
-                                <div class="startup-subscribe-form">
-                                    <form action="#" method="POST">
-                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
-                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="startup-popup-sub-content">
-                                <div class="popup-warning">
-                                    <input type="checkbox" id="startup-popup-hidden">
-                                    <label for="startup-popup-hidden">Do not show the popup again</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- startup popup end -->
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
