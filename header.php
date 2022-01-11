@@ -68,5 +68,7 @@
       setInterval(show_mycart,1000);
    });
    </script>
+</head>
+<body>
 </body>
 </html>

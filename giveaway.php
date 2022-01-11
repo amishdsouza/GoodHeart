@@ -1,6 +1,7 @@
 <?php
-require_once 'configs/db.php';
+require_once("configs/db.php");
 include("header.php");
+
 
 session_start();
 
@@ -716,7 +717,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                                     <form action="#" method="POST">
                                         <input type="number" value="1">
                                         <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
-                                            cart</a>
+                                            cart</button</a>
                                     </form>
                                 </div>
 
