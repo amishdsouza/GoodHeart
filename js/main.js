@@ -517,10 +517,229 @@
         newVal = 0;
       }
     }
+})
+
+/* magnificPopup img view */
+$('.popup-image').magnificPopup({
+	type: 'image',
+	gallery: {
+	  enabled: true
+	}
+});
+
+/* magnificPopup video view */
+$('.video-popup').magnificPopup({
+	type: 'iframe',
+	iframe: {
+		markup: '<div class="mfp-iframe-scaler">'+
+				  '<div class="mfp-close"></div>'+
+				  '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+				'</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+
+		patterns: {
+		  youtube: {
+			index: 'youtube.com/',
+			id: 'v=',
+
+			src: 'https://www.youtube.com/embed/e2FKXPzsT7E'
+		  },
+
+		},
+
+		srcAction: 'iframe_src',
+	  }
+});
+
+
+// isotop
+$('.grid').imagesLoaded( function() {
+	// init Isotope
+	var $grid = $('.grid').isotope({
+	  itemSelector: '.grid-item',
+	  percentPosition: true,
+	  masonry: {
+		// use outer width of grid-sizer for columnWidth
+		columnWidth: '.grid-item',
+	  }
+	});
+});
+
+// filter items on button click
+$('.portfolio-menu').on( 'click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+
+//for menu active class
+$('.portfolio-menu button').on('click', function(event) {
+	$(this).siblings('.active').removeClass('active');
+	$(this).addClass('active');
+	event.preventDefault();
+});
+
+
+
+
+// scrollToTop
+$.scrollUp({
+	scrollName: 'scrollUp', // Element ID
+	topDistance: '300', // Distance from top before showing element (px)
+	topSpeed: 300, // Speed back to top (ms)
+	animation: 'fade', // Fade, slide, none
+	animationInSpeed: 200, // Animation in speed (ms)
+	animationOutSpeed: 200, // Animation out speed (ms)
+	scrollText: "<i class='fal fa-angle-double-up'></i>", // Text for element
+	activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+});
+
+// WOW active
+new WOW().init();
+
+
+// bootstrap tooltip
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+  })
+
+//   header search popup
+$('header.header i.fa-search').on('click',function(){
+	$('#search-popup').css({
+		'opacity' : '1',
+		'visibility' : 'visible'
+	})
+})
+$('.close-search-popup').on('click',function(){
+	$('#search-popup').css({
+		'opacity' : '0',
+		'visibility' : 'hidden'
+	})
+})
+
+
+// slick slider text content
+// $('#slick-slide-control00').html('Lookbook');
+// $('#slick-slide-control01').html('Over.S18');
+// $('#slick-slide-control02').html('Style.S16');
+// // slick slider number content
+ $('.number-dots #slick-slide-control00').html('01');
+$('.number-dots #slick-slide-control01').html('02');
+$('.number-dots #slick-slide-control02').html('03');
+
+
+
+
+
+	/* Price filter active */
+	if ($("#slider-range").length) {
+		$("#slider-range").slider({
+			range: true,
+			min: 0,
+			max: 500,
+			values: [75, 300],
+			slide: function (event, ui) {
+				$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+			}
+		});
+		$("#amount").val("$" + $("#slider-range").slider("values", 0) +
+			" - $" + $("#slider-range").slider("values", 1));
+		$('#filter-btn').on('click', function () {
+			$('.filter-widget').slideToggle(1000);
+		});
+
+	}
+
+	if ($("#slider-range-2").length) {
+		$("#slider-range-2").slider({
+			range: true,
+			min: 0,
+			max: 500,
+			values: [75, 300],
+			slide: function (event, ui) {
+				$("#amount-2").val("$" + ui.values[0] + " - $" + ui.values[1]);
+			}
+		});
+		$("#amount-2").val("$" + $("#slider-range-2").slider("values", 0) +
+			" - $" + $("#slider-range-2").slider("values", 1));
+		$('#filter-btn-2').on('click', function () {
+			$('.filter-widget').slideToggle(1000);
+		});
+
+	}
+
+	// filter widget toggle
+	$('.filter-popup').hide();
+	$('.filter-widget-toggle').on('click',function(){
+		$('.filter-popup').slideToggle(500);
+	})
+
+
+
+	// fixed sidebar
+	$( document ).ready(function() {
+
+		var setState = function() {
+		  if(length > yPos && width > xPos){
+			//use the fixed sidebar state
+			$('#sidebar-fluid').hide();
+			$('#sidebar-fixed').show();
+		  }else{
+			//use the fluid sidebar state
+			$('#sidebar-fluid').show();
+			$('#sidebar-fixed').hide();
+		  }
+		}
+
+		var xPos = 683;
+		var yPos = 240;
+
+		var length = $(window).scrollTop();
+		var width = $(window).width();
+
+		$( window ).scroll(function (event) {
+		  length = $(window).scrollTop();
+		  setState();
+		});
+
+		$( window ).resize(function() {
+		  width = $(window).width();
+		  setState();
+		});
+
+	  });
+
+
+
+	//   price calculate
+	$('.price-calculate').on('click',function(){
+		$('.calculate-shipping-box').slideToggle(500);
+	})
+
+/*----- cart-plus-minus-button -----*/
+$(".cart-plus-minus").append('<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>');
+$(".qtybutton").on("click", function () {
+	var $button = $(this);
+	var oldValue = $button.parent().find("input").val();
+	if ($button.text() == "+") {
+		var newVal = parseFloat(oldValue) + 1;
+	} else {
+		// Don't allow decrementing below zero
+		if (oldValue > 0) {
+			var newVal = parseFloat(oldValue) - 1;
+		} else {
+			newVal = 0;
+		}
+	}
+	$button.parent().find("input").val(newVal);
+});
+
+
+/*-------------------------
+=======
     $button.parent().find("input").val(newVal);
   });
 
   /*-------------------------
+
 	showlogin toggle function
 --------------------------*/
   $("#showlogin").on("click", function () {

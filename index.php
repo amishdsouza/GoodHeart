@@ -6,13 +6,7 @@ function loginStart($db)
     $no_of_items = 0;
     $uid = $_SESSION['ID'];
 
-    $query = "SELECT * FROM `shopping_cart` WHERE `Customer_ID` = '$uid'";
-
-    $sql = $db->query($query) or die($db->error);
-    $row = $sql->fetch_assoc();
-    $cart_id = $row['Cart_ID'];
-
-    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Cart_ID` = '$cart_id'";
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Customer_ID` = '$uid'";
     $sql2 = $db->query($query2) or die($db->error);
     $row2 = $sql2->fetch_assoc();
 
@@ -34,6 +28,39 @@ if (isset($_SESSION['login_Sess'])) {
 
 <!doctype html>
 <html lang="en">
+
+
+<body>
+    <!-- preloader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- header section start -->
+    
+    <!-- header section end -->
+
+
+
+
+    <!-- slider section start -->
+    <section class="slider">
+        <div class="slider-active">
+            <div class="single-slider d-flex align-items-center h-950" data-background="img/slider/1.jpg">
+                <div class="container">
+                    <div class="single-slider-inner d-flex align-items-center justify-content-start">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading">
+                                <h2 class="mb-0" data-animation="fadeInUp" data-delay=".2s">Perfect</h2>
+                                <h2 class="mb-0" data-animation="fadeInUp" data-delay=".4s">Kids Collection</h2>
+                            </div>
+                            <div class="slider-desc" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0">New Spring drops from Over. Shop the Collection</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="shop2.php" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                    now</a>
     <body>
         <!-- preloader -->
         <div id="loader-wrapper">

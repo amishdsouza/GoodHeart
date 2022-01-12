@@ -1,13 +1,86 @@
 <?php
+
+use FontLib\Table\Type\head;
+
 require_once 'configs/db.php';
 session_start();
-
 
 if (isset($_GET['source'])) {
     $source = $_GET['source'];
 }
 
+if (isset($_POST['loginbtn'])) {
+    $required = array('uemail', 'upass');
 
+    $error = false;
+    if (isset($_GET['source'])) {
+        $source = $_GET['source'];
+    }
+
+    foreach ($required as $fields) {
+        # code...
+        if (isset($_POST[$fields])) {
+            $error = true;
+        }
+    }
+
+    if ($error) {
+        # code...
+        $uemail = $db->real_escape_string($_POST['uemail']);
+        $upass = $db->real_escape_string($_POST['upass']);
+        $encryptPass = md5($upass);
+    }
+
+
+
+
+
+    $selectLogin = "SELECT `Customer_ID`, `Customer_Name`, `Customer_Email` FROM `customer_registration` WHERE Customer_Email = ? AND Customer_Password = ?";
+
+    $pstmtLogin = $db->prepare($selectLogin);
+    $pstmtLogin->bind_param("ss", $uemail, $encryptPass);
+    $pstmtLogin->execute();
+    $pstmtLogin->store_result();
+    $row = $pstmtLogin->num_rows();
+    $pstmtLogin->bind_result($cid, $cname, $cemail);
+    //var_dump($row_data);
+
+    if ($row > 0) {
+        # code...
+
+
+        //$data = $row_data->fetch_assoc() or die($db->error);
+        //$data = $row_data->fetch_assoc();
+        while ($pstmtLogin->fetch()) {
+            $_SESSION['ID'] = $cid;
+            $_SESSION['CName'] = $cname;
+            $_SESSION['CEmail'] = $cemail;
+        }
+
+
+        $_SESSION['login_Sess'] = true;
+
+        if (isset($source)) {
+            # code...
+            header("location:$source");
+        } else {
+            # code...
+            header("location:index.php");
+        }
+        echo json_encode(array("statusCode" => 200));
+    } else {
+        # code...
+        //echo json_encode(array("statusCode" => 201));
+        $_SESSION['login_Sess'] = false;
+
+?>
+        <script>
+            alert("Wrong Credentials");
+        </script>
+<?php
+
+    }
+}
 
 
 ?>
@@ -238,7 +311,7 @@ if (isset($_GET['source'])) {
                                 </span>
                             </div>
 
-                            <button type="button" id="loginbtn" name="loginbtn" class="btn theme-btn w-100">Login Now</button>
+                            <button type="submit" id="loginbtn" name="loginbtn" class="btn theme-btn w-100">Login Now</button>
 
                             <div class="or-divide">
                                 <span>or</span>
@@ -445,32 +518,6 @@ if (isset($_GET['source'])) {
         $(document).ready(function() {
 
             $("#loginform").validate();
-
-            $("#loginbtn").on('click', function() {
-                var uemail = $('#uemail').val();
-                var upass = $('#upass').val();
-
-                if (!$('#loginform').valid()) {
-                    return false;
-                } else {
-                    $.ajax({
-                        type: "POST",
-                        url: "loginauth.php",
-                        //dataType: 'json',
-                        data: $('#loginform').serialize(),
-                        success: function(dataResult) {
-                            //var db = JSON.stringify(dataResult)
-                            var dataResult = JSON.parse(dataResult);
-
-                            if (dataResult.statusCode == 200) {
-                                location.href = "index.php";
-                            } else if (dataResult.statusCode == 201) {
-                                $("#errorLogin").show();
-                            }
-                        }
-                    });
-                }
-            });
         });
     </script>
 </body>
