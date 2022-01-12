@@ -1,5 +1,4 @@
 <?php
-
 require_once 'configs/db.php';
 session_start();
 ?>
@@ -54,8 +53,6 @@ session_start();
    <script src="js/jquery.magnific-popup.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
-
-
    <script type="text/javascript">
       $(document).ready(function() {
 
@@ -427,7 +424,7 @@ session_start();
       </div>
    </header>
    <!-- header section end -->
-
+   
 </body>
 
 </html>
