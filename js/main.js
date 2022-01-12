@@ -384,11 +384,11 @@ $('.close-search-popup').on('click',function(){
 
 
 // slick slider text content
-$('#slick-slide-control00').html('Lookbook');
-$('#slick-slide-control01').html('Over.S18');
-$('#slick-slide-control02').html('Style.S16');
-// slick slider number content
-$('.number-dots #slick-slide-control00').html('01');
+// $('#slick-slide-control00').html('Lookbook');
+// $('#slick-slide-control01').html('Over.S18');
+// $('#slick-slide-control02').html('Style.S16');
+// // slick slider number content
+ $('.number-dots #slick-slide-control00').html('01');
 $('.number-dots #slick-slide-control01').html('02');
 $('.number-dots #slick-slide-control02').html('03');
 

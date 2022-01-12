@@ -8,28 +8,19 @@ function loginStart($db)
     $no_of_items = 0;
     $uid = $_SESSION['ID'];
 
-    $query = "SELECT * FROM `shopping_cart` WHERE `Customer_ID` = '$uid'";
-
-    $sql = $db->query($query) or die($db->error);
-    $row = $sql->fetch_assoc();
-    $cart_id = $row['Cart_ID'];
-
-    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Cart_ID` = '$cart_id'";
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Customer_ID` = '$uid'";
     $sql2 = $db->query($query2) or die($db->error);
     $row2 = $sql2->fetch_assoc();
-
     $no_of_items = $row2['count'];
-
     return $no_of_items;
 }
-
 if (isset($_SESSION['login_Sess'])) {
     # code...
     loginStart($db);
-} else {
-    # code... = 0;
-    $no_of_items = 0;
-}
+    } else {
+      # code... = 0;
+      $no_of_items = 0;
+    }
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php 
-
 include("../configs/db.php");
+//include("../header.php");
 
 if (isset($_POST['page'])) {
 	$page = $_POST['page'];
@@ -70,7 +70,7 @@ else
 				<div class='product-box mb-40'>
 					<div class='product-box-wrapper'>
 						<div class='product-img'>
-							<img src='img/uploadImages/".$row['Product_Image_Name']."'  class='w-100' alt='' >
+							<img src='img/product_images/".$row['Product_Image_Name']."'  class='w-100' alt='' >
 
 							<a href='single-product-4.php' class='d-block'>
 								<div class='second-img'>
@@ -102,7 +102,8 @@ else
 							<input type='hidden' name='id' value='".$row['Product_ID']."' id='".$row['Product_ID']."'>
 							<input type='hidden' name='name' value='".$row['Product_Name']."' id='name".$row['Product_ID']."'>
 							<input type='hidden' name='price' value='".$row['Product_Description']."' id='price".$row['Product_ID']."'>
-							<input type='submit' name='add' id='".$row['Product_ID']."' class='add-cart text-capitalize switcher-item' value='+add to cart' style='margin-left: 100px;'>
+							 <a href='ajax/add-cart.php?id=" . $row['Product_ID'] . "' class='add-cart text-capitalize switcher-item'>+add
+                                                                        to cart</a>
 							</div>
 						</div>
 					</div>
