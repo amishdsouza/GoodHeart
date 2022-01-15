@@ -1,8 +1,6 @@
 <?php
 require_once 'configs/db.php';
 include("header.php");
-//session_start();
-
 function loginStart($db)
 {
     $no_of_items = 0;
@@ -48,12 +46,9 @@ if (isset($_SESSION['login_Sess'])) {
         <div id="loader"></div>
     </div>
 
-    <!-- header section start -->
 
-    <!-- header section end -->
 
     <section>
-
         <div class="shop-body mb-90">
             <div class="container-fluid">
                 <div class="shop-wrapper">
@@ -141,6 +136,10 @@ if (isset($_SESSION['login_Sess'])) {
                                             <div class="text-center mt-20" id="pagination">
 
                                             </div>
+
+   
+<header  class="header pt-85 pb-30  header-static" ></header>
+
 
                                         </div>
                                     </div>
@@ -1214,7 +1213,8 @@ if (isset($_SESSION['login_Sess'])) {
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+<section>
 
     <!-- footer section start -->
     <section class="footer">

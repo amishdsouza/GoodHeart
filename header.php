@@ -1,5 +1,4 @@
 <?php
-
 require_once 'configs/db.php';
 ob_start();
 session_start();
@@ -64,8 +63,6 @@ if (isset($_SESSION['login_Sess'])) {
    <script src="js/jquery.magnific-popup.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
-
-
    <script type="text/javascript">
       $(document).ready(function() {
 
@@ -378,7 +375,7 @@ if (isset($_SESSION['login_Sess'])) {
       </div>
    </header>
    <!-- header section end -->
-
+   
 </body>
 
 </html>
