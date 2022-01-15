@@ -415,9 +415,9 @@ if (isset($_POST['loginbtn'])) {
 
 
     <!-- footer section start -->
-    <section class="footer">
-        <!-- footer top -->
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
+    <!-- <section class="footer">
+        <!-- footer top --> 
+        <!-- <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
                 <div class="footer-bottom-wrapper">
                     <div class="footer-bottom-primary pb-60">
@@ -485,7 +485,7 @@ if (isset($_POST['loginbtn'])) {
             </div>
         </div>
 
-    </section>
+    </section> --> -->
     <!-- footer section end -->
 
     <!-- JS here -->

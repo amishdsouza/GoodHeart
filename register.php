@@ -57,7 +57,8 @@ session_start();
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="img/logo/logo.png" alt=""></a>
+
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt=""></a>
                         </div>
                     </div>
 
@@ -375,9 +376,9 @@ session_start();
     </main>
 
     <!-- footer section start -->
-    <section class="footer">
+    <!-- <section class="footer"> -->
         <!-- footer top -->
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
+        <!-- <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
                 <div class="footer-bottom-wrapper">
                     <div class="footer-bottom-primary pb-60">
@@ -445,7 +446,7 @@ session_start();
             </div>
         </div>
 
-    </section>
+    </section> -->
     <!-- footer section end -->
 
 

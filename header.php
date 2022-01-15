@@ -1,7 +1,17 @@
 <?php
 
 require_once 'configs/db.php';
+ob_start();
 session_start();
+if (isset($_SESSION['login_Sess'])) {
+   # code...
+
+   $id = $_SESSION['ID'];
+   $cart_details = "SELECT shopping_cart_details.Cart_Details_ID,products.Product_ID, products.Product_Name, products.Product_Description,products.Product_Image_Location,shopping_cart_details.Item_Date_Added FROM products LEFT JOIN shopping_cart_details ON products.Product_ID = shopping_cart_details.Product_ID WHERE shopping_cart_details.Customer_ID = $id ";
+
+   $result = $db->query($cart_details);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,23 +114,10 @@ session_start();
                                                                                     echo "active";
                                                                                  } else {
                                                                                     echo "";
-                                                                                 } ?>"><span>Shop <i class="fal fa-angle-down"></i></span></a>
-                              <div class="mega-menu">
-                                 <div class="col-xl-7 pl-0 position-static">
+                                                                                 } ?>"><span>Shop</span></a>
 
-                                    <ul>
-                                       <li><a href="single-product-2.php">Product Layout</a></li>
-                                       <li><a href="single-product.php">Description Sticky</a></li>
-                                       <li><a href="single-product-2.php">Product Carousels</a></li>
-                                       <li><a href="single-product-3.php">Gallery Modern</a></li>
-                                       <li><a href="single-product-4.php">Thumbnail Left</a></li>
-                                       <li><a href="single-product-5.php">Thumbnail Right</a></li>
-                                       <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
-                                    </ul>
-                                 </div>
-                              </div>
                            </li>
-                           <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
+                           <!-- <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
                               </a>
                               <ul class="submenu">
                                  <li><a href="blog.php">Grid layout</a></li>
@@ -129,22 +126,27 @@ session_start();
                                  <li><a href="blog4.php">Right Sidebar</a></li>
                                  <li><a href="blog5.php">No sidebar</a></li>
                               </ul>
-                           </li>
+                           </li> -->
+                           <!--                            
                            <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
                               <ul class="submenu">
                                  <li><a href="portfolio.php">Single project</a></li>
                                  <li><a href="portfolio2.php">Two Columns</a></li>
                                  <li><a href="portfolio3.php">Three Columns</a></li>
                               </ul>
+                           </li> -->
+                           <li><a href="about.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "about.php") {
+                                                               echo "active";
+                                                            } else {
+                                                               echo "";
+                                                            } ?>"><span>About us</span> </a>
+
                            </li>
-                           <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
-                              <ul class="submenu">
-                                 <li><a href="about.php">About</a></li>
-                                 <li><a href="question.php">Frequently Questions</a></li>
-                                 <li><a href="contact.php">Contact</a></li>
-                              </ul>
-                           </li>
-                           <li><a href="contact.php"><span>Contact</span></a></li>
+                           <li><a href="contact.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "contact.php") {
+                                                               echo "active";
+                                                            } else {
+                                                               echo "";
+                                                            } ?>"><span>Contact</span></a></li>
                         </ul>
                      </nav>
                   </div>
@@ -155,7 +157,14 @@ session_start();
                      <ul class="text-right">
 
                         <li>
-                           <a href="giveaway.php" class="account"> <i class="fas fa-gift"> </i><?php echo "GIVEAWAY" ?></a>
+                           <?php
+                           if (isset($_SESSION['login_Sess'])) {
+                           ?>
+                              <a href="giveaway.php" class="account"> <i class="fas fa-gift"> </i><?php echo "GIVEAWAY" ?></a>
+                           <?php
+                           }
+                           ?>
+
                         </li>
 
 
@@ -176,12 +185,9 @@ session_start();
                                        <li><a href="javascript:void(0)" class="active">All categories</a>
                                        </li>
                                        <li><a href="javascript:void(0)">Clothing</a></li>
-                                       <li><a href="javascript:void(0)">Gift Cards</a></li>
-                                       <li><a href="javascript:void(0)">Handbag</a></li>
+                                       <li><a href="javascript:void(0)">Books</a></li>
                                        <li><a href="javascript:void(0)">Kids</a></li>
                                        <li><a href="javascript:void(0)">Shoes</a></li>
-                                       <li><a href="javascript:void(0)">Sneaker</a></li>
-                                       <li><a href="javascript:void(0)">Women</a></li>
                                     </ul>
 
                                     <div class="search-form mt-35">
@@ -191,70 +197,11 @@ session_start();
                                        </form>
                                     </div>
 
-                                    <div class="search-result-list">
+                                    <!-- <div class="search-result-list">
                                        <ul class="text-left">
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="../img/product/1.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
-                                                   chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="../img/product/2.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">RIMINI - Folding leather
-                                                   deck chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="../img/product/3.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
-                                                   fabric deck chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="img/product/1.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">ELLE - Recliner syntheti
-                                                   chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="../img/product/2.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">RIMINI - Folding leather
-                                                   deck chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
-                                          <li class="d-block d-flex align-items-center">
-                                             <div class="search-result-img">
-                                                <img src="img/product/3.jpg" class="w-100" alt="">
-                                             </div>
-                                             <div class="search-result-desc pl-10">
-                                                <a href="shop2.php" class="title px-0">LANDSCAPE - Folding
-                                                   fabric deck chair</a>
-                                                <div class="price">$<span>399</span></div>
-                                             </div>
-                                          </li>
+                                         
                                        </ul>
-                                    </div>
+                                    </div> -->
                                  </div>
 
 
@@ -282,7 +229,37 @@ session_start();
                               <div class="minicart-body">
                                  <div class="minicart-content">
                                     <ul class="text-left">
-                                       <li>
+
+                                       <?php
+                                       if (isset($_SESSION['login_Sess'])) {
+                                          if ($noCart = $result->num_rows == 0) {
+                                       ?>
+                                             <p class="title">Cart is Empty</p>
+                                          <?php
+
+                                          } else {
+                                             while ($row = $result->fetch_assoc()) { 
+                                          ?>
+                                             <li>
+                                                <div class="minicart-img">
+                                                   <a href="single-product-3.php" class="p-0"><img src="<?php echo $row['Product_Image_Location'] ?>" class="w-100" alt=""></a>
+                                                </div>
+                                                <div class="minicart-desc">
+                                                   <a href="" class="p-0"><?php echo $row['Product_Name'] ?></a>
+                                                   <strong><?php echo $row['Product_Description'] ?></strong>
+                                                </div>
+                                                <div class="remove">
+                                                   <i class="fal fa-times"></i>
+                                                </div>
+                                             </li>
+                                       <?php
+                                             }
+                                          }
+                                       }
+
+                                       ?>
+
+                                       <!-- <li>
                                           <div class="minicart-img">
                                              <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
                                           </div>
@@ -294,46 +271,20 @@ session_start();
                                           <div class="remove">
                                              <i class="fal fa-times"></i>
                                           </div>
-                                       </li>
+                                       </li> -->
 
-                                       <li>
-                                          <div class="minicart-img">
-                                             <a href="single-product-3.php" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
-                                          </div>
-                                          <div class="minicart-desc">
-                                             <a href="single-product-3.php" class="p-0">Leather Courriere duffle ba</a>
-                                             <strong>1 × $150.00</strong>
-                                          </div>
-                                          <div class="remove">
-                                             <i class="fal fa-times"></i>
-                                          </div>
-                                       </li>
-
-
-                                       <li>
-                                          <div class="minicart-img">
-                                             <a href="single-product-3.php" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
-                                          </div>
-                                          <div class="minicart-desc">
-                                             <a href="single-product-3.php" class="p-0">Party Supplies Around Cupcake</a>
-                                             <strong>1 × $150.00</strong>
-                                          </div>
-                                          <div class="remove">
-                                             <i class="fal fa-times"></i>
-                                          </div>
-                                       </li>
                                     </ul>
                                  </div>
                               </div>
                               <div class="minicart-checkout">
                                  <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                    <strong class="float-left">Subtotal:</strong>
-                                    <span class="price float-right">503.00</span>
+                                    <!-- <strong class="float-left">Subtotal:</strong>
+                                    <span class="price float-right">503.00</span> -->
                                  </div>
                                  <div class="minicart-checkout-links">
                                     <a href="cart.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
                                        cart</a>
-                                    <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                    <!-- <a href="checkout.php" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a> -->
                                  </div>
                               </div>
                            </div>

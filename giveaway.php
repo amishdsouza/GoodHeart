@@ -146,7 +146,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                             <div class="col-lg-12">
                                 <div class="form-box user-icon mb-30">
                                     <input type="text" name="name" placeholder="Name of the product">
-                                    <img src = img\logo\info-lg.svg> 
+                                    <!-- <img src = img\logo\info-lg.svg>  -->
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -154,7 +154,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                                     <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
                                 </div>
 
-                                <div class="form-box message-icon mb-30">
+                                <div class="form-box image-icon mb-30">
                                 <input type="text"  placeholder="Upload Image" disabled>
                                     <input type="file" class="form-control" id="image" name="image"/>
                                 </div>
