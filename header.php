@@ -40,6 +40,27 @@ if (isset($_SESSION['login_Sess'])) {
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/responsive.css">
 
+   <style>
+      .select-cat {
+         background: #ffffff;
+         height: 80px;
+         width: 100%;
+         padding: 0 80px;
+         padding-right: 30px;
+         border: 0;
+         color: #aab5ca;
+         font-weight: 500;
+         letter-spacing: 2px;
+         text-transform: uppercase;
+      }
+
+      .error {
+         color: red !important;
+         font-weight: 500;
+      }
+   </style>
+
+
    <!-- AJAX here -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
@@ -232,23 +253,23 @@ if (isset($_SESSION['login_Sess'])) {
                                           if ($noCart = $result->num_rows == 0) {
                                        ?>
                                              <p class="title">Cart is Empty</p>
-                                          <?php
+                                             <?php
 
                                           } else {
-                                             while ($row = $result->fetch_assoc()) { 
-                                          ?>
-                                             <li>
-                                                <div class="minicart-img">
-                                                   <a href="single-product-3.php" class="p-0"><img src="<?php echo $row['Product_Image_Location'] ?>" class="w-100" alt=""></a>
-                                                </div>
-                                                <div class="minicart-desc">
-                                                   <a href="" class="p-0"><?php echo $row['Product_Name'] ?></a>
-                                                   <strong><?php echo $row['Product_Description'] ?></strong>
-                                                </div>
-                                                <div class="remove">
-                                                   <i class="fal fa-times"></i>
-                                                </div>
-                                             </li>
+                                             while ($row = $result->fetch_assoc()) {
+                                             ?>
+                                                <li>
+                                                   <div class="minicart-img">
+                                                      <a href="single-product-3.php" class="p-0"><img src="<?php echo $row['Product_Image_Location'] ?>" class="w-100" alt=""></a>
+                                                   </div>
+                                                   <div class="minicart-desc">
+                                                      <a href="" class="p-0"><?php echo $row['Product_Name'] ?></a>
+                                                      <strong><?php echo $row['Product_Description'] ?></strong>
+                                                   </div>
+                                                   <div class="remove">
+                                                      <i class="fal fa-times"></i>
+                                                   </div>
+                                                </li>
                                        <?php
                                              }
                                           }
@@ -300,6 +321,7 @@ if (isset($_SESSION['login_Sess'])) {
                               <ul class="submenu text-right">
                                  <li><a href="">My Account</a></li>
                                  <li><a href="shop.php">Shop</a></li>
+                                 <li><a href="product-listing.php">Your Listings</a></li>
                                  <li><a href="wishlist.php">Wishlist</a></li>
                                  <li><a href="logout.php">Log Out</a></li>
                               </ul>
@@ -375,7 +397,7 @@ if (isset($_SESSION['login_Sess'])) {
       </div>
    </header>
    <!-- header section end -->
-   
+
 </body>
 
 </html>

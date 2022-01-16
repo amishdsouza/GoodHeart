@@ -25,20 +25,27 @@ if (isset($_POST['submit'])) {
 
   if ($row > 0) {
     // code...
-
+    $_SESSION['adminlogin'] = true;
     while ($pstmtLogin->fetch()) {
       $_SESSION['AID'] = $aid;
       $_SESSION['AName'] = $aname;
     }
-    $_SESSION['adminlogin'] = "1";
+    
 
     # code...
-    header("location:dashboard.php");
+    if (isset($sourcead)) {
+      # code...
+      header("location:$sourcead");
+    } else {
+      # code...
+      header("location:dashboard.php");
+    }
+    
     # code...
 
 
   } else {
-    $_SESSION['adminlogin'] = "";
+    $_SESSION['adminlogin'] = false;
 ?>
     <script type="text/javascript">
       alert('Wrong Email and Password');
