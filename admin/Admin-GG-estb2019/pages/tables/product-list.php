@@ -55,15 +55,15 @@ if (isset($_POST['up_submit'])) {
 
 if (isset($_POST['image_submit'])) {
   // code...
-  $pro_image = addslashes($_FILES['prod_image']['name']);
-  $pro_image_tmp = addslashes($_FILES['prod_image']['tmp_name']);
+  $prod_image = ($_FILES['prod_image']['name']);
+  $prod_image_tmp = ($_FILES['prod_image']['tmp_name']);
 
-  $pro_image_tmp = file_get_contents($pro_image_tmp);
-  $pro_image_tmp = base64_encode($pro_image_tmp);
+  $folder = "../../../../img/product_images/" . $prod_image;
+  $trim_loc = ltrim($folder, "./");
 
-  $query_update_image = mysqli_query($con, "UPDATE `products` SET `Product_Image`='$pro_image',`Product_Image_Temp`='$pro_image_tmp' WHERE `Product_ID` = '$prodid'");
+  $query_update_image = mysqli_query($db, "UPDATE `products` SET `Product_Image_Location`= '$trim_loc' WHERE `Product_ID` = '$prodid'");
 
-  if ($query_update_image) {
+  if (move_uploaded_file($prod_image_tmp, $folder)) {
     // code...
     ?>
     <script type="text/javascript">
@@ -75,7 +75,7 @@ if (isset($_POST['image_submit'])) {
 
 if (isset($_POST['del_submit'])) {
   # code...
-  $del_prod = mysqli_query($con, "DELETE FROM `products` WHERE `Product_ID`= '$prodid' ");
+  $del_prod = mysqli_query($db, "DELETE FROM `products` WHERE `Product_ID`= '$prodid' ");
 
   if ($del_prod) {
     # code...\
@@ -397,34 +397,33 @@ if (isset($_POST['del_submit'])) {
 
                     <input type="hidden" name="prod_id" class="form-control" id="prod_id" onkeypress="return (event.charCode > 64 &&
                       event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($prod_row['Product_ID'])) {
-                                                                                                                              echo $prod_row['Product_ID'];
-                                                                                                                            }  ?>">
+                              echo $prod_row['Product_ID'];
+                              }  ?>">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Product Name</label>
                     <input type="text" name="prod_name" class="form-control" id="prod_name" required value="<?php if (isset($prod_row['Product_Name'])) {
-                                                                                                              echo $prod_row['Product_Name'];
-                                                                                                            }  ?>">
+                            echo $prod_row['Product_Name'];
+                            }  ?>">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Product Description</label>
                     <textarea name="prod_des" class="form-control" id="prod_des" required rows="8" cols="20"><?php if (isset($prod_row['Product_Description'])) {
-                                                                                                                echo $prod_row['Product_Description'];
-                                                                                                              }  ?></textarea>
-                  </div>
+                            echo $prod_row['Product_Description'];
+                          }  ?></textarea>
+                  </div> 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
                     <select class="form-control" name="prod_cat" id="prod_cat" required>
-                      <option value="">---Change Category---</option>
                       <option value="<?php if (isset($prod_row['Category_ID'])) {
                                         echo $prod_row['Category_ID'];
                                       }  ?>"> <?php if (isset($prod_row['Category_Name'])) {
                                                 echo $prod_row['Category_Name'];
                                               }  ?></option>
-
+                      <option value="">---Change Category---</option>
                       <?php
-                      $query_cat = mysqli_query($con, "SELECT * FROM `categories`");
+                      $query_cat = mysqli_query($db, "SELECT * FROM `categories`");
                       while ($row3 = mysqli_fetch_array($query_cat)) {
                         // code...
                         echo "<option value='" . $row3['Category_ID'] . "'>" . $row3['Category_Name'] . "</option>";
