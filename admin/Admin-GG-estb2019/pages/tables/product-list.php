@@ -397,31 +397,32 @@ if (isset($_POST['del_submit'])) {
 
                     <input type="hidden" name="prod_id" class="form-control" id="prod_id" onkeypress="return (event.charCode > 64 &&
                       event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($prod_row['Product_ID'])) {
-                              echo $prod_row['Product_ID'];
-                              }  ?>">
+                                                                                                                              echo $prod_row['Product_ID'];
+                                                                                                                            }  ?>">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Product Name</label>
                     <input type="text" name="prod_name" class="form-control" id="prod_name" required value="<?php if (isset($prod_row['Product_Name'])) {
-                            echo $prod_row['Product_Name'];
-                            }  ?>">
+                                                                                                              echo $prod_row['Product_Name'];
+                                                                                                            }  ?>">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Product Description</label>
                     <textarea name="prod_des" class="form-control" id="prod_des" required rows="8" cols="20"><?php if (isset($prod_row['Product_Description'])) {
-                            echo $prod_row['Product_Description'];
-                          }  ?></textarea>
-                  </div> 
+                                                                                                                echo $prod_row['Product_Description'];
+                                                                                                              }  ?></textarea>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
                     <select class="form-control" name="prod_cat" id="prod_cat" required>
+                      <option value="">---Change Category---</option>
                       <option value="<?php if (isset($prod_row['Category_ID'])) {
                                         echo $prod_row['Category_ID'];
                                       }  ?>"> <?php if (isset($prod_row['Category_Name'])) {
                                                 echo $prod_row['Category_Name'];
                                               }  ?></option>
-                      <option value="">---Change Category---</option>
+
                       <?php
                       $query_cat = mysqli_query($con, "SELECT * FROM `categories`");
                       while ($row3 = mysqli_fetch_array($query_cat)) {
