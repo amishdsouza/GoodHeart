@@ -292,7 +292,7 @@ if (isset($_POST['del_submit'])) {
                     ?>
                       <tr>
                         <td><?php echo $row['Category_ID']; ?></td>
-                        <td><?php echo "<img src=" . $row['Category_Admin_Location'] . " alt=" . $row['Category_Image_Name'] . " width=\"50px\" height=\"50px\">"; ?></td>
+                        <td><?php echo "<img src=../../../../" . $row['Category_Image_Location'] . " alt=" . $row['Category_Image_Name'] . " width=\"50px\" height=\"50px\">"; ?></td>
                         <td><?php echo $row['Category_Name']; ?></td>
                         <td><a href="?catid=<?php echo $row['Category_ID']; ?>" class="btn btn-info btn-sm" onclick="openModal()">
                             <i class=" fas fa-pencil-alt">

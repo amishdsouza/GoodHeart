@@ -3,8 +3,6 @@ require_once 'configs/db.php';
 
 include 'header.php';
 
-$id = $_SESSION['ID'];
-
 function loginStart($db)
 {
     $no_of_items = 0;
@@ -20,16 +18,25 @@ function loginStart($db)
 
 if (isset($_SESSION['login_Sess'])) {
     # code...
-    $no_of_items = loginStart($db);
+    loginStart($db);
+    $id = $_SESSION['ID'];
+    $cart_details = "SELECT shopping_cart_details.Cart_Details_ID,products.Product_ID, products.Product_Name, products.Product_Description,products.Product_Image_Location,shopping_cart_details.Item_Date_Added FROM products LEFT JOIN shopping_cart_details ON products.Product_ID = shopping_cart_details.Product_ID WHERE shopping_cart_details.Customer_ID = $id ";
+
+    $result = $db->query($cart_details);
+
+
 } else {
     # code... = 0;
     $no_of_items = 0;
     header('location:login.php?source=cart.php');
 }
 
-$cart_details = "SELECT shopping_cart_details.Cart_Details_ID,products.Product_ID, products.Product_Name, products.Product_Description,products.Product_Image_Location,shopping_cart_details.Item_Date_Added FROM products LEFT JOIN shopping_cart_details ON products.Product_ID = shopping_cart_details.Product_ID WHERE shopping_cart_details.Customer_ID = $id ";
 
-$result = $db->query($cart_details);
+
+
+
+
+
 ?>
 
 
@@ -112,41 +119,43 @@ $result = $db->query($cart_details);
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                if ($noCart = $result->num_rows == 0) {
-                                                    # code...
+                                                if (isset($_SESSION['login_Sess'])) {
+                                                    if ($noCart = $result->num_rows == 0) {
+                                                        # code...
                                                 ?>
 
-                                                    <p class="title">Cart is Empty</p>
+                                                        <p class="title">Cart is Empty</p>
 
-                                                    <?php
-                                                } else {
-                                                    while ($row = $result->fetch_assoc()) { {
-                                                            # code...
-                                                    ?>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="table-data">
-                                                                        <a href='remove-cart.php?cid=<?php echo $row['Cart_Details_ID'] ?>' class="close-btn"><i class="fal fa-times"></i></button>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="table-data">
-                                                                        <img src="<?php echo $row['Product_Image_Location'] ?>" width="80" alt="">
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="table-data">
-                                                                        <h6><a href="single-product-3.html" class="title"><?php echo $row['Product_Name'] ?></a></h6>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="table-data">
-                                                                        <p><?php echo $row['Product_Description'] ?></p>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
+                                                        <?php
+                                                    } else {
+                                                        while ($row = $result->fetch_assoc()) { {
+                                                                # code...
+                                                        ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="table-data">
+                                                                            <a href='remove-cart.php?cid=<?php echo $row['Cart_Details_ID'] ?>' class="close-btn"><i class="fal fa-times"></i></button>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="table-data">
+                                                                            <img src="<?php echo $row['Product_Image_Location'] ?>" width="80" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="table-data">
+                                                                            <h6><a href="single-product-3.html" class="title"><?php echo $row['Product_Name'] ?></a></h6>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="table-data">
+                                                                            <p><?php echo $row['Product_Description'] ?></p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
 
                                                 <?php
+                                                            }
                                                         }
                                                     }
                                                 }

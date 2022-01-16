@@ -1,22 +1,20 @@
 <?php
-include_once '../../../../php/config.php';
+require_once '../../../../configs/db.php';
 session_start();
 # code...
 
 if (!isset($_SESSION['adminlogin'])) {
   // code...
-  header('location:../../index.php');
+  header('location:../../index.php?sourcead=/pages/tables/product-list.php');
 }
 
 if (isset($_GET['prodid'])) {
   # code...
   $prodid = $_GET['prodid'];
-  $prod_data = mysqli_query($con, "SELECT products.Product_ID,products.Product_Name,products.Product_Description,products.Product_Price,products.Product_Dis_Price,products.Product_Image_Temp,products.Product_Image,categories.Category_Name,categories.Category_ID,inventory.Stock_Items FROM products INNER JOIN categories ON products.Category_ID = categories.Category_ID INNER JOIN inventory ON products.Product_ID = inventory.Product_ID WHERE products.Product_ID = '$prodid' ");
+  $prod_data = mysqli_query($db, "SELECT products.Product_ID,products.Product_Name,products.Product_Description,products.Product_Image_Location,categories.Category_Name,categories.Category_ID,customer_registration.Customer_Name FROM products INNER JOIN category_product_relation ON products.Product_ID = category_product_relation.Product_ID INNER JOIN categories ON categories.Category_ID = category_product_relation.Category_ID INNER JOIN product_customer_relation ON product_customer_relation.Product_ID = products.Product_ID INNER JOIN customer_registration ON customer_registration.Customer_ID =  product_customer_relation.Customer_ID WHERE products.Product_ID = '$prodid' ");
 
 
   $prod_row = mysqli_fetch_assoc($prod_data);
-
-
 }
 
 # code...
@@ -30,17 +28,15 @@ if (isset($_POST['up_submit'])) {
   $pid = $_POST['prod_id'];
   $pro_name = $_POST['prod_name'];
   $pro_des = $_POST['prod_des'];
-  $pro_price = $_POST['prod_price'];
-  $pro_dis = $_POST['prod_dis'];
   $pro_cat = $_POST['prod_cat'];
-  $stock = $_POST['prod_stock'];
 
 
 
-  $update_query_prod = mysqli_query($con, "UPDATE `products` SET `Product_Name`='$pro_name',`Product_Description`='$pro_des',`Product_Price`='$pro_price',`Product_Dis_Price`='$pro_dis',`Category_ID` = '$pro_cat' WHERE `Product_ID` = '$pid'");
+
+  $update_query_prod = mysqli_query($db, "UPDATE `products` SET `Product_Name`='$pro_name',`Product_Description`='$pro_des' WHERE `Product_ID` = '$pid'");
 
 
-  $update_stock_query = mysqli_query($con, "UPDATE `inventory` SET `Stock_Items`='$stock' WHERE `Product_ID`= '$pid'");
+  $update_stock_query = mysqli_query($db, "UPDATE `inventory` SET `Stock_Items`='$stock' WHERE `Product_ID`= '$pid'");
   if ($update_query_prod) {
     # code...
     if ($update_stock_query) {
@@ -52,39 +48,38 @@ if (isset($_POST['up_submit'])) {
       </script>
 
     <?php
-    header('location:product-list.php');
+      header('location:product-list.php');
     }
   }
 }
 
 if (isset($_POST['image_submit'])) {
   // code...
-  $pro_image = addslashes($_FILES['prod_image']['name']);
-  $pro_image_tmp = addslashes($_FILES['prod_image']['tmp_name']);
+  $prod_image = ($_FILES['prod_image']['name']);
+  $prod_image_tmp = ($_FILES['prod_image']['tmp_name']);
 
-  $pro_image_tmp = file_get_contents($pro_image_tmp);
-  $pro_image_tmp = base64_encode($pro_image_tmp);
+  $folder = "../../../../img/product_images/" . $prod_image;
+  $trim_loc = ltrim($folder, "./");
 
-  $query_update_image = mysqli_query($con,"UPDATE `products` SET `Product_Image`='$pro_image',`Product_Image_Temp`='$pro_image_tmp' WHERE `Product_ID` = '$prodid'");
+  $query_update_image = mysqli_query($db, "UPDATE `products` SET `Product_Image_Location`= '$trim_loc' WHERE `Product_ID` = '$prodid'");
 
-  if ($query_update_image) {
+  if (move_uploaded_file($prod_image_tmp, $folder)) {
     // code...
     ?>
-      <script type="text/javascript">
-        alert('Image Updated');
-      </script>
-    <?php
+    <script type="text/javascript">
+      alert('Image Updated');
+    </script>
+  <?php
   }
-
 }
 
 if (isset($_POST['del_submit'])) {
   # code...
-  $del_prod = mysqli_query($con, "DELETE FROM `products` WHERE `Product_ID`= '$prodid' ");
+  $del_prod = mysqli_query($db, "DELETE FROM `products` WHERE `Product_ID`= '$prodid' ");
 
   if ($del_prod) {
     # code...\
-    ?>
+  ?>
 
     <script>
       alert('Data Deleted');
@@ -195,7 +190,7 @@ if (isset($_POST['del_submit'])) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Good Heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good Heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
         <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
@@ -207,7 +202,7 @@ if (isset($_POST['del_submit'])) {
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName']; ?></a>
           </div>
         </div>
 
@@ -297,218 +292,196 @@ if (isset($_POST['del_submit'])) {
           </div>
         </div><!-- /.container-fluid -->
       </section>
-  <section class="content">
-      <!-- Main content -->
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title"></h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <form method="POST">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Product ID</th>
-                      <th>Product Image</th>
-                      <th>Product Name</th>
-                      <th>Description</th>
-                      <th>Price</th>
-                      <th>Discount</th>
-                      <th>Stock Left</th>
-                      <th>Load Data</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <?php
-                    $sql = "SELECT products.Product_ID,products.Product_Name,products.Product_Description,products.Product_Price,products.Product_Dis_Price,products.Product_Image_Temp,products.Product_Image,categories.Category_Name,inventory.Stock_Items FROM products INNER JOIN categories ON products.Category_ID = categories.Category_ID INNER JOIN inventory ON products.Product_ID = inventory.Product_ID";
-                    $res_data = mysqli_query($con, $sql);
-
-
-
-                    while ($row = mysqli_fetch_assoc($res_data)) {
-                      // code...
-
-                    ?>
-
+      <section class="content">
+        <!-- Main content -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <form method="POST">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
                       <tr>
-                        <td><?php echo $row['Product_ID']; ?></td>
-                        <td><?php echo "<img src=\"data:image;base64," . $row['Product_Image_Temp'] . "\" alt=" . $row['Product_Image'] . " width=\"50px\" height=\"50px\">"; ?></td>
-                        <td><?php echo $row['Product_Name']; ?></td>
-                        <td><?php echo $row['Product_Description']; ?></td>
-                        <td><?php echo $row['Product_Price']; ?></td>
-                        <td><?php echo $row['Product_Dis_Price']; ?></td>
-                        <td><?php echo $row['Stock_Items']; ?></td>
-
-                        <td><a href="?prodid=<?php echo $row['Product_ID']; ?>" class="btn btn-info btn-sm" onclick="openModal()">
-                            <i class=" fas fa-pencil-alt">
-                            </i>
-                            Load
-                          </a></td>
-
-
-                        <input type="hidden" name="product_id" value="<?php echo $row['Product_ID']; ?>">
+                        <th>Product ID</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Category Name</th>
+                        <th>Added by</th>
+                        <th>Action</th>
                       </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php
-
-                    }
-                    ?>
-
+                      <?php
+                      $sql = "SELECT products.Product_ID,products.Product_Name,products.Product_Description,products.Product_Image_Location,categories.Category_Name,categories.Category_ID,customer_registration.Customer_Name FROM products INNER JOIN category_product_relation ON products.Product_ID = category_product_relation.Product_ID INNER JOIN categories ON categories.Category_ID = category_product_relation.Category_ID INNER JOIN product_customer_relation ON product_customer_relation.Product_ID = products.Product_ID INNER JOIN customer_registration ON customer_registration.Customer_ID =  product_customer_relation.Customer_ID";
+                      $res_data = mysqli_query($db, $sql);
 
 
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Product ID</th>
-                      <th>Product Image</th>
-                      <th>Product Name</th>
-                      <th>Description</th>
-                      <th>Price</th>
-                      <th>Discount</th>
-                      <th>Stock Left</th>
-                      <th>Load Data</th>
-                    </tr>
-                  </tfoot>
-                </table>
-              </form>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <?php
-        if (isset($_GET['prodid'])) {
-          // code...
-          ?>
-            <!--form-->
 
-            <div class="modal" id="myModal">
-              <!-- jquery validation -->
+                      while ($row = mysqli_fetch_assoc($res_data)) {
+                        // code...
 
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">Add Products</h3>
-                  <span class="close cursor" onclick="closeModal()">&times;</span>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form id="form1" method="post">
-                  <div class="card">
-                    <div class="form-group">
+                      ?>
 
-                      <input type="hidden" name="prod_id" class="form-control" id="prod_id" onkeypress="return (event.charCode > 64 &&
-                      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($prod_row['Product_ID'])) {
-                                                                                                                              echo $prod_row['Product_ID'];
-                                                                                                                            }  ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Product Name</label>
-                      <input type="text" name="prod_name" class="form-control" id="prod_name" required value="<?php if (isset($prod_row['Product_Name'])) {
-                                                                                                                              echo $prod_row['Product_Name'];
-                                                                                                                            }  ?>">
-                    </div>
+                        <tr>
+                          <td><?php echo $row['Product_ID']; ?></td>
+                          <td><img src="../../../../<?php echo $row['Product_Image_Location']; ?>" alt="" style="height: 50px;width=50px;"></td>
+                          <td><?php echo $row['Product_Name']; ?></td>
+                          <td><?php echo $row['Product_Description']; ?></td>
+                          <td><?php echo $row['Category_Name']; ?></td>
+                          <td><?php echo $row['Customer_Name']; ?></td>
 
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Product Description</label>
-                      <textarea name="prod_des" class="form-control" id="prod_des" required rows="8" cols="20"><?php if (isset($prod_row['Product_Description'])) {
-                                                                                                                        echo $prod_row['Product_Description'];
-                                                                                                                      }  ?></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Product Price</label>
-                      <input type="text" name="prod_price" class="form-control" id="prod_price" required onkeypress="return isNumber(event);" value="<?php if (isset($prod_row['Product_Price'])) {
-                                                                                                                                                        echo $prod_row['Product_Price'];
-                                                                                                                                                      }  ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Product Discount</label>
-                      <input type="text" name="prod_dis" class="form-control" id="prod_dis" required onkeypress="return isNumber(event);" value=" <?php if (isset($prod_row['Product_Dis_Price'])) {
-                                                                                                                                                    echo $prod_row['Product_Dis_Price'];
-                                                                                                                                                  }  ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Category</label>
-                      <select class="form-control" name="prod_cat" id="prod_cat" required>
-                        <option value="<?php if (isset($prod_row['Category_ID'])) {
-                                          echo $prod_row['Category_ID'];
-                                        }  ?>"> <?php if (isset($prod_row['Category_Name'])) {
-                                                  echo $prod_row['Category_Name'];
-                                                }  ?></option>
-                        <option value="">---Change Category---</option>
-                        <?php
-                        $query_cat = mysqli_query($con, "SELECT * FROM `categories`");
-                        while ($row3 = mysqli_fetch_array($query_cat)) {
-                          // code...
-                          echo "<option value='" . $row3['Category_ID'] . "'>" . $row3['Category_Name'] . "</option>";
-                        }
-                        ?>
+                          <td><a href="?prodid=<?php echo $row['Product_ID']; ?>" class="btn btn-info btn-sm" onclick="openModal()">
+                              <i class=" fas fa-pencil-alt">
+                              </i>
+                              Load
+                            </a></td>
 
-                      </select>
-                    </div>
 
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Product Stock</label>
-                    <input type="text" name="prod_stock" class="form-control" id="prod_stock" value="<?php if (isset($prod_row['Stock_Items'])) {
-                                                                                                        echo $prod_row['Stock_Items'];
-                                                                                                      }  ?>" required onkeypress="return isNumber(event);">
-                  </div>
+                          <input type="hidden" name="product_id" value="<?php echo $row['Product_ID']; ?>">
+                        </tr>
+
+                      <?php
+
+                      }
+                      ?>
+
+
+
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Product ID</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Category Name</th>
+                        <th>Added by</th>
+                        <th>Action</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </form>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" name="up_submit" class="btn btn-primary">
-                  <i class=" fas fa-pencil-alt">
-                  </i>
-                  Submit</button>
-                <button type="submit" name="del_submit" class="btn btn-danger">
-                  <i class="fas fa-trash">
-                  </i>
-                  Delete
-                </button>
-            </form>
-
-          <form method="post" id="image_val" enctype="multipart/form-data">
-            <div class="form-group" style="margin-top:15px;">
-              <label for="exampleInputFile">Product Image</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" name="prod_image" id="prod_image" required accept="image/*">
-                </div>
-              </div>
             </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <?php
+        if (isset($_GET['prodid'])) {
+          // code...
+        ?>
+          <!--form-->
+
+          <div class="modal" id="myModal">
+            <!-- jquery validation -->
+
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add Products</h3>
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="form1" method="post">
+                <div class="card">
+                  <div class="form-group">
+
+                    <input type="hidden" name="prod_id" class="form-control" id="prod_id" onkeypress="return (event.charCode > 64 &&
+                      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" value="<?php if (isset($prod_row['Product_ID'])) {
+                              echo $prod_row['Product_ID'];
+                              }  ?>">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Product Name</label>
+                    <input type="text" name="prod_name" class="form-control" id="prod_name" required value="<?php if (isset($prod_row['Product_Name'])) {
+                            echo $prod_row['Product_Name'];
+                            }  ?>">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Product Description</label>
+                    <textarea name="prod_des" class="form-control" id="prod_des" required rows="8" cols="20"><?php if (isset($prod_row['Product_Description'])) {
+                            echo $prod_row['Product_Description'];
+                          }  ?></textarea>
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Category</label>
+                    <select class="form-control" name="prod_cat" id="prod_cat" required>
+                      <option value="<?php if (isset($prod_row['Category_ID'])) {
+                                        echo $prod_row['Category_ID'];
+                                      }  ?>"> <?php if (isset($prod_row['Category_Name'])) {
+                                                echo $prod_row['Category_Name'];
+                                              }  ?></option>
+                      <option value="">---Change Category---</option>
+                      <?php
+                      $query_cat = mysqli_query($db, "SELECT * FROM `categories`");
+                      while ($row3 = mysqli_fetch_array($query_cat)) {
+                        // code...
+                        echo "<option value='" . $row3['Category_ID'] . "'>" . $row3['Category_Name'] . "</option>";
+                      }
+                      ?>
+
+                    </select>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" name="up_submit" class="btn btn-primary">
+                    <i class=" fas fa-pencil-alt">
+                    </i>
+                    Submit</button>
+                  <button type="submit" name="del_submit" class="btn btn-danger">
+                    <i class="fas fa-trash">
+                    </i>
+                    Delete
+                  </button>
+              </form>
+
+              <form method="post" id="image_val" enctype="multipart/form-data">
+                <div class="form-group" style="margin-top:15px;">
+                  <label for="exampleInputFile">Product Image</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" name="prod_image" id="prod_image" required accept="image/*">
+                    </div>
+                  </div>
+                </div>
                 <button type="submit" name="image_submit" id="image_submit" class="btn btn-primary" style="margin-top:10px;">
                   <i class=" fas fa-pencil-alt">
                   </i>
                   Update Image</button>
 
-          </form>
-              </div>
-
+              </form>
             </div>
 
-            <!-- /.card -->
-        </div>
-        <!--form end-->
+          </div>
+
+          <!-- /.card -->
+    </div>
+    <!--form end-->
 
 
-          <?php
+  <?php
         } else {
           // code...
-          ?>
-              <h1>Kindly Load The Data</h1>
-          <?php
+  ?>
+    <h1>Kindly Load The Data</h1>
+  <?php
         }
 
 
-       ?>
+  ?>
   </section>
-    <!-- /.content -->
+  <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

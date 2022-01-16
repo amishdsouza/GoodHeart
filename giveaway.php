@@ -23,38 +23,37 @@ if (isset($_SESSION['login_Sess'])) {
     $no_of_items = 0;
 }
 
-if (isset($_SESSION['login_Sess'])) {
-    # code...
-    loginStart($db);
-} else {
-    # code... = 0;
-    $no_of_items = 0;
-}
-
-if (isset($_POST['name']) && isset($_POST['description']) ) {
-	$name = $_POST['name'];
-	$description = $_POST['description'];
-	$file = $_FILES['image']['name'];
+if (isset($_POST['name']) && isset($_POST['description'])) {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $file = $_FILES['image']['name'];
     $file_tmp = $_FILES['image']['tmp_name'];
-    $folder = "../../../../img/product_images/" . $file;
-    $trim_loc = ltrim($folder, "./");
+    $folder = "img/product_images/" . $file;
+
+    $cid = $_POST['category'];
+
     //echo $location;
-    echo $db->error;
-    $query = "INSERT INTO products(Product_Name,Product_Description,Product_Image_Name, Product_Image_Location,Product_Admin_Location) VALUES('$name','$description','$file','$trim_loc','$folder')";
-    $res = mysqli_query($db,$query);
+    // echo $db->error;
+    $query = "INSERT INTO products(Product_Name,Product_Description,Product_Image_Name, Product_Image_Location) VALUES('$name','$description','$file','$folder')";
+    $res = mysqli_query($db, $query);
 
-    
-        if ($res) {
-        move_uploaded_file($file_tmp, $trim_loc);
+    if ($res) {
+        move_uploaded_file($file_tmp, $folder);
+        $last_id = $db->insert_id;
+        
+        $query2 = "INSERT INTO `product_customer_relation`(`Product_ID`, `Customer_ID`) VALUES ('$last_id','$uid')";
+        $query3 = "INSERT INTO `category_product_relation`(`Product_ID`, `Category_ID`) VALUES ('$last_id','$cid')";
 
-        $name = "";
+        $res2 = $db->query($query2);
+        $res3 = $db->query($query3);
         header("Location: shop.php");
-        }
-        else{
-            echo $db->error;
-        }
+    } else {
+        echo $db->error;
+    }
 }
+$cat_query = "SELECT * FROM `categories`";
 
+$cat_result = $db->query($cat_query);
 ?>
 
 <!doctype html>
@@ -72,7 +71,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
 
 
     <!-- header section start -->
-    
+
     <!-- header section end -->
 
 
@@ -80,15 +79,15 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
     <section class="contact-area pb-30" data-background="assets/img/bg/bg-map.png">
         <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/bg/3.jpg');">
             <div class="breadcrumb-content d-flex justify-content-center align-items-center" style="flex-direction: column;">
-             <h2 class="title">Contact</h2>
-             <nav aria-label="breadcrumb" class="mb-40">
-                 <ol class="breadcrumb p-0 m-0">
-                     <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                 </ol>
-             </nav>
+                <h2 class="title">Contact</h2>
+                <nav aria-label="breadcrumb" class="mb-40">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
             </div>
-         </div>
+        </div>
         <div class="container container-1430">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4">
@@ -145,20 +144,30 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-box user-icon mb-30">
-                                    <input type="text" name="name" placeholder="Name of the product">
-                                    <img src = img\logo\info-lg.svg> 
+                                    <input type="text" name="name" id="name" placeholder="Name of the product" required>
+                                    <!-- <img src = img\logo\info-lg.svg>  -->
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
                                 <div class="form-box message-icon mb-30">
-                                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-                                </div>
+                                    <select name="category" id="category" class="select-cat" required>
+                                        <option value="">Select Category</option>
+                                        <?php
+                                        while ($cat_row = $cat_result->fetch_assoc()) {
+                                        ?>
 
-                                <div class="form-box message-icon mb-30">
-                                <input type="text"  placeholder="Upload Image" disabled>
-                                    <input type="file" class="form-control" id="image" name="image"/>
+                                            <option value="<?php echo $cat_row['Category_ID'] ?>"><?php echo $cat_row['Category_Name'] ?></option>
+
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                
+                                <div class="form-box subject-icon mb-30">
+                                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+                                </div>
+                                <div class="form-box image-icon mb-30">
+                                    <input type="text" placeholder="Upload Image" disabled>
+                                    <input type="file" id="image" name="image" required />
+                                </div>
                                 <div class="contact-btn text-center ">
                                     <button class="btn theme-btn" name="add" id="add" type="submit">get action</button>
                                 </div>
@@ -359,7 +368,7 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
                                     <form action="#" method="POST">
                                         <input type="number" value="1">
                                         <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
-                                            cart</button</a>
+                                            cart</button< /a>
                                     </form>
                                 </div>
 
@@ -387,8 +396,18 @@ if (isset($_POST['name']) && isset($_POST['description']) ) {
     </section>
     <!-- product popup end -->
 
-    
+
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#give-form").validate();
+        });
+    </script>
 </body>
 
 </html>

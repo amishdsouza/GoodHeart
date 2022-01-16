@@ -130,13 +130,13 @@ if (isset($_POST['loginbtn'])) {
     </div>
 
     <!-- header section start -->
-    <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+    <header class="header pt-10 pb-10  header-sticky">
         <div class="container-fluid">
             <div class="header-nav position-relative">
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                         <div class="logo">
-                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt="Good Heart logo"></a>
+                            <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt=""></a>
                         </div>
                     </div>
 
@@ -144,68 +144,50 @@ if (isset($_POST['loginbtn'])) {
                         <div class="header-nav">
                             <nav>
                                 <ul>
-                                    <li><a href="index.php"><span>Home </span></a>
-                                    </li>
-                                    <li class="position-static"><a href="javascript:void(0)"><span>Shop <i class="fal fa-angle-down"></i></span></a>
-                                        <div class="mega-menu">
-                                            <div class="col-xl-7 pl-0 position-static">
-                                                <ul>
-                                                    <li><a href="shop.php">Shop Layout</a></li>
-                                                    <li><a href="shop4.php">Masonry – Grid</a></li>
-                                                    <li><a href="shop3.php">Pagination</a></li>
-                                                    <li><a href="shop2.php">Ajax Load More</a></li>
-                                                    <li><a href="shop2.php">Infinite Scroll</a></li>
-                                                    <li><a href="shop2.php">Sidebar Right</a></li>
-                                                    <li><a href="shop.php">Sidebar Left</a></li>
-                                                </ul>
+                                    <li><a href="index.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "index.php") {
+                                                                        echo "active";
+                                                                    } else {
+                                                                        echo "";
+                                                                    } ?>"><span>Home </span></a>
 
-                                                <ul>
-                                                    <li><a href="shop.php">Shop Pages</a></li>
-                                                    <li><a href="shop2.php">List View</a></li>
-                                                    <li><a href="shop3.php">Small Products</a></li>
-                                                    <li><a href="shop2.php">Large Products</a></li>
-                                                    <li><a href="shop3.php">Shop — 3 Items</a></li>
-                                                    <li><a href="shop3.php">Shop — 4 Items</a></li>
-                                                    <li><a href="shop4.php">Shop — 5 Items</a></li>
-                                                </ul>
+                                    </li>
+                                    <li class="position-static"><a href="shop.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "shop.php") {
+                                                                                                echo "active";
+                                                                                            } else {
+                                                                                                echo "";
+                                                                                            } ?>"><span>Shop</span></a>
 
-                                                <ul>
-                                                    <li><a href="single-product-2.php">Product Layout</a></li>
-                                                    <li><a href="single-product.php">Description Sticky</a></li>
-                                                    <li><a href="single-product-2.php">Product Carousels</a></li>
-                                                    <li><a href="single-product-3.php">Gallery Modern</a></li>
-                                                    <li><a href="single-product-4.php">Thumbnail Left</a></li>
-                                                    <li><a href="single-product-5.php">Thumbnail Right</a></li>
-                                                    <li><a href="single-product-6.php">Thumbnail Botttom</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
-                                        </a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.php">Grid layout</a></li>
-                                            <li><a href="blog2.php">Large image</a></li>
-                                            <li><a href="blog3.php">Left Sidebar</a></li>
-                                            <li><a href="blog4.php">Right Sidebar</a></li>
-                                            <li><a href="blog5.php">No sidebar</a></li>
-                                        </ul>
+                                    <!-- <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
+                              </a>
+                              <ul class="submenu">
+                                 <li><a href="blog.php">Grid layout</a></li>
+                                 <li><a href="blog2.php">Large image</a></li>
+                                 <li><a href="blog3.php">Left Sidebar</a></li>
+                                 <li><a href="blog4.php">Right Sidebar</a></li>
+                                 <li><a href="blog5.php">No sidebar</a></li>
+                              </ul>
+                           </li> -->
+                                    <!--                            
+                           <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
+                              <ul class="submenu">
+                                 <li><a href="portfolio.php">Single project</a></li>
+                                 <li><a href="portfolio2.php">Two Columns</a></li>
+                                 <li><a href="portfolio3.php">Three Columns</a></li>
+                              </ul>
+                           </li> -->
+                                    <li><a href="about.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "about.php") {
+                                                                        echo "active";
+                                                                    } else {
+                                                                        echo "";
+                                                                    } ?>"><span>About us</span> </a>
+
                                     </li>
-                                    <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
-                                        <ul class="submenu">
-                                            <li><a href="portfolio.php">Single project</a></li>
-                                            <li><a href="portfolio2.php">Two Columns</a></li>
-                                            <li><a href="portfolio3.php">Three Columns</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="about.php">About</a></li>
-                                            <li><a href="question.php">Frequently Questions</a></li>
-                                            <li><a href="contact.php">Contact</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.php"><span>Contact</span></a></li>
+                                    <li><a href="contact.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "contact.php") {
+                                                                            echo "active";
+                                                                        } else {
+                                                                            echo "";
+                                                                        } ?>"><span>Contact</span></a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -415,9 +397,9 @@ if (isset($_POST['loginbtn'])) {
 
 
     <!-- footer section start -->
-    <section class="footer">
+    <!-- <section class="footer">
         <!-- footer top -->
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
+    <!-- <div class="footer-bottom pt-77" style="background-color: #292929;">
             <div class="container-1180">
                 <div class="footer-bottom-wrapper">
                     <div class="footer-bottom-primary pb-60">
@@ -485,7 +467,7 @@ if (isset($_POST['loginbtn'])) {
             </div>
         </div>
 
-    </section>
+    </section> --> -->
     <!-- footer section end -->
 
     <!-- JS here -->
