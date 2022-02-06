@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
   $trim_loc = ltrim($folder, "./");
 
-  $query = mysqli_query($db, "INSERT INTO categories(Category_ID,Category_Name,Category_Image_Name,Category_Image_Location,Category_Admin_Location) VALUES ('$cat_id','$cat_name','$cat_image','$trim_loc','$folder')");
+  $query = mysqli_query($db, "INSERT INTO categories(Category_ID,Category_Name,Category_Image_Name,Category_Image_Location) VALUES ('$cat_id','$cat_name','$cat_image','$trim_loc')");
   if (move_uploaded_file($cat_image_tmp, $folder)) {
     // code...
 

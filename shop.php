@@ -17,7 +17,6 @@ function loginStart($db)
 if (isset($_SESSION['login_Sess'])) {
     # code...
     loginStart($db);
-    
 } else {
     # code... = 0;
     $no_of_items = 0;
@@ -28,14 +27,15 @@ if (isset($_SESSION['login_Sess'])) {
 
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <style>
-            #acart {
-                pointer-events: none;
-                cursor: default;
-            }
-        </style>
-    </head>
+
+<head>
+    <style>
+        #acart {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
+</head>
 
 <body>
     <!--[if lte IE 9]>
@@ -67,23 +67,23 @@ if (isset($_SESSION['login_Sess'])) {
                                             <ul class="nav nav-pills">
                                                 <li><span>Views</span></li>
                                                 <li class="nav-item">
-                                                    <a data-toggle="pill" href="#shop-tab-1" data-toggle="tooltip" data-placement="top" title="2 grid"><i class="fal fa-line-columns"></i></a>
+                                                    <a data-toggle="pill" href="#shop-tab-1" data-toggle="tooltip" data-placement="top" title="2 grid" class="active"><i class="fal fa-line-columns"></i></a>
                                                 </li>
-                                                <li class="nav-item">
+                                                <!-- <li class="nav-item">
                                                     <a data-toggle="pill" href="#shop-tab-2" data-placement="top" title="3 grid"><i class="fal fa-border-none"></i></a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a data-toggle="pill" href="#shop-tab-3" data-placement="top" title="4 grid" class="active"><i class="fal fa-border-center-v"></i></a>
+                                                    <a data-toggle="pill" href="#shop-tab-3" data-placement="top" title="4 grid"><i class="fal fa-border-center-v"></i></a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a data-toggle="pill" href="#shop-tab-4" data-placement="top" title="list view"><i class="fal fa-list"></i></a>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
                                     </div>
 
                                     <div class="col-xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-end position-static">
-                                        <div class="sorting d-inline-block">
+                                        <!-- <div class="sorting d-inline-block">
                                             <select name="sort" id="shop-sort">
                                                 <option value="default">Default sorting</option>
                                                 <option value="default">Short by popularity</option>
@@ -92,7 +92,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                 <option value="default">Sort by price: low to high</option>
                                                 <option value="default">Sort by price: high to low</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="filter">
                                             <h6 class="d-inline-block filter-widget-toggle">Filter</h6>
                                             <div class="filter-popup">
@@ -125,26 +125,26 @@ if (isset($_SESSION['login_Sess'])) {
                             <!-- /. filter heading -->
                             <div class="filter-content">
                                 <div class="tab-content">
-                                    <div class="tab-pane fade" id="shop-tab-1">
+                                    <div class="tab-pane fade show active" id="shop-tab-1">
                                         <div class="product-wrapper mt-55">
                                             <div class="row show_data"></div>
 
                                             <div class="text-center mt-20">
-                                                <a href="shop.php" class="load-more">LOAD MORE...</a>
+                                                <!-- <a href="shop.php" class="load-more">LOAD MORE...</a> -->
                                             </div>
 
                                             <div class="text-center mt-20" id="pagination">
 
                                             </div>
 
-   
-<header  class="header pt-85 pb-30  header-static" ></header>
+
+                                            <header class="header pt-85 pb-30  header-static"></header>
 
 
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade" id="shop-tab-2">
+                                    <!-- <div class="tab-pane fade" id="shop-tab-2">
                                         <div class="product-wrapper mt-55">
                                             <div class="row">
                                                 <div class="col-xl-4 col-md-4 col-6">
@@ -551,8 +551,8 @@ if (isset($_SESSION['login_Sess'])) {
                                                 <a href="shop.php" class="load-more">LOAD MORE...</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade  show active" id="shop-tab-3">
+                                    </div> -->
+                                    <!-- <div class="tab-pane fade  " id="shop-tab-3">
                                         <div class="product-wrapper mt-55">
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
@@ -959,7 +959,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                 <a href="shop.php" class="load-more">LOAD MORE...</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="tab-pane fade" id="shop-tab-4">
                                         <div class="product-wrapper mt-55">
                                             <div class="product-box mb-40">
@@ -1136,7 +1136,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- /. list product -->
+                                                   
                                                 </div>
                                             </div>
                                             <div class="product-box mb-40">
@@ -1213,132 +1213,134 @@ if (isset($_SESSION['login_Sess'])) {
                 </div>
             </div>
         </div>
-    </div>
-<section>
-
-    <!-- footer section start -->
-    <section class="footer">
-        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
-            <div class="footer-top-wrapper">
-                <div class="newsletter ">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
-                            <p>Subscribe our newsletter and get discount 20% Off</p>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="newsletter-form">
-                                <form action="#" method="POST">
-                                    <input type="text" placeholder="Search for our newsletter...">
-                                    <button type="submit" class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
-                                        Now</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.newsletter -->
-                <div class="service pt-57 mt-40 gray-border-top">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-4 col-md-6 service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Worldwide Shipping</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Online Support 24/7</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Money Return Guarantee</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /. service -->
-                <!-- /. footer bottom -->
-            </div>
-
         </div>
-        <!-- footer top -->
+        <section>
 
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
-            <div class="container-1180">
-                <div class="footer-bottom-wrapper">
-                    <div class="footer-bottom-primary pb-60">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-5 col-md-9">
-                                <div class="footer-item has-desc">
-                                    <div class="footer-logo mb-25">
-                                        <img src="img/logo/logo2.png" width="120" height="31" alt="">
+            <!-- footer section start -->
+            <section class="footer">
+                <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
+                    <div class="footer-top-wrapper">
+                        <div class="newsletter ">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <h2 class="title m-0">Sign Up For Our Newsletter</h2>
+                                    <p>Subscribe our newsletter and get discount 20% Off</p>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="newsletter-form">
+                                        <form action="#" method="POST">
+                                            <input type="text" placeholder="Search for our newsletter...">
+                                            <button type="submit" class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                                Now</button>
+                                        </form>
                                     </div>
-                                    <div class="footer-desc">
-                                        <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
-                                            extremely customizable, easy to use and fully responsive and retina ready.
-                                        </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /.newsletter -->
+                        <div class="service pt-57 mt-40 gray-border-top">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-md-6 service-item">
+                                    <div class="service-box service-box-2">
+                                        <div class="service-box-content">
+                                            <h4 class="title">Worldwide Shipping</h4>
+                                            <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
+                                                molestie consequat.</p>
+                                        </div>
                                     </div>
-                                    <div class="footer-img mt-65">
-                                        <img src="img/logo/paypal.png" alt="">
+                                </div>
+
+                                <div class="col-xl-4 col-md-6 service-item">
+                                    <div class="service-box service-box-2">
+                                        <div class="service-box-content">
+                                            <h4 class="title">Online Support 24/7</h4>
+                                            <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
+                                                molestie consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 hidden-md service-item">
+                                    <div class="service-box service-box-2">
+                                        <div class="service-box-content">
+                                            <h4 class="title">Money Return Guarantee</h4>
+                                            <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
+                                                molestie consequat.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-7 col-lg-7 col-md-12">
+                        </div>
+                        <!-- /. service -->
+                        <!-- /. footer bottom -->
+                    </div>
+
+                </div>
+                <!-- footer top -->
+
+                <div class="footer-bottom pt-77" style="background-color: #292929;">
+                    <div class="container-1180">
+                        <div class="footer-bottom-wrapper">
+                            <div class="footer-bottom-primary pb-60">
                                 <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
-                                                <li><a href="login.php">My account</a></li>
-                                                <li><a href="checkout.php">Checkout</a></li>
-                                                <li><a href="shop.php">Shop</a></li>
-                                                <li><a href="wishlist.php">Wishlist</a></li>
-                                                <li><a href="question.php">Frequently</a></li>
-                                            </ul>
+                                    <div class="col-xl-5 col-lg-5 col-md-9">
+                                        <div class="footer-item has-desc">
+                                            <div class="footer-logo mb-25">
+                                                <img src="img/logo/logo2.png" width="120" height="31" alt="">
+                                            </div>
+                                            <div class="footer-desc">
+                                                <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
+                                                    extremely customizable, easy to use and fully responsive and retina ready.
+                                                </p>
+                                            </div>
+                                            <div class="footer-img mt-65">
+                                                <img src="img/logo/paypal.png" alt="">
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-7 col-lg-7 col-md-12">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                                <div class="footer-menu">
+                                                    <ul>
+                                                        <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                        <li><a href="login.php">My account</a></li>
+                                                        <li><a href="checkout.php">Checkout</a></li>
+                                                        <li><a href="shop.php">Shop</a></li>
+                                                        <li><a href="wishlist.php">Wishlist</a></li>
+                                                        <li><a href="question.php">Frequently</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
 
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
-                                                <li><a href="shop.php">Special Offers</a></li>
-                                                <li><a href="shop.php">Gift Cards</a></li>
-                                                <li><a href="shop.php">F21 Red</a></li>
-                                                <li><a href="about.php">Privacy Policy</a></li>
-                                                <li><a href="about.php">Teams of Use</a></li>
-                                                <li><a href="portfolio.php">Portfolio</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                                <div class="footer-menu">
+                                                    <ul>
+                                                        <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                                        <li><a href="shop.php">Special Offers</a></li>
+                                                        <li><a href="shop.php">Gift Cards</a></li>
+                                                        <li><a href="shop.php">F21 Red</a></li>
+                                                        <li><a href="about.php">Privacy Policy</a></li>
+                                                        <li><a href="about.php">Teams of Use</a></li>
+                                                        <li><a href="portfolio.php">Portfolio</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
 
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 hidden-sm">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Company Info</a></li>
-                                                <li><a href="about.php">About us</a></li>
-                                                <li><a href="blog.php">Careers</a></li>
-                                                <li><a href="portfolio2.php">Business With Us</a></li>
-                                                <li><a href="shop.php">Find a Store</a></li>
-                                                <li><a href="question.php">Teams of Use</a></li>
-                                                <li><a href="portfolio3.php">Press & Talent</a></li>
-                                            </ul>
+                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 hidden-sm">
+                                                <div class="footer-menu">
+                                                    <ul>
+                                                        <li><a href="javascript:void(0)" class="title">Company Info</a></li>
+                                                        <li><a href="about.php">About us</a></li>
+                                                        <li><a href="blog.php">Careers</a></li>
+                                                        <li><a href="portfolio2.php">Business With Us</a></li>
+                                                        <li><a href="shop.php">Find a Store</a></li>
+                                                        <li><a href="question.php">Teams of Use</a></li>
+                                                        <li><a href="portfolio3.php">Press & Talent</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1346,193 +1348,191 @@ if (isset($_SESSION['login_Sess'])) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </section>
-    <!-- footer section end -->
+            </section>
+            <!-- footer section end -->
 
-    <!-- product popup start -->
-    <section id="product-popup">
-        <div class="product-popup-overlay"></div>
-        <div class="product-popup-container">
-            <div class="product-inner w-100">
-                <div class="product-inner-content">
-                    <div class="quick-close-action"><i class="fal fa-times"></i></div>
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="product-popup-1">
-                                    <div class="product-popup-img">
-                                        <img src="img/product/10.jpg" class="w-100" alt="">
+            <!-- product popup start -->
+            <section id="product-popup">
+                <div class="product-popup-overlay"></div>
+                <div class="product-popup-container">
+                    <div class="product-inner w-100">
+                        <div class="product-inner-content">
+                            <div class="quick-close-action"><i class="fal fa-times"></i></div>
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="product-popup-1">
+                                            <div class="product-popup-img">
+                                                <img src="img/product/10.jpg" class="w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="product-popup-2">
+                                            <div class="product-popup-img">
+                                                <img src="img/product/11.jpg" class="w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="product-popup-3">
+                                            <div class="product-popup-img">
+                                                <img src="img/product/12.jpg" class="w-100" alt="">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane fade" id="product-popup-2">
-                                    <div class="product-popup-img">
-                                        <img src="img/product/11.jpg" class="w-100" alt="">
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product-popup-3">
-                                    <div class="product-popup-img">
-                                        <img src="img/product/12.jpg" class="w-100" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="nav nav-pills justify-content-center mt-10">
-                                <li class="nav-item">
-                                    <a class="active" data-toggle="pill" href="#product-popup-1">
-                                        <img src="img/product/10.jpg" class="w-100" alt="">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="" data-toggle="pill" href="#product-popup-2">
-                                        <img src="img/product/11.jpg" class="w-100" alt="">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="" data-toggle="pill" href="#product-popup-3">
-                                        <img src="img/product/12.jpg" class="w-100" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6">
-                            <div class="product-content">
-                                <div class="product-title">
-                                    <h2>Nari Narwhal Usb...</h2>
-                                </div>
-                                <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
-                                <a href="single-product-4.php" class="all-feature">See all feature</a>
-                                <div class="quick-quantity mt-30">
-                                    <form action="#" method="POST">
-                                        <input type="number" value="1">
-                                        <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
-                                            cart</button>
-                                    </form>
-                                </div>
-
-                                <div class="product-desc pb-20 mt-25 gray-border-top">
-                                    <p class="mb-0">Typi non habent claritatem insitam, est usus legentis in iis qui
-                                        facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
-                                        quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
-                                        fruit to identify a ballpark value added activity to beta test. Override the
-                                        digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
-                                        information highway will close the […]</p>
-                                </div>
-                                <div class="product-list mt-25">
-                                    <ul>
-                                        <li>– Light green crewnec...t.</li>
-                                        <li>– Hand pockets.</li>
-                                        <li>– Relaxed fit.</li>
+                                    <ul class="nav nav-pills justify-content-center mt-10">
+                                        <li class="nav-item">
+                                            <a class="active" data-toggle="pill" href="#product-popup-1">
+                                                <img src="img/product/10.jpg" class="w-100" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="" data-toggle="pill" href="#product-popup-2">
+                                                <img src="img/product/11.jpg" class="w-100" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="" data-toggle="pill" href="#product-popup-3">
+                                                <img src="img/product/12.jpg" class="w-100" alt="">
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- product popup end -->
+                                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6">
+                                    <div class="product-content">
+                                        <div class="product-title">
+                                            <h2>Nari Narwhal Usb...</h2>
+                                        </div>
+                                        <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
+                                        <a href="single-product-4.php" class="all-feature">See all feature</a>
+                                        <div class="quick-quantity mt-30">
+                                            <form action="#" method="POST">
+                                                <input type="number" value="1">
+                                                <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
+                                                    cart</button>
+                                            </form>
+                                        </div>
 
-    <!-- startup popup start -->
-    <section id="startup-popup">
-        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
-        <div class="startup-popup-body">
-            <div class="startup-body-content h-100">
-                <div class="row justify-content-end h-100">
-                    <div class="col-6 h-100">
-                        <div class="startup-popup-inner h-100">
-                            <div class="close-search-popup">
-                                <i class="fal fa-times"></i>
-                            </div>
-                            <div class="startup-popup-main-content">
-                                <h2>Get Our Email Letter</h2>
-                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
-                                    arrivals, special offers
-                                    and other discount information.</p>
-                                <div class="startup-subscribe-form">
-                                    <form action="#" method="POST">
-                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
-                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="startup-popup-sub-content">
-                                <div class="popup-warning">
-                                    <input type="checkbox" id="startup-popup-hidden">
-                                    <label for="startup-popup-hidden">Do not show the popup again</label>
+                                        <div class="product-desc pb-20 mt-25 gray-border-top">
+                                            <p class="mb-0">Typi non habent claritatem insitam, est usus legentis in iis qui
+                                                facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
+                                                quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
+                                                fruit to identify a ballpark value added activity to beta test. Override the
+                                                digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
+                                                information highway will close the […]</p>
+                                        </div>
+                                        <div class="product-list mt-25">
+                                            <ul>
+                                                <li>– Light green crewnec...t.</li>
+                                                <li>– Hand pockets.</li>
+                                                <li>– Relaxed fit.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- startup popup end -->
+            </section>
+            <!-- product popup end -->
+
+            <!-- startup popup start -->
+            <section id="startup-popup">
+                <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
+                <div class="startup-popup-body">
+                    <div class="startup-body-content h-100">
+                        <div class="row justify-content-end h-100">
+                            <div class="col-6 h-100">
+                                <div class="startup-popup-inner h-100">
+                                    <div class="close-search-popup">
+                                        <i class="fal fa-times"></i>
+                                    </div>
+                                    <div class="startup-popup-main-content">
+                                        <h2>Get Our Email Letter</h2>
+                                        <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
+                                            arrivals, special offers
+                                            and other discount information.</p>
+                                        <div class="startup-subscribe-form">
+                                            <form action="#" method="POST">
+                                                <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
+                                                <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="startup-popup-sub-content">
+                                        <div class="popup-warning">
+                                            <input type="checkbox" id="startup-popup-hidden">
+                                            <label for="startup-popup-hidden">Do not show the popup again</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- startup popup end -->
 
 
 
-    <script src="js/main.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            load_data();
+            <script src="js/main.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    load_data();
 
-            function load_data(page) {
-                $.ajax({
-                    url: "ajax/load_data.php",
-                    method: "POST",
-                    data: {
-                        page: page
-                    },
-                    dataType: "JSON",
-                    success: function(data) {
-                        $(".show_data").html(data.output);
-                        $("#pagination").html(data.pagination);
+                    function load_data(page) {
+                        $.ajax({
+                            url: "ajax/load_data.php",
+                            method: "POST",
+                            data: {
+                                page: page
+                            },
+                            dataType: "JSON",
+                            success: function(data) {
+                                $(".show_data").html(data.output);
+                                $("#pagination").html(data.pagination);
+                            }
+                        });
+                    }
+
+                    $(document).on("click", ".pagination a", function(event) {
+                        event.preventDefault();
+                        var id = $(this).attr("id");
+                        load_data(id);
+                    });
+
+
+                    function show_mycart() {
+                        $.ajax({
+                            url: "ajax/show_mycart.php",
+                            method: "POST",
+                            dataType: "JSON",
+                            success: function(data) {
+                                $("#cart").text(data.da);
+                            }
+                        });
                     }
                 });
-            }
 
-            $(document).on("click", ".pagination a", function(event) {
-                event.preventDefault();
-                var id = $(this).attr("id");
-                load_data(id);
-            });
-
-
-            function show_mycart() {
-                $.ajax({
-                    url: "ajax/show_mycart.php",
-                    method: "POST",
-                    dataType: "JSON",
-                    success: function(data) {
-                        $("#cart").text(data.da);
-                    }
+                $(document).on("click", ".add_cart", function(event) {
+                    event.preventDefault();
+                    var id = $(this).attr("id");
+                    var name = $("#name" + id + "").val();
+                    var price = $("#description" + id + "").val();
+                    var action = "add";
+                    $.ajax({
+                        url: "ajax/cart_action.php",
+                        method: "POST",
+                        dataType: "JSON",
+                        data: {
+                            id: id,
+                            name: name,
+                            description: description,
+                            action: action
+                        },
+                        success: function(data) {}
+                    });
                 });
-            }
-        });
-
-        $(document).on("click", ".add_cart", function(event) {
-            event.preventDefault();
-            var id = $(this).attr("id");
-            var name = $("#name" + id + "").val();
-            var price = $("#description" + id + "").val();
-            var action = "add";
-            $.ajax({
-                url: "ajax/cart_action.php",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id,
-                    name: name,
-                    description: description,
-                    action: action
-                },
-                success: function(data) {}
-            });
-        });
-    </script>
+            </script>
 
 </body>
 
