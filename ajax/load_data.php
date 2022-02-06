@@ -53,13 +53,13 @@ $pagination .= "
 ";}
 }
 
-$query = "SELECT * FROM products LIMIT $start, $limit";
+$query = "SELECT `products`.`Product_ID`, `products`.`Product_Name`, `products`.`Product_Description`, `products`.`Product_Image_Name`, `products`.`Product_Image_Location` FROM `products` INNER JOIN product_customer_relation ON products.Product_ID = product_customer_relation.Product_ID WHERE product_customer_relation.Product_Status = 'Active' LIMIT $start, $limit";
 $res = mysqli_query($db,$query);
 
 $output = "";
 if (mysqli_num_rows($res) < 1) 
 {
-	$output .= "<h1 class='text-center'>NO DATA IN THE DB</h1>";
+	$output .= "<h1 class='text-center'>OUT OF STOCK</h1>";
 }
 else
 {
@@ -70,11 +70,11 @@ else
 				<div class='product-box mb-40'>
 					<div class='product-box-wrapper'>
 						<div class='product-img'>
-							<img src='img/product_images/".$row['Product_Image_Name']."'  class='w-100' alt='' >
+							<img src='". $row['Product_Image_Location']. "'  class='w-100' alt='' >
 
-							<a href='single-product-4.php' class='d-block'>
+							<a href='single-product.php?id=".$row['Product_ID']. "' class='d-block'>
 								<div class='second-img'>
-									<img src='img/uploadImages/".$row['Product_Image_Name']."'  class='w-100' alt='' >
+									<img src='" . $row['Product_Image_Location'] . "'  class='w-100' alt='' >
 									<input type='hidden' name='image' value='".$row['Product_Image_Name']."' id='image".$row['Product_ID']."'>
 								</div>
 							</a>

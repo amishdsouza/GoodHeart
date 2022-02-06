@@ -1,10 +1,48 @@
+<?php
+require_once 'configs/db.php';
+include("header.php");
+function loginStart($db)
+{
+    $no_of_items = 0;
+    $uid = $_SESSION['ID'];
+    $query2 = "SELECT COUNT(*) AS `count` FROM `shopping_cart_details` WHERE `Customer_ID` = '$uid'";
+    $sql2 = $db->query($query2) or die($db->error);
+    $row2 = $sql2->fetch_assoc();
+
+    $no_of_items = $row2['count'];
+
+    return $no_of_items;
+}
+
+if (isset($_SESSION['login_Sess'])) {
+    # code...
+    loginStart($db);
+} else {
+    # code... = 0;
+    //header('location:login.php');
+    $no_of_items = 0;
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "SELECT * FROM `products` WHERE `Product_ID` = '$id'";
+    $query2 = "SELECT customer_registration.Mobile_Number,customer_registration.Customer_Email FROM customer_registration INNER JOIN product_customer_relation ON customer_registration.Customer_ID = customer_registration.Customer_ID WHERE product_customer_relation.Product_ID = '$id'";
+
+    $sql2 = $db->query($query2) or die($db->error);
+    $row2 = $sql2->fetch_assoc();
+
+    $sql = $db->query($query) or die($db->error);
+    $row = $sql->fetch_assoc();
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mazia - Clean Minimal eCommerce HTML5 Template</title>
+    <title>Good Heart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,334 +77,7 @@
 
 
     <!-- header section start -->
-    <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
-        <div class="container-fluid">
-            <div class="header-nav position-relative">
-                    <div class="row align-items-center">
-                       
 
-                        <div class="col-xl-5 col-lg-6 hidden-md position-static">
-                            <div class="header-nav">
-                                <nav>
-                                    <ul>
-                                        <li><a href="javascript:void(0)" class="active"><span>Home  <i class="fal fa-angle-down"></i></span></a>
-                                        
-                                            <ul class="submenu">
-                                                <li><a href="index.html">Home Fashion 1</a></li>
-                                                <li><a href="index2.html">Home Fashion 2</a></li>
-                                                <li><a href="index3.html">Home Fashion 3</a></li>
-                                                <li><a href="index4.html">Home Fashion 4</a></li>
-                                                <li><a href="index5.html">Home Fashion 5</a></li>
-                                                <li><a href="index6.html">Home Fashion 6</a></li>
-                                                <li><a href="index7.html">Home Fashion 7</a></li>
-                                                
-                                            </ul>
-                                        </li>
-                                        <li class="position-static"><a href="javascript:void(0)"><span>Shop  <i class="fal fa-angle-down"></i></span></a>
-                                            <div class="mega-menu">
-                                                <div class="col-xl-7 pl-0 position-static">
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop Layout</a></li>
-                                                        <li><a href="shop4.html">Masonry – Grid</a></li>
-                                                        <li><a href="shop3.html">Pagination</a></li>
-                                                        <li><a href="shop2.html">Ajax Load More</a></li>
-                                                        <li><a href="shop2.html">Infinite Scroll</a></li>
-                                                        <li><a href="shop2.html">Sidebar Right</a></li>
-                                                        <li><a href="shop.html">Sidebar Left</a></li>
-                                                    </ul>
-
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop Pages</a></li>
-                                                        <li><a href="shop2.html">List View</a></li>
-                                                        <li><a href="shop3.html">Small Products</a></li>
-                                                        <li><a href="shop2.html">Large Products</a></li>
-                                                        <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                                        <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                                        <li><a href="shop4.html">Shop — 5 Items</a></li>
-                                                    </ul>
-
-                                                    <ul>
-                                                        <li><a href="single-product-2.html">Product Layout</a></li>
-                                                        <li><a href="single-product.html">Description Sticky</a></li>
-                                                        <li><a href="single-product-2.html">Product Carousels</a></li>
-                                                        <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                                        <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                                        <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                                        <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span> </a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Grid layout</a></li>
-                                                <li><a href="blog2.html">Large image</a></li>
-                                                <li><a href="blog3.html">Left Sidebar</a></li>
-                                                <li><a href="blog4.html">Right Sidebar</a></li>
-                                                <li><a href="blog5.html">No sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
-                                            <ul class="submenu">
-                                                <li><a href="portfolio.html">Single project</a></li>
-                                                <li><a href="portfolio2.html">Two Columns</a></li>
-                                                <li><a href="portfolio3.html">Three Columns</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>Page</span> <i class="fal fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="question.html">Frequently Questions</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html"><span>Contact</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
-                            <div class="logo">
-                                <a href="index3.html"><img src="img/logo/logo1.png" alt=""></a>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
-                            <div class="header-right">
-                                <ul class="text-right">
-                                    <li><a href="login.html" class="account"><i class="fal fa-user-friends"></i> <article class="account-registar d-inline-block">Login/Sign up</article></a></li>
-                                    <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
-                                    
-                                        <!-- search popup -->
-                                        <div id="search-popup">
-                                            <div class="close-search-popup">
-                                                <i class="fal fa-times"></i>
-                                            </div>
-                                            <div class="search-popup-inner mt-135">
-                                                <div class="search-title text-center">
-                                                    <h2>Search</h2>
-                                                </div>
-
-                                                <div class="search-content pt-55">
-                                                    <ul class="text-center">
-                                                        <li><a href="javascript:void(0)" class="active">All categories</a></li>
-                                                        <li><a href="javascript:void(0)">Clothing</a></li>
-                                                        <li><a href="javascript:void(0)">Gift Cards</a></li>
-                                                        <li><a href="javascript:void(0)">Handbag</a></li>
-                                                        <li><a href="javascript:void(0)">Kids</a></li>
-                                                        <li><a href="javascript:void(0)">Shoes</a></li>
-                                                        <li><a href="javascript:void(0)">Sneaker</a></li>
-                                                        <li><a href="javascript:void(0)">Women</a></li>
-                                                    </ul>
-
-                                                    <div class="search-form mt-35">
-                                                        <form action="#" method="post">
-                                                            <input type="text" placeholder="Search Products...">
-                                                            <button type="submit"><i class="fal fa-search"></i></button>
-                                                        </form>
-                                                    </div>
-
-                                                    <div class="search-result-list">
-                                                        <ul class="text-left">
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/1.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">ELLE  - Recliner syntheti chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/2.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">RIMINI  - Folding leather deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/3.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">LANDSCAPE  - Folding fabric deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/1.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">ELLE  - Recliner syntheti chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/2.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">RIMINI  - Folding leather deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-block d-flex align-items-center">
-                                                                <div class="search-result-img">
-                                                                    <img src="img/product/3.jpg" class="w-100" alt="">
-                                                                </div>
-                                                                <div class="search-result-desc pl-10">
-                                                                    <a href="single-product-4.html" class="title px-0">LANDSCAPE  - Folding fabric deck chair</a>
-                                                                    <div class="price">$<span>399</span></div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="wishlist.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
-                                    <li><a href="cart.html"><i class="fal fa-shopping-bag"><span>5</span></i></a>
-                                        <div class="minicart">
-                                            <div class="minicart-body">
-                                                <div class="minicart-content">
-                                                    <ul class="text-left">
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Capitalize on low hanging fruit t</a>
-                                                                <strong>1 × $250.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/2.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Leather Courriere duffle ba</a>
-                                                                <strong>1 × $150.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-
-
-                                                        <li>
-                                                            <div class="minicart-img">
-                                                                <a href="single-product-4.html" class="p-0"><img src="img/product/3.jpg" class="w-100" alt=""></a>
-                                                            </div>
-                                                            <div class="minicart-desc">
-                                                                <a href="single-product-4.html" class="p-0">Party Supplies Around Cupcake</a>
-                                                                <strong>1 × $150.00</strong>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <i class="fal fa-times"></i>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="minicart-checkout">
-                                                <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
-                                                    <strong class="float-left">Subtotal:</strong>
-                                                    <span class="price float-right">503.00</span>
-                                                </div>
-                                                <div class="minicart-checkout-links">
-                                                    <a href="cart.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View cart</a>
-                                                    <a href="checkout.html" class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
-                                        <ul class="submenu bold-content text-right">
-                                            <li><a href="login.html">My Account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="question.html">Frequently</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="mobile-menu visible-sm">
-                <div id="mobile-menu">
-                    <ul>
-                        <li><a  class="pl-3" href="javascript:void(0)">Home</a>
-                            <ul class="pl-4">
-                                <li><a href="index.html">Home Fashion 1</a></li>
-                                <li><a href="index2.html">Home Fashion 2</a></li>
-                                <li><a href="index3.html">Home Fashion 3</a></li>
-                                <li><a href="index4.html">Home Fashion 4</a></li>
-                                <li><a href="index5.html">Home Fashion 5</a></li>
-                                <li><a href="index6.html">Home Fashion 6</a></li>
-                                <li><a href="index7.html">Home Fashion 7</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li><a  class="pl-3" href="javascript:void(0)">Shop</a>
-                            <ul>
-                                <li><a href="shop.html">Shop Layout</a></li>
-                                <li><a href="shop4.html">Masonry – Grid</a></li>
-                                <li><a href="shop3.html">Pagination</a></li>
-                                <li><a href="shop2.html">Ajax Load More</a></li>
-                                <li><a href="shop2.html">Infinite Scroll</a></li>
-                                <li><a href="shop2.html">Sidebar Right</a></li>
-                                <li><a href="shop.html">Sidebar Left</a></li>
-                                <li><a href="shop.html">Shop Pages</a></li>
-                                <li><a href="shop2.html">List View</a></li>
-                                <li><a href="shop3.html">Small Products</a></li>
-                                <li><a href="shop2.html">Large Products</a></li>
-                                <li><a href="shop3.html">Shop — 3 Items</a></li>
-                                <li><a href="shop3.html">Shop — 4 Items</a></li>
-                                <li><a href="shop4.html">Shop — 5 Items</a></li>
-                                <li><a href="single-product-2.html">Product Layout</a></li>
-                                <li><a href="single-product.html">Description Sticky</a></li>
-                                <li><a href="single-product-2.html">Product Carousels</a></li>
-                                <li><a href="single-product-3.html">Gallery Modern</a></li>
-                                <li><a href="single-product-4.html">Thumbnail Left</a></li>
-                                <li><a href="single-product-5.html">Thumbnail Right</a></li>
-                                <li><a href="single-product-6.html">Thumbnail Botttom</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Blog</a>
-                            <ul>
-                                <li><a href="blog.html">Grid layout</a></li>
-                                <li><a href="blog2.html">Large image</a></li>
-                                <li><a href="blog3.html">Left Sidebar</a></li>
-                                <li><a href="blog4.html">Right Sidebar</a></li>
-                                <li><a href="blog5.html">No sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0)">Portfolio</a>
-                            <ul>
-                                <li><a href="portfolio.html">Single project</a></li>
-                                <li><a href="portfolio2.html">Two Columns</a></li>
-                                <li><a href="portfolio3.html">Three Columns</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /. mobile nav -->
-        </div>
-    </header>
     <!-- header section end -->
 
 
@@ -386,95 +97,97 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-4 col-12">
                             <div class="shop-img ">
-                                <a href="img/product/farniture-1.jpg" class="popup-image"><img src="img/product/farniture-1.jpg" class="w-100 mb-30" alt=""></a>
-                                <a href="img/product/farniture-2.jpg" class="popup-image"><img src="img/product/farniture-2.jpg" class="w-100 mb-30" alt=""></a>
-                                <a href="img/product/farniture-3.jpg" class="popup-image"><img src="img/product/farniture-3.jpg" class="w-100 mb-30" alt=""></a>
-                                <a href="img/product/farniture-4.jpg" class="popup-image"><img src="img/product/farniture-4.jpg" class="w-100 mb-30" alt=""></a>
-                                <a href="img/product/farniture-5.jpg" class="popup-image"><img src="img/product/farniture-5.jpg" class="w-100 mb-30" alt=""></a>
-                                <a href="img/product/farniture-6.jpg" class="popup-image"><img src="img/product/farniture-6.jpg" class="w-100" alt=""></a>
+                                <a href="<?php echo $row['Product_Image_Location'] ?>" class="popup-image"><img src="<?php echo $row['Product_Image_Location'] ?>" class="w-100 mb-30" alt=""></a>
+
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-8 col-12">
                             <div class="single-product-sidebar">
                                 <div class="product-content">
                                     <div class="single-product-title">
-                                        <h2>Elegant wooden leg design Replica</h2>
+                                        <h2><?php echo $row['Product_Name'] ?></h2>
                                     </div>
-                                    <div class="single-product-price">$<span>44.00</span>–<span>$250.00</span></div>
+                                    <!-- <div class="single-product-price">$<span>44.00</span>–<span>$250.00</span></div> -->
                                     <div class="single-product-desc mb-25">
-                                        <p>Typi non habent claritatem insitam, est usus legentis in iis qui
-                                            facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
-                                            quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
-                                            fruit to identify a ballpark value added activity to beta test. Override the
-                                            digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
-                                            information highway will close the […]</p>
-                                            <div class="product-list single-product-list">
-                                                <ul>
-                                                    <li>– Light green crewneck sweatshirt.</li>
-                                                    <li>– Hand pockets.</li>
-                                                    <li>– Relaxed fit.</li>
-                                                </ul>
-                                            </div>
+
+                                        <div class="product-list single-product-list">
+
+                                        </div>
                                     </div>
-                                    
-                                    <div class="quick-quantity mt-0">
-                                        <form action="#" method="POST">
-                                            <input type="number" value="1" style="margin-right: 20px; width: 119px;">
-                                            <button type="submit" class="list-add-cart-btn red-hover-btn border-0" style="padding-left: 80px;padding-right: 80px;transition: all .5s;">add to
-                                                cart
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <div class="single-product-action mt-35">
+                                    <?php if (isset($_SESSION['login_Sess'])) {
+                                    ?>
+                                        <div class="quick-quantity mt-0">
+                                            <form action="#" method="POST">
+                                                <a href="https://api.whatsapp.com/send?phone=91<?php echo $row2['Mobile_Number']; ?>&text=Hi There, I'm Interested in buying your product <?php echo $row['Product_Name'] ?>" target="_blank"><button type="button" class="list-add-cart-btn red-hover-btn border-0" style="padding-left: 80px;padding-right: 80px;transition: all .5s;">Chat with Owner on WhatsApp
+                                                    </button></a>
+
+                                                <a href="mailto:<?php echo $row2['Customer_Email']; ?>?subject=Hi There, I'm Interested in buying your product <?php echo $row['Product_Name'] ?>&body=Please Write the body!!!" target="_blank"><button type="button" class="list-add-cart-btn red-hover-btn border-0" style="padding-left: 80px;padding-right: 80px;transition: all .5s; margin-top:10px;">Chat with Owner on Email
+                                                    </button></a>
+
+                                            </form>
+                                        </div>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <div class="quick-quantity mt-0">
+                                            <form action="#" method="POST">
+                                                <a href="login.php" target="_blank"><button type="button" class="list-add-cart-btn red-hover-btn border-0" style="padding-left: 80px;padding-right: 80px;transition: all .5s;">Kindly login ot Chat with the owner
+                                                    </button></a>
+                                            </form>
+                                        </div>
+                                            <?php
+                                        }
+                                            ?>
+
+
+                                            <!-- <div class="single-product-action mt-35">
                                         <ul>
                                             <li><a href="wishlist.html"><i class="fal fa-heart"></i> add to wishlist</a></li>
                                             <li><a href="javascript:void(0)"><i class="fal fa-abacus"></i> add to compare</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="single-product-category mt-20">
+                                    </div> -->
+                                            <!-- <div class="single-product-category mt-20">
                                         <ul>
                                             <li><a href="javascript:void(0)" class="title">Categories: </a></li>
                                             <li><a href="shop4.html">Chair & Table</a></li>
                                             <li><a href="shop4.html">Chairs</a></li>
                                             <li><a href="shop4.html">Handbeg</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="share-product mt-20">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="title">Share this product</a></li>
-                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
-                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="google +"><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Linkdin"><i class="fab fa-linkedin-in"></i></a></li>
-                                        </ul>
-                                    </div>
+                                    </div> -->
+                                            <div class="share-product mt-20">
+                                                <ul>
+                                                    <li><a href="javascript:void(0)" class="title">Share this product</a></li>
+                                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="twitter"><i class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="google +"><i class="fab fa-google-plus-g"></i></a></li>
+                                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Linkdin"><i class="fab fa-linkedin-in"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="single-product-bottom mt-115">
-                    <ul class="nav nav-pills justify-content-center">
-                        <li class="nav-item">
-                          <a class="active" data-toggle="pill" href="#desc-tab-1">Description</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="" data-toggle="pill" href="#desc-tab-2">Reviews (0)</a>
-                        </li>
-                      </ul>
-                      <div class="container container-1200">
-                        <div class="tab-content mt-60">
-                            <div class="tab-pane fade show active" id="desc-tab-1">
-                                <div class="single-product-tab-content">
-                                    <h3 class="title mb-30">Description</h3>
-                                    <p>Designed by Hans J. Wegner in 1949 as one of the first models created especially for Carl Hansen & Son, and produced since 1950. The last of a series of chairs Wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions, ideal for both long visits to the dining table and relaxed lounging. A light chair, easy to move around the dining table and about the room.</p>
-                                    <p>The characteristic “Y” provides comfortable back support and stability to the steam-bent top, also inspiring the chair’s names An excellent example of Wegner’s constant striving towards organic simplicity to create sculptural beauty, comfort and outstanding stability.</p>
-                                    <p>The gently rounded top together with the back and seat offers a variety of comfortable seating positions, ideal for both long visits to the dining table and relaxed lounging. A light chair, easy to move around the dining table and about the room.</p>
+                    <div class="single-product-bottom mt-115">
+                        <ul class="nav nav-pills justify-content-center">
+                            <li class="nav-item">
+                                <a class="active" data-toggle="pill" href="#desc-tab-1">Description</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                            <a class="" data-toggle="pill" href="#desc-tab-2">Reviews (0)</a>
+                        </li> -->
+                        </ul>
+                        <div class="container container-1200">
+                            <div class="tab-content mt-60">
+                                <div class="tab-pane fade show active" id="desc-tab-1">
+                                    <div class="single-product-tab-content">
+                                        <h3 class="title mb-30"></h3>
+                                        <p><?php echo $row['Product_Description'] ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="desc-tab-2">
+                                <!-- <div class="tab-pane fade" id="desc-tab-2">
                                 <div class="single-product-tab-content">
                                     <h3 class="title mb-30">Reviews</h3>
                                     <div class="review-box-item">
@@ -546,17 +259,17 @@
                                         <button type="submit" class="generic-btn red-hover-btn" style="font-size: 14px !important;">Submit</button>
                                     </div>
                                 </div>
+                            </div> -->
                             </div>
-                          </div>
-                      </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- single product end -->
 
     <!-- related product start -->
-    <section class="related-product mt-120">
+    <!-- <section class="related-product mt-120">
         <div class="container-fluid">
             <div class="generic-title text-center">
                 <h2 class="mb-20">Related Product</h2>
@@ -568,23 +281,25 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-1.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-1-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-1-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Light green crewneck sweatshir</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$58.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$58.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -597,23 +312,25 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-2.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-2-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-2-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Light green crewneck sweatshir</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$58.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$58.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -626,23 +343,25 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-4.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-4-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-4-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Tassels Pendant Earrings</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$85.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$85.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -655,25 +374,27 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-5.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-5-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-5-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Shoes</span></a>
-                                            <a href="shop3.html"  class="product-category"><span>Sneaker</span></a>
-                                            <a href="shop3.html"  class="product-category"><span>Women</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Shoes</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Sneaker</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Women</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Leather Courriere duffle bag</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$3.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$3.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -686,9 +407,11 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-6.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-6-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-6-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                     <span class="sale bg-red text-white">sale!</span>
                                 </div>
@@ -696,15 +419,15 @@
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Shoes</span></a>
-                                            <a href="shop3.html"  class="product-category"><span>Sneaker</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Shoes</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Sneaker</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Wood design bedroom clook</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$45-$10.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$45-$10.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -717,9 +440,11 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-7.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-7-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-7-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                     <span class="sale bg-red text-white">sale!</span>
                                 </div>
@@ -727,14 +452,14 @@
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Capitalize on low hanging fruit to</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$250.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$250.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -747,23 +472,25 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-8.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-8-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-8-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Light green crewneck sweatshir</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$58.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$58.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -776,23 +503,25 @@
                             <div class="product-box-wrapper">
                                 <div class="product-img">
                                     <img src="img/product/farniture-9.jpg" class="w-100" alt="">
-                                    <a href="single-product-3.html" class="d-block"><div class="second-img">
-                                        <img src="img/product/farniture-9-hover.jpg" alt="" class="w-100">
-                                    </div></a>
+                                    <a href="single-product-3.html" class="d-block">
+                                        <div class="second-img">
+                                            <img src="img/product/farniture-9-hover.jpg" alt="" class="w-100">
+                                        </div>
+                                    </a>
                                     <a href="javascript:void(0)" class="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
 
                                 <div class="product-desc pb-20">
                                     <div class="product-desc-top">
                                         <div class="categories">
-                                            <a href="shop3.html"  class="product-category"><span>Woman</span></a>
+                                            <a href="shop3.html" class="product-category"><span>Woman</span></a>
                                         </div>
                                         <a href="wishlist.html" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a>
                                     </div>
                                     <a href="single-product-3.html" class="product-title">Tassels Pendant Earrings</a>
                                     <div class="price-switcher">
-                                            <span class="price switcher-item">$85.00</span>
-                                            <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                        <span class="price switcher-item">$85.00</span>
+                                        <a href="cart.html" class="add-cart text-capitalize switcher-item">+add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -801,7 +530,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- related product end -->
 
 
@@ -821,8 +550,7 @@
                             <div class="newsletter-form">
                                 <form action="#" method="POST">
                                     <input type="text" placeholder="Search for our newsletter...">
-                                    <button type="submit"
-                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                    <button type="submit" class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
                                         Now</button>
                                 </form>
                             </div>
