@@ -40,17 +40,24 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
     if ($res) {
         move_uploaded_file($file_tmp, $folder);
         $last_id = $db->insert_id;
-        
+        $uid = $_SESSION['ID'];
         $query2 = "INSERT INTO `product_customer_relation`(`Product_ID`, `Customer_ID`) VALUES ('$last_id','$uid')";
         $query3 = "INSERT INTO `category_product_relation`(`Product_ID`, `Category_ID`) VALUES ('$last_id','$cid')";
 
         $res2 = $db->query($query2);
-        $res3 = $db->query($query3);
-        header("Location: shop.php");
+        if($res2){
+            $res3 = $db->query($query3);
+            if($res3){
+                echo "<script>alert('Product Added Successfully');</script>";
+                header("Location: shop.php");
+            }
+        }
     } else {
-        echo $db->error;
+        echo "<script>alert('Product Adding Failed');</script>";
     }
-}
+        
+    } 
+
 $cat_query = "SELECT * FROM `categories`";
 
 $cat_result = $db->query($cat_query);
@@ -129,8 +136,8 @@ $cat_result = $db->query($cat_query);
                 <div class="row align-items-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="section-title mb-55">
-                            <p><span></span> Anything On your Mind</p>
-                            <h1>Estimate Your Idea</h1>
+                            <p><span></span> </p>
+                            <h1>Add Product</h1>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-3 d-none d-xl-block ">
