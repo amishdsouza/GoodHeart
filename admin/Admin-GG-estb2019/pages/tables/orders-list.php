@@ -2,10 +2,10 @@
 require_once '../../../../configs/db.php';
 session_start();
 
-if (!isset($_SESSION['adminlogin'])) {
-  // code...
-  header('location:../../index.php?sourcead=/pages/tables/orderr-list.php');
-}
+// if (!isset($_SESSION['adminlogin'])) {
+//   // code...
+//   header('location:../../index.php?sourcead=/pages/tables/order-list.php');
+// }
 
 
 
@@ -89,7 +89,7 @@ if (!isset($_SESSION['adminlogin'])) {
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="navbar-nav">
-          <a class="nav-link" href="../../../logout.php">Log Out</a>
+          <a class="nav-link" href="../../logout.php">Log Out</a>
         </li>
 
     </nav>

@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="navbar-nav">
-          <a class="nav-link" href="../../../logout.php">Log Out</a>
+          <a class="nav-link" href="../../logout.php">Log Out</a>
         </li>
 
     </nav>
