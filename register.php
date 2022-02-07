@@ -516,6 +516,7 @@ session_start();
                                 $("#errorEmail").hide();
                                 $("#errorPass").hide();
                                 $("#errorMobile").hide();
+                                window.location.href = "login.php";
                             }
 
                         }

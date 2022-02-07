@@ -3,10 +3,10 @@ require_once '../../../../configs/db.php';
 session_start();
 # code...
 
-if (!isset($_SESSION['adminlogin'])) {
-  // code...
-  header('location:../../index.php?sourcead=/pages/tables/product-list.php');
-}
+// if (!isset($_SESSION['adminlogin'])) {
+//   // code...
+//   header('location:../../index.php?sourcead=/pages/tables/product-list.php');
+// }
 
 if (isset($_GET['prodid'])) {
   # code...
@@ -227,14 +227,14 @@ if (isset($_POST['del_submit'])) {
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="../forms/add-products.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Add Products
                 </p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="../forms/add-category.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>

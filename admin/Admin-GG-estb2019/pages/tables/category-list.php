@@ -3,7 +3,7 @@ require_once '../../../../configs/db.php';
 session_start();
 if (!isset($_SESSION['adminlogin'])) {
   // code...
-  header('location:../../index.php?sourcead=/pages/tables/category-list.php');
+  // header('location:../../index.php?sourcead=/pages/tables/category-list.php');
 }
 
 if (isset($_GET['catid'])) {
@@ -195,14 +195,14 @@ if (isset($_POST['del_submit'])) {
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="../forms/add-products.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Add Products
                 </p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="../forms/add-category.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>

@@ -185,10 +185,10 @@ if (isset($_SESSION['login_Sess'])) {
 
                         </li>
 
-
+<!-- 
                         <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
 
-                           <!-- search popup -->
+                          
                            <div id="search-popup">
                               <div class="close-search-popup">
                                  <i class="fal fa-times"></i>
@@ -199,14 +199,7 @@ if (isset($_SESSION['login_Sess'])) {
                                  </div>
 
                                  <div class="search-content pt-55">
-                                    <ul class="text-center">
-                                       <li><a href="javascript:void(0)" class="active">All categories</a>
-                                       </li>
-                                       <li><a href="javascript:void(0)">Clothing</a></li>
-                                       <li><a href="javascript:void(0)">Books</a></li>
-                                       <li><a href="javascript:void(0)">Kids</a></li>
-                                       <li><a href="javascript:void(0)">Shoes</a></li>
-                                    </ul>
+                              
 
                                     <div class="search-form mt-35">
                                        <form action="#" method="post">
@@ -215,22 +208,22 @@ if (isset($_SESSION['login_Sess'])) {
                                        </form>
                                     </div>
 
-                                    <!-- <div class="search-result-list">
+                                    <div class="search-result-list">
                                        <ul class="text-left">
                                          
                                        </ul>
-                                    </div> -->
+                                    </div>
                                  </div>
 
 
                               </div>
                            </div>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                            <a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist">
                               <i class="fal fa-heart"><span>0</span></i>
                            </a>
-                        </li>
+                        </li> -->
 
                         <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag">
                                  <span>
@@ -319,10 +312,9 @@ if (isset($_SESSION['login_Sess'])) {
                                  </article>
                               </a>
                               <ul class="submenu text-right">
-                                 <li><a href="">My Account</a></li>
+                                 <li><a href="profile.php">My Account</a></li>
                                  <li><a href="shop.php">Shop</a></li>
                                  <li><a href="product-listing.php">Your Listings</a></li>
-                                 <li><a href="wishlist.php">Wishlist</a></li>
                                  <li><a href="logout.php">Log Out</a></li>
                               </ul>
                            <?php

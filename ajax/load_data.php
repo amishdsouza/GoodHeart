@@ -66,7 +66,7 @@ else
 	while ($row = mysqli_fetch_array($res)) {
 	$output .= "
 		<div class='col-6'>
-			<form method='post'>
+			<form method='post'> 
 				<div class='product-box mb-40'>
 					<div class='product-box-wrapper'>
 						<div class='product-img'>
@@ -111,6 +111,7 @@ else
 			</div>
 		</form>
 	</div>
+
 	";}
 }
 

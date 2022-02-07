@@ -131,14 +131,14 @@ if (isset($_POST['submit'])) {
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="add-products.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Add Products
                 </p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="add-category.php" class="nav-link active">
                 <i class="nav-icon fas fa-edit"></i>
