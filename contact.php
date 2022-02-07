@@ -18,10 +18,10 @@ function loginStart($db)
 if (isset($_SESSION['login_Sess'])) {
     # code...
     loginStart($db);
-    } else {
-      # code... = 0;
-      $no_of_items = 0;
-    }
+} else {
+    # code... = 0;
+    $no_of_items = 0;
+}
 
 ?>
 
@@ -31,7 +31,7 @@ if (isset($_SESSION['login_Sess'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mazia - Clean Minimal eCommerce HTML5 Template</title>
+    <title>Good Heart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -72,15 +72,15 @@ if (isset($_SESSION['login_Sess'])) {
 
 
     <!-- header section start -->
-  
+
     <!-- header section end -->
 
 
     <!-- contact-area start -->
     <section class="contact-area pb-30" data-background="assets/img/bg/bg-map.png">
-        <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/bg/3.jpg');">
+        <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/banner/how-to-give-feedback-header@2x.png');">
             <div class="breadcrumb-content d-flex justify-content-center align-items-center" style="flex-direction: column;">
-                <h2 class="title">Contact</h2>
+                <h2 class="title" style="color: white ;">Contact</h2>
                 <nav aria-label="breadcrumb" class="mb-40">
                     <ol class="breadcrumb p-0 m-0">
                         <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
@@ -230,7 +230,7 @@ if (isset($_SESSION['login_Sess'])) {
 
 
     <!-- footer section start -->
-  <?php include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
     <!-- footer section end -->
 
 
