@@ -94,7 +94,7 @@ else
 									</span>
 								</a>
 							</div>
-							<a href='single-product-4.php' class='product-title'>".$row['Product_Name']."</a>
+							<a href='single-product.php?id=".$row['Product_ID']. "' class='product-title'>".$row['Product_Name']."</a>
 							<div class='price-switcher'>
 								
 							<span class='price switcher-item'>".$row['Product_Description']."</span>
@@ -102,8 +102,7 @@ else
 							<input type='hidden' name='id' value='".$row['Product_ID']."' id='".$row['Product_ID']."'>
 							<input type='hidden' name='name' value='".$row['Product_Name']."' id='name".$row['Product_ID']."'>
 							<input type='hidden' name='price' value='".$row['Product_Description']."' id='price".$row['Product_ID']."'>
-							 <a href='ajax/add-cart.php?id=" . $row['Product_ID'] . "' class='add-cart text-capitalize switcher-item'>+add
-                                                                        to cart</a>
+							 <a href='ajax/add-cart.php?id=" . $row['Product_ID'] . "' class='add-cart text-capitalize switcher-item'>+ Add to cart</a>
 							</div>
 						</div>
 					</div>

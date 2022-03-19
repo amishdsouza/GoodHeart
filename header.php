@@ -107,13 +107,13 @@ if (isset($_SESSION['login_Sess'])) {
 
 <body>
    <!-- header section start -->
-   <header class="header pt-10 pb-10  header-static">
+   <header class="header pt-10 pb-10  header-static   ">
       <div class="container-fluid">
-         <div class="header-nav position-relative">
+         <div class="header-nav position-relative ">
             <div class="row align-items-center">
                <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
                   <div class="logo">
-                     <a href="index.php"><img src="img/banner/good_heart_new_trans.png" alt=""></a>
+                     <a href="index.php"><img src="img/banner/mine2.png" alt="" height="100"></a>
                   </div>
                </div>
 
@@ -135,24 +135,6 @@ if (isset($_SESSION['login_Sess'])) {
                                                                                  } ?>"><span>Shop</span></a>
 
                            </li>
-                           <!-- <li><a href="javascript:void(0)"><span>Blog <i class="fal fa-angle-down"></i></span>
-                              </a>
-                              <ul class="submenu">
-                                 <li><a href="blog.php">Grid layout</a></li>
-                                 <li><a href="blog2.php">Large image</a></li>
-                                 <li><a href="blog3.php">Left Sidebar</a></li>
-                                 <li><a href="blog4.php">Right Sidebar</a></li>
-                                 <li><a href="blog5.php">No sidebar</a></li>
-                              </ul>
-                           </li> -->
-                           <!--                            
-                           <li><a href="javascript:void(0)"><span>Portfolio <i class="fal fa-angle-down"></i></span> </a>
-                              <ul class="submenu">
-                                 <li><a href="portfolio.php">Single project</a></li>
-                                 <li><a href="portfolio2.php">Two Columns</a></li>
-                                 <li><a href="portfolio3.php">Three Columns</a></li>
-                              </ul>
-                           </li> -->
                            <li><a href="about.php" class="<?php if (basename($_SERVER['PHP_SELF']) == "about.php") {
                                                                echo "active";
                                                             } else {
@@ -164,7 +146,7 @@ if (isset($_SESSION['login_Sess'])) {
                                                                echo "active";
                                                             } else {
                                                                echo "";
-                                                            } ?>"><span>Contact</span></a></li>
+                                                            } ?>"><span>Feedback</span></a></li>
                         </ul>
                      </nav>
                   </div>
@@ -214,22 +196,9 @@ if (isset($_SESSION['login_Sess'])) {
                                           <button type="submit"><i class="fal fa-search"></i></button>
                                        </form>
                                     </div>
-
-                                    <!-- <div class="search-result-list">
-                                       <ul class="text-left">
-                                         
-                                       </ul>
-                                    </div> -->
                                  </div>
-
-
                               </div>
                            </div>
-                        </li>
-                        <li>
-                           <a href="wishlist.php" data-toggle="tooltip" data-placement="bottom" title="view wishlist">
-                              <i class="fal fa-heart"><span>0</span></i>
-                           </a>
                         </li>
 
                         <li><a href="javascript:void(0)"><i class="fal fa-shopping-bag">
@@ -266,31 +235,12 @@ if (isset($_SESSION['login_Sess'])) {
                                                       <a href="" class="p-0"><?php echo $row['Product_Name'] ?></a>
                                                       <strong><?php echo $row['Product_Description'] ?></strong>
                                                    </div>
-                                                   <div class="remove">
-                                                      <i class="fal fa-times"></i>
-                                                   </div>
                                                 </li>
                                        <?php
                                              }
                                           }
                                        }
-
                                        ?>
-
-                                       <!-- <li>
-                                          <div class="minicart-img">
-                                             <a href="single-product-3.php" class="p-0"><img src="img/product/1.jpg" class="w-100" alt=""></a>
-                                          </div>
-                                          <div class="minicart-desc">
-                                             <a href="single-product-3.php" class="p-0">Capitalize on low hanging fruit
-                                                t</a>
-                                             <strong>1 × $250.00</strong>
-                                          </div>
-                                          <div class="remove">
-                                             <i class="fal fa-times"></i>
-                                          </div>
-                                       </li> -->
-
                                     </ul>
                                  </div>
                               </div>
@@ -319,10 +269,9 @@ if (isset($_SESSION['login_Sess'])) {
                                  </article>
                               </a>
                               <ul class="submenu text-right">
-                                 <li><a href="">My Account</a></li>
+                                 <li><a href="profile.php">My Account</a></li>
                                  <li><a href="shop.php">Shop</a></li>
                                  <li><a href="product-listing.php">Your Listings</a></li>
-                                 <li><a href="wishlist.php">Wishlist</a></li>
                                  <li><a href="logout.php">Log Out</a></li>
                               </ul>
                            <?php

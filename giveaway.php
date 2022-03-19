@@ -84,18 +84,12 @@ $cat_result = $db->query($cat_query);
 
     <!-- contact-area start -->
     <section class="contact-area pb-30" data-background="assets/img/bg/bg-map.png">
-        <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/bg/3.jpg');">
+        <div class="has-breadcrumb-bg mb-120" style="background-image: url('img/banner/214029364.jpg');">
             <div class="breadcrumb-content d-flex justify-content-center align-items-center" style="flex-direction: column;">
-                <h2 class="title">Contact</h2>
-                <nav aria-label="breadcrumb" class="mb-40">
-                    <ol class="breadcrumb p-0 m-0">
-                        <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
+               
             </div>
         </div>
-        <div class="container container-1430">
+        <!-- <div class="container container-1430">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="contact text-center mb-30">
@@ -122,7 +116,7 @@ $cat_result = $db->query($cat_query);
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- contact-area end -->
 
@@ -138,11 +132,6 @@ $cat_result = $db->query($cat_query);
                         <div class="section-title mb-55">
                             <p><span></span> </p>
                             <h1>Add Product</h1>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-3 d-none d-xl-block ">
-                        <div class="section-link mb-80 text-right">
-                            <a class="btn theme-btn" href="tel:+8123985789"><i class="fas fa-phone"></i> make call</a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +176,7 @@ $cat_result = $db->query($cat_query);
         </div>
     </section>
 
-    <section class="contact-form-area pt-100 pb-100">
+    <!-- <section class="contact-form-area pt-100 pb-100">
         <div class="container container-1430">
             <div class="row  service-row">
                 <div class="col-md-4">
@@ -227,97 +216,13 @@ $cat_result = $db->query($cat_query);
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- contact-form-area end -->
 
 
-
-
-
-
-
-
-
-    <!-- footer section start -->
-    <section class="footer">
-
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
-            <div class="container-1180">
-                <div class="footer-bottom-wrapper">
-                    <div class="footer-bottom-primary pb-60">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-5 col-md-9">
-                                <div class="footer-item has-desc">
-                                    <div class="footer-logo mb-25">
-                                        <img src="img/logo/logo2.png" width="120" height="31" alt="">
-                                    </div>
-                                    <div class="footer-desc">
-                                        <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
-                                            extremely customizable, easy to use and fully responsive and retina ready.
-                                        </p>
-                                    </div>
-                                    <div class="footer-img mt-65">
-                                        <img src="img/logo/paypal.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-7 col-lg-7 col-md-12">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
-                                                <li><a href="login.php">My account</a></li>
-                                                <li><a href="checkout.php">Checkout</a></li>
-                                                <li><a href="shop2.php">Shop</a></li>
-                                                <li><a href="wishlist.php">Wishlist</a></li>
-                                                <li><a href="question.php">Frequently</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
-                                                <li><a href="shop2.php">Special Offers</a></li>
-                                                <li><a href="shop2.php">Gift Cards</a></li>
-                                                <li><a href="shop2.php">F21 Red</a></li>
-                                                <li><a href="about.php">Privacy Policy</a></li>
-                                                <li><a href="about.php">Teams of Use</a></li>
-                                                <li><a href="portfolio.php">Portfolio</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 hidden-sm">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Company Info</a></li>
-                                                <li><a href="about.php">About us</a></li>
-                                                <li><a href="blog.php">Careers</a></li>
-                                                <li><a href="portfolio2.php">Business With Us</a></li>
-                                                <li><a href="shop2.php">Find a Store</a></li>
-                                                <li><a href="question.php">Teams of Use</a></li>
-                                                <li><a href="portfolio3.php">Press & Talent</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- footer section end -->
-
-
-
-
-
+    <?php
+        include("footer.php");
+        ?>
 
 
     <!-- product popup start -->

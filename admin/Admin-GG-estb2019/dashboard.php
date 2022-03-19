@@ -136,14 +136,14 @@
                  </p>
                </a>
              </li>
-             <li class="nav-item">
+             <!-- <li class="nav-item">
                <a href="pages/forms/add-products.php" class="nav-link">
                  <i class="nav-icon fas fa-edit"></i>
                  <p>
                    Add Products
                  </p>
                </a>
-             </li>
+             </li> -->
              <li class="nav-item">
                <a href="pages/forms/add-category.php" class="nav-link">
                  <i class="nav-icon fas fa-edit"></i>

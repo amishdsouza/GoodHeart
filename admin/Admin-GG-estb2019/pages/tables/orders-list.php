@@ -1,26 +1,25 @@
 <?php
-include_once '../../../../php/config.php';
-
+require_once '../../../../configs/db.php';
 session_start();
 
 if (!isset($_SESSION['adminlogin'])) {
   // code...
-  header('location:../../index.php');
+  header('location:../../index.php?sourcead=/pages/tables/orderr-list.php');
 }
 
 
-$page = 'Processing';
 
-if (!isset($_GET['status'])) {
-  // code...
-  $res_data = mysqli_query($con, "SELECT *,DATE_FORMAT(Date_OF_Purchase,'%D %M %Y') AS Purchase_Date  FROM `total_orders` WHERE  `Order_Status` = 'Processing'");
-}
-else {
-  // code...
-  $page = $_GET['status'];
-  $res_data = mysqli_query($con, "SELECT *,DATE_FORMAT(Date_OF_Purchase,'%D %M %Y') AS Purchase_Date  FROM `total_orders` WHERE `Order_Status` = '$page'");
 
-}
+// if (!isset($_GET['status'])) {
+//   // code...
+//   $res_data = mysqli_query($con, "SELECT *,DATE_FORMAT(Date_OF_Purchase,'%D %M %Y') AS Purchase_Date  FROM `total_orders` WHERE  `Order_Status` = 'Processing'");
+// }
+// else {
+//   // code...
+//   $page = $_GET['status'];
+//   $res_data = mysqli_query($con, "SELECT *,DATE_FORMAT(Date_OF_Purchase,'%D %M %Y') AS Purchase_Date  FROM `total_orders` WHERE `Order_Status` = '$page'");
+
+// }
 
 //  $oid = $_GET['q'];
 //$pid = $_GET['r'];
@@ -73,10 +72,10 @@ else {
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style>
-      .sactive{
-        color: white !important;
-        background-color: #007bff !important;
-      }
+    .sactive {
+      color: white !important;
+      background-color: #007bff !important;
+    }
   </style>
 </head>
 
@@ -100,7 +99,7 @@ else {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="..\..\..\..\images/GriceeGroceryfinal.png" alt="Good Heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+        <img src="..\..\..\..\img\banner\good_heart_new_trans_white.png" alt="Good heart Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
         <span class="brand-text font-weight-light">Good Heart</span>
       </a>
 
@@ -112,7 +111,7 @@ else {
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['AName']; ?></a>
           </div>
         </div>
 
@@ -137,14 +136,14 @@ else {
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="../forms/add-products.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Add Products
                 </p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="../forms/add-category.php" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
@@ -203,41 +202,9 @@ else {
         </div><!-- /.container-fluid -->
       </section>
       <div class="content row" style="margin-left:350px !important;">
-        <div class="row justify-content-center" >
-          <div class="col-md-10 mb-5 text-center" >
-            <table class="table table-bordered table-striped">
-              <th class="<?php if (!isset($_GET['status']) || $page =='Processing'):echo "sactive"; ?>
+        <div class="row justify-content-center">
+          <div class="col-md-10 mb-5 text-center">
 
-              <?php endif; ?>">
-              <a href="?status=Processing" class="<?php if (!isset($_GET['status']) || $page =='Processing'):echo "sactive"; ?>
-
-              <?php endif; ?>">Processing</a>
-            </th>
-
-              <th class="<?php if ($page =='Dispatched'):echo "sactive"; ?>
-
-              <?php endif; ?>">
-              <a href="?status=Dispatched" class="<?php if ($page =='Dispatched'):echo "sactive"; ?>
-
-              <?php endif; ?>">Dispatched</a>
-              </th>
-
-              <th class="<?php if ($page =='Cancelled'):echo "sactive"; ?>
-
-              <?php endif; ?>">
-                <a href="?status=Cancelled" class="<?php if ($page =='Cancelled'):echo "sactive"; ?>
-
-                <?php endif; ?>">Cancelled</a>
-             </th>
-
-              <th class="<?php if ($page =='Delivered'):echo "sactive"; ?>
-
-              <?php endif; ?>">
-                <a href="?status=Delivered" class="<?php if ($page =='Delivered'):echo "sactive"; ?>
-
-                <?php endif; ?>">Delivered</a>
-              </th>
-            </table>
           </div>
         </div>
       </div>
@@ -247,7 +214,7 @@ else {
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><?php echo $page ?> Orders</h3>
+                <h3 class="card-title">Orders</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -255,89 +222,30 @@ else {
                   <thead>
                     <tr>
                       <th>Order ID</th>
-                      <th>User ID</th>
                       <th>Product ID</th>
                       <th>Product Name</th>
-                      <th>Quantity</th>
-                      <th>Total Price</th>
+                      <th>Product Description</th>
+                      <th>Order Date</th>
                       <th>Order Status</th>
-                      <th>Payment Type</th>
-                      <th>Payment Status</th>
-                      <th>Date of Purchase</th>
-                      <th>Cancel Status</th>
-                      <th>Transport Status</th>
                     </tr>
                   </thead>
                   <tbody>
 
                     <?php
-                    //$sql = "SELECT * FROM total_orders WHERE Order_Status = 'Processing'";
-                    //$res_data = mysqli_query($con, $sql);
+                    $sql = "SELECT `orders`.`Order_ID`,`orders`.`Date_Placed`,`orders`.`Order_Status`,`products`.`Product_ID`,`products`.`Product_Name`,`products`.`Product_Description` FROM `orders` INNER JOIN `products` ON `orders`.`Product_ID` = `products`.`Product_ID`";
+                    $res_data = mysqli_query($db, $sql);
 
                     while ($row = mysqli_fetch_assoc($res_data)) {
                       // code...
 
                     ?>
                       <tr>
-                        <td><?php echo $row['Order_No']; ?></td>
-                        <td><?php echo $row['User_ID']; ?></td>
+                        <td><?php echo $row['Order_ID']; ?></td>
                         <td><?php echo $row['Product_ID']; ?></td>
                         <td><?php echo $row['Product_Name']; ?></td>
-                        <td><?php echo $row['Quantity']; ?></td>
-                        <td>₹<?php echo $row['Total_Price']; ?></td>
+                        <td><?php echo $row['Product_Description']; ?></td>
+                        <td><?php echo $row['Date_Placed']; ?></td>
                         <td><?php echo $row['Order_Status']; ?></td>
-                        <td><?php echo $row['Payment_Type']; ?></td>
-                        <td><?php echo $row['Payment_Status']; ?></td>
-                        <td><?php echo $row['Purchase_Date']; ?></td>
-                        <td>
-                          <?php if ($page == "Delivered" or $page == "Cancelled") {
-    												// code...
-    												?>
-    												   Order Already <?php echo $page; ?>
-    												<?php
-                          }
-                          else {
-                            // code...
-                            ?>
-                            <a href="update-order.php?q=<?php echo $row['Order_No'] ?>&r=<?php echo $row['Product_ID'] ?>&p=<?php echo $row['Quantity'] ?>&o=<?php echo $row['User_ID']; ?>"><button type="submit" class="btn btn-info btn-sm" name="cancel">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Cancel
-                              </button></a>
-                            <?php
-                          }
-    						           ?>
-
-                          </td>
-                        <td>
-                          <?php if ($page == "Delivered" or $page == "Cancelled") {
-    												// code...
-    												?>
-    												   Order Already <?php echo $page; ?>
-    												<?php
-                          }
-                          elseif($page == "Processing") {
-                            // code...
-                            ?>
-                            <a href="dispatch-order.php?q=<?php echo $row['Order_No'] ?>&r=<?php echo $row['Product_ID'] ?>&p=<?php echo $row['Quantity'] ?>&o=<?php echo $row['User_ID']; ?>"><button type="submit" class="btn btn-info btn-sm" name="deliver">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Dispatch
-                              </button></a>
-                            <?php
-                          }
-                          else {
-                            // code...
-                            ?>
-                            <a href="deliver-order.php?q=<?php echo $row['Order_No'] ?>&r=<?php echo $row['Product_ID'] ?>&p=<?php echo $row['Quantity'] ?>&o=<?php echo $row['User_ID']; ?>"><button type="submit" class="btn btn-info btn-sm" name="deliver">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Delivered
-                              </button></a>
-                            <?php
-                          }
-                          ?>
-                          </td>
                       </tr>
                     <?php
 
@@ -350,17 +258,11 @@ else {
                   <tfoot>
                     <tr>
                       <th>Order ID</th>
-                      <th>User ID</th>
                       <th>Product ID</th>
                       <th>Product Name</th>
-                      <th>Quantity</th>
-                      <th>Total Price</th>
+                      <th>Product Description</th>
+                      <th>Order Date</th>
                       <th>Order Status</th>
-                      <th>Payment Type</th>
-                      <th>Payment Status</th>
-                      <th>Date of Purchase</th>
-                      <th>Cancel Status</th>
-                      <th>Transport Status</th>
                     </tr>
                   </tfoot>
                 </table>

@@ -34,7 +34,7 @@ if($error)
 $insertCustDetailsSql = "INSERT INTO customer_registration (`Customer_Name`, `Customer_Email`, `Customer_Password`, `Customer_Street_Address`, `Customer_HouseNo`, `Customer_Place`, `Customer_State`, `Customer_PinCode`, `Date_Of_Birth`, `Mobile_Number`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
 $pstmtInsert = $db->prepare($insertCustDetailsSql);
-$pstmtInsert->bind_param("sssssssisi",$uname, $uemail, $pass, $StreetAddress, $houseNo, $place, $state, $zip, $dob, $mobileNo);
+$pstmtInsert->bind_param("sssssssisi",$uname, $uemail, $encryptPass, $StreetAddress, $houseNo, $place, $state, $zip, $dob, $mobileNo);
 
 
 $selectEmailSql = "SELECT * FROM `customer_registration` WHERE Customer_Email = ?";
@@ -77,9 +77,10 @@ $numMobile = $pstmtMobile->num_rows();
     } else if ($numMobile > 0) {
         echo json_encode(array("statusCode" => 203));
     } else if ($pstmtInsert->execute()) {
-        # code...else
-        echo json_encode(array("statusCode" => 200));
+    # code...else
         unset($_SESSION['OTP']);
+        echo json_encode(array("statusCode" => 200));
+        
     } else {
         # code...
         echo $db->error;

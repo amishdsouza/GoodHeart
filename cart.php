@@ -43,49 +43,11 @@ if (isset($_SESSION['login_Sess'])) {
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Good Heart | Cart</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/meanmenu.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
-
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
     <!-- preloader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
-
-
-
-    <!-- header section start -->
-
-    <!-- header section end -->
-
-
 
     <!-- shop body section start -->
     <section class="cart-body mb-90 gray-border-top pt-35">
@@ -94,7 +56,7 @@ if (isset($_SESSION['login_Sess'])) {
                 <div class="breadcrumb-content" style="flex-direction: column;">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb p-0 m-0">
-                            <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Cart</li>
                         </ol>
                     </nav>
@@ -108,7 +70,7 @@ if (isset($_SESSION['login_Sess'])) {
                             <div class="product-content">
                                 <form action="#">
                                     <div class="table-responsive">
-                                        <table class="table table-2">
+                                        <table class="table table-borderless">
                                             <thead>
                                                 <tr>
                                                     <th class="remove-porduct"></th>
@@ -177,143 +139,7 @@ if (isset($_SESSION['login_Sess'])) {
 
 
 
-
-    <!-- footer section start -->
-    <section class="footer">
-        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
-            <div class="footer-top-wrapper">
-                <div class="newsletter ">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
-                            <p>Subscribe our newsletter and get discount 20% Off</p>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="newsletter-form">
-                                <form action="#" method="POST">
-                                    <input type="text" placeholder="Search for our newsletter...">
-                                    <button type="submit" class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
-                                        Now</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.newsletter -->
-                <div class="service pt-57 mt-40 gray-border-top">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-4 col-md-6 service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Worldwide Shipping</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Online Support 24/7</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
-                            <div class="service-box service-box-2">
-                                <div class="service-box-content">
-                                    <h4 class="title">Money Return Guarantee</h4>
-                                    <p class="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
-                                        molestie consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /. service -->
-                <!-- /. footer bottom -->
-            </div>
-
-        </div>
-        <!-- footer top -->
-
-        <div class="footer-bottom pt-77" style="background-color: #292929;">
-            <div class="container-1180">
-                <div class="footer-bottom-wrapper">
-                    <div class="footer-bottom-primary pb-60">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-5 col-md-9">
-                                <div class="footer-item has-desc">
-                                    <div class="footer-logo mb-25">
-                                        <img src="img/logo/logo2.png" width="120" height="31" alt="">
-                                    </div>
-                                    <div class="footer-desc">
-                                        <p class="mb-10">Mazia store is a premium theme with advanced admin module. It’s
-                                            extremely customizable, easy to use and fully responsive and retina ready.
-                                        </p>
-                                    </div>
-                                    <div class="footer-img mt-65">
-                                        <img src="img/logo/paypal.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-7 col-lg-7 col-md-12">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
-                                                <li><a href="login.html">My account</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="shop2.html">Shop</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="question.html">Frequently</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
-                                                <li><a href="shop2.html">Special Offers</a></li>
-                                                <li><a href="shop2.html">Gift Cards</a></li>
-                                                <li><a href="shop2.html">F21 Red</a></li>
-                                                <li><a href="about.html">Privacy Policy</a></li>
-                                                <li><a href="about.html">Teams of Use</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 hidden-sm">
-                                        <div class="footer-menu">
-                                            <ul>
-                                                <li><a href="javascript:void(0)" class="title">Company Info</a></li>
-                                                <li><a href="about.html">About us</a></li>
-                                                <li><a href="blog.html">Careers</a></li>
-                                                <li><a href="portfolio2.html">Business With Us</a></li>
-                                                <li><a href="shop2.html">Find a Store</a></li>
-                                                <li><a href="question.html">Teams of Use</a></li>
-                                                <li><a href="portfolio3.html">Press & Talent</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- footer section end -->
-
+<?php include('footer.php') ?>
 
 
 
